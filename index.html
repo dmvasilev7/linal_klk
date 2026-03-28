@@ -125,17 +125,17 @@
             <button id="btn-ticket-4" onclick="switchTab('ticket-4')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
                 <i class="fas fa-ticket-alt mr-2"></i> Билет 4
             </button>
-            <button id="btn-ticket-5" onclick="switchTab('ticket-5')" class="tab-btn bg-indigo-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center">
+            <button id="btn-ticket-5" onclick="switchTab('ticket-5')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
                 <i class="fas fa-ticket-alt mr-2"></i> Билет 5
+            </button>
+            <button id="btn-ticket-6" onclick="switchTab('ticket-6')" class="tab-btn bg-indigo-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center">
+                <i class="fas fa-ticket-alt mr-2"></i> Билет 6
             </button>
         </div>
     </div>
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative">
 
-        <!-- ==========================================
-             БИЛЕТ 1
-             ========================================== -->
         <div id="ticket-1" class="ticket-section hidden space-y-12">
             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-sm uppercase tracking-wider text-indigo-500 font-bold mb-2">Полная формулировка</h2>
@@ -164,7 +164,7 @@
                     </div>
                     <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-6 pattern-bg">
                         <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center"><i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрическая интерпретация</h3>
-                        <p>Представь себе трехмерное векторное пространство. Идеал $I$ — это плоскость, проходящая через начало координат. Когда мы строим факторкольцо, мы буквально смотрим на пространство <em>вдоль</em> этой плоскости. Вся плоскость сливается для нас в одну точку (нуль факторкольца), а все плоскости, параллельные ей, превращаются в отдельные точки новой прямой.</p>
+                        <p>Представ себе трехмерное векторное пространство. Идеал $I$ — это плоскость, проходящая через начало координат. Когда мы строим факторкольцо, мы буквально смотрим на пространство <em>вдоль</em> этой плоскости. Вся плоскость сливается для нас в одну точку (нуль факторкольца), а все плоскости, параллельные ей, превращаются в отдельные точки новой прямой.</p>
                     </div>
                     <div class="bg-purple-50/50 border border-purple-100 rounded-xl p-6">
                         <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center"><i class="fas fa-code mr-2 text-purple-600"></i> Пример</h3>
@@ -295,9 +295,6 @@
             </section>
         </div>
 
-        <!-- ==========================================
-             БИЛЕТ 2
-             ========================================== -->
         <div id="ticket-2" class="ticket-section hidden space-y-12">
             <div class="bg-gradient-to-r from-teal-50 to-cyan-50 border border-cyan-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-sm uppercase tracking-wider text-cyan-600 font-bold mb-2">Полная формулировка</h2>
@@ -602,7 +599,6 @@
                     4. Матрица линейного оператора. Связь между матрицами оператора в разных базисах. Ранг, след и определитель оператора как инварианты. Алгебра линейных операторов и её изоморфизм алгебре квадратных матриц.
                 </p>
             </div>
-
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-blue-500">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-bl-full -z-10 opacity-50"></div>
                 <div class="flex items-center mb-8">
@@ -718,8 +714,7 @@
             </section>
         </div>
 
-
-        <div id="ticket-5" class="ticket-section space-y-12">
+        <div id="ticket-5" class="ticket-section hidden space-y-12">
             <div class="bg-gradient-to-r from-emerald-50 to-purple-50 border border-emerald-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-sm uppercase tracking-wider text-emerald-600 font-bold mb-2">Полная формулировка</h2>
                 <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
@@ -729,44 +724,30 @@
 
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-100 rounded-bl-full -z-10 opacity-50"></div>
-                
                 <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-compress-alt"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-compress-alt"></i></div>
                     <h2 class="text-3xl font-bold text-slate-900">1. Проектор и идемпотентный оператор</h2>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-6">
-                        <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center">
-                            <i class="fas fa-book-open mr-2"></i> Формулировки
-                        </h3>
+                        <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center"><i class="fas fa-book-open mr-2"></i> Формулировки</h3>
                         <ul class="space-y-4">
-                            <li>
-                                <span class="font-semibold text-slate-900">Проектор:</span> Пусть пространство $V$ разложено в прямую сумму: $V = U \oplus W$. Тогда любой вектор $v \in V$ однозначно представляется как $v = u + w$, где $u \in U, w \in W$. Линейный оператор $P(v) = u$ называется проектором на $U$ параллельно $W$.
-                            </li>
-                            <li>
-                                <span class="font-semibold text-slate-900">Идемпотент:</span> Оператор $A$ называется идемпотентным, если его квадрат равен самому себе:
+                            <li><span class="font-semibold text-slate-900">Проектор:</span> Пусть пространство $V$ разложено в прямую сумму: $V = U \oplus W$. Тогда любой вектор $v \in V$ однозначно представляется как $v = u + w$, где $u \in U, w \in W$. Линейный оператор $P(v) = u$ называется проектором на $U$ параллельно $W$.</li>
+                            <li><span class="font-semibold text-slate-900">Идемпотент:</span> Оператор $A$ называется идемпотентным, если его квадрат равен самому себе:
                                 <div class="text-center my-2 font-mono text-lg text-emerald-700 bg-white p-2 rounded border border-emerald-100">$A^2 = A$</div>
                             </li>
                         </ul>
                     </div>
-
                     <div class="space-y-6">
                         <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
-                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
-                                <i class="fas fa-shapes mr-2 text-amber-600"></i> Геометрия (Свет и Тень)
-                            </h3>
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-shapes mr-2 text-amber-600"></i> Геометрия (Свет и Тень)</h3>
                             <p class="text-sm">Представь, что $U$ — это пол, а $W$ — направление лучей света. Проектор — это тень от объекта на полу. Идемпотентность означает простую вещь: если точка уже является тенью (то есть уже лежит на полу), то повторное проецирование ничего не изменит, она останется на месте.</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="mt-8 bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
                     <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-balance-scale text-slate-400 mr-2"></i> Теорема о связи</h3>
                     <p class="text-slate-700 mb-4 font-medium">Любой проектор является идемпотентом. Обратно, любой идемпотентный оператор $A$ является проектором на свой образ $Im A$ параллельно своему ядру $Ker A$.</p>
-                    
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div class="space-y-3">
                             <h4 class="font-bold text-emerald-700 flex items-center"><i class="fas fa-arrow-right mr-2"></i> Проектор $\implies$ Идемпотент</h4>
@@ -777,7 +758,6 @@
                             </div>
                             <p class="text-sm text-slate-600">Следовательно, $P^2 = P$.</p>
                         </div>
-
                         <div class="space-y-3 border-l-0 lg:border-l-2 lg:pl-8 border-slate-100">
                             <h4 class="font-bold text-emerald-700 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Идемпотент $\implies$ Проектор</h4>
                             <p class="text-sm text-slate-600">Пусть $A^2 = A$. Разложим любой вектор на два слагаемых:</p>
@@ -797,42 +777,29 @@
 
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-purple-500 shadow-xl">
                 <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-adjust"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-adjust"></i></div>
                     <h2 class="text-3xl font-bold text-slate-900">2. Отражение и инволюция</h2>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-purple-50/50 border border-purple-100 rounded-xl p-6">
-                        <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center">
-                            <i class="fas fa-book-open mr-2"></i> Формулировки
-                        </h3>
+                        <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center"><i class="fas fa-book-open mr-2"></i> Формулировки</h3>
                         <ul class="space-y-4">
-                            <li>
-                                <span class="font-semibold text-slate-900">Отражение:</span> Пусть $V = U \oplus W$. Оператор $R(v) = R(u+w) = u - w$ называется отражением относительно подпространства $U$ параллельно подпространству $W$.
-                            </li>
-                            <li>
-                                <span class="font-semibold text-slate-900">Инволюция:</span> Оператор $A$ называется инволюцией, если его квадрат равен тождественному оператору $E$:
+                            <li><span class="font-semibold text-slate-900">Отражение:</span> Пусть $V = U \oplus W$. Оператор $R(v) = R(u+w) = u - w$ называется отражением относительно подпространства $U$ параллельно подпространству $W$.</li>
+                            <li><span class="font-semibold text-slate-900">Инволюция:</span> Оператор $A$ называется инволюцией, если его квадрат равен тождественному оператору $E$:
                                 <div class="text-center my-2 font-mono text-lg text-purple-700 bg-white p-2 rounded border border-purple-100">$A^2 = E$</div>
                             </li>
                         </ul>
                     </div>
-
                     <div class="space-y-6">
                         <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
-                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
-                                <i class="fas fa-shapes mr-2 text-amber-600"></i> Геометрия (Зеркало)
-                            </h3>
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-shapes mr-2 text-amber-600"></i> Геометрия (Зеркало)</h3>
                             <p class="text-sm">Представь, что $U$ — это плоскость зеркала. Векторы, лежащие в самом зеркале, не меняются ($u \to u$). Векторы, торчащие перпендикулярно зеркалу, меняют направление на строго противоположное ($w \to -w$). А инволюция означает, что если отразить объект дважды, он вернется в исходное положение.</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="mt-8 bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
                     <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-balance-scale text-slate-400 mr-2"></i> Теорема о связи</h3>
                     <p class="text-slate-700 mb-4 font-medium">Любое отражение является инволюцией. Обратно, любая инволюция $A$ является отражением относительно подпространства $V^+ = \{v \mid A(v) = v\}$ параллельно подпространству $V^- = \{v \mid A(v) = -v\}$.</p>
-                    
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div class="space-y-3">
                             <h4 class="font-bold text-purple-700 flex items-center"><i class="fas fa-arrow-right mr-2"></i> Отражение $\implies$ Инволюция</h4>
@@ -843,7 +810,6 @@
                             </div>
                             <p class="text-sm text-slate-600">Так как $R^2(v) = v = E(v)$ для любого вектора, то $R^2 = E$.</p>
                         </div>
-
                         <div class="space-y-3 border-l-0 lg:border-l-2 lg:pl-8 border-slate-100">
                             <h4 class="font-bold text-purple-700 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Инволюция $\implies$ Отражение</h4>
                             <p class="text-sm text-slate-600">Пусть $A^2 = E$. Представим вектор $v$ как полусумму:</p>
@@ -855,7 +821,6 @@
                                 $A(\frac{v + A(v)}{2}) = \frac{A(v) + A^2(v)}{2} = \frac{A(v) + v}{2}$
                             </div>
                             <p class="text-sm text-slate-600 mb-2">Знак не поменялся, значит оно лежит в $V^+$.</p>
-                            
                             <p class="text-sm text-slate-600">Применим $A$ ко второму слагаемому:</p>
                             <div class="bg-slate-50 p-2 rounded text-sm font-mono border border-slate-100 mb-2">
                                 $A(\frac{v - A(v)}{2}) = \frac{A(v) - A^2(v)}{2} = \frac{A(v) - v}{2} = - \frac{v - A(v)}{2}$
@@ -863,6 +828,134 @@
                             <p class="text-sm text-slate-600">Знак поменялся на минус, значит оно лежит в $V^-$.</p>
                             <p class="text-sm text-slate-600 mt-2">Пересечение $V^+ \cap V^-$ состоит только из нуля (ведь если $x = -x$, то $2x = 0 \implies x = 0$). Значит, $V = V^+ \oplus V^-$, и оператор действует как отражение.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <div id="ticket-6" class="ticket-section space-y-12">
+            <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-amber-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    6. Инвариантное подпространство. Ограничение оператора на него. Связь между матрицей оператора и матрицей ограничения на инвариантное подпространство. Блочно-диагональная матрица и разложение пространства в прямую сумму инвариантных подпространств.
+                </p>
+            </div>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-amber-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-amber-100 rounded-bl-full -z-10 opacity-50"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Инвариантное подпространство и ограничение</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-amber-800 mb-3 flex items-center">
+                            <i class="fas fa-book-open mr-2"></i> Формулировки
+                        </h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <span class="font-semibold text-slate-900">Инвариантное подпространство:</span> Подпространство $U$ векторного пространства $V$ называется инвариантным относительно линейного оператора $\mathcal{A}$ (или $\mathcal{A}$-инвариантным), если $\mathcal{A}(U) \le U$, то есть для любого вектора $x \in U$ его образ $\mathcal{A}(x)$ снова принадлежит $U$.
+                            </li>
+                            <li>
+                                <span class="font-semibold text-slate-900">Ограничение (сужение) оператора:</span> Ограничение $\mathcal{A}|_U$ линейного оператора $\mathcal{A}$ на инвариантное подпространство $U$ само по себе является полноценным линейным оператором в пространстве $U$.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-5">
+                            <h3 class="text-sm font-bold text-blue-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-lightbulb mr-2 text-blue-500"></i> Суть «на пальцах»
+                            </h3>
+                            <p class="text-sm">Для инвариантных подпространств действует «правило Вегаса»: всё, что происходит в $U$, остаётся в $U$. Оператор может как угодно мять или растягивать векторы внутри этого подпространства, но он никогда не сможет выкинуть вектор наружу.</p>
+                        </div>
+                        <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-emerald-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрия
+                            </h3>
+                            <p class="text-sm">Представь себе 3D-пространство и оператор, который вращает всё вокруг вертикальной оси $Z$. Сама ось $Z$ — это инвариантное 1D-подпространство. А пол (плоскость $XY$) — это инвариантное 2D-подпространство. Любой вектор, лежащий на полу, после вращения останется лежать на полу.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-orange-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-orange-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Матрица оператора и матрица ограничения</h2>
+                </div>
+
+                <div class="bg-orange-50 border border-orange-200 p-5 rounded-xl mb-8 flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-4 md:mb-0 md:mr-6">
+                        <p class="text-orange-900 text-lg">Если выбрать базис $V$ так, чтобы инвариантное $U$ было линейной оболочкой первых $k$ векторов, матрица оператора примет вид:</p>
+                    </div>
+                    <div class="text-3xl font-bold text-orange-700 bg-white inline-block px-8 py-4 rounded-lg shadow-sm border border-orange-100">
+                        $$\begin{pmatrix} B & D \\ 0 & C \end{pmatrix}$$
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-search text-slate-400 mr-2"></i> Почему под $B$ одни нули?</h3>
+                <div class="pl-8 step-counter space-y-4 text-orange-600">
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p>Матрица оператора строится по столбцам — это координаты образов базисных векторов.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-orange-400">
+                        <p>Возьмем любой из первых $k$ базисных векторов (назовем его $e_j$, где $j \le k$). Он по построению лежит в $U$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p>Так как $U$ <strong>инвариантно</strong>, его образ $\mathcal{A}(e_j)$ тоже обязан лежать в $U$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p>А значит, $\mathcal{A}(e_j)$ можно выразить <em>только</em> через первые $k$ базисных векторов. Коэффициенты при остальных векторах ($e_{k+1}, \dots, e_n$) будут строго равны нулю.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm font-medium">
+                        <p>Именно поэтому под матрицей $B$ образуется прямоугольник из нулей. Блок $B$ забирает на себя всю работу оператора внутри $U$, становясь <strong>матрицей ограничения</strong> $\mathcal{A}|_U$.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-sky-500">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Разложение в прямую сумму (Блочно-диагональная матрица)</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <p class="text-lg text-slate-700">Если удаётся разложить пространство $V$ в прямую сумму инвариантных подпространств $V = V_1 \oplus V_2 \oplus \dots \oplus V_k$, то матрица оператора принимает <strong>блочно-диагональный вид</strong>:</p>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-sky-100 text-center text-xl font-bold text-sky-800 overflow-x-auto">
+                            $$\begin{pmatrix} A_1 & 0 & \dots & 0 \\ 0 & A_2 & \dots & 0 \\ \dots & \dots & \dots & \dots \\ 0 & 0 & \dots & A_k \end{pmatrix}$$
+                        </div>
+                        <p class="text-sm text-slate-500 text-center">где $A_i$ — матрица оператора $\mathcal{A}|_{V_i}$.</p>
+                    </div>
+
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-3 flex items-center text-sky-300">
+                            <i class="fas fa-magic mr-2"></i> Суть (Святой Грааль)
+                        </h3>
+                        <p class="text-slate-300 mb-6 text-sm leading-relaxed">
+                            Если мы смогли разбить всё пространство на прямую сумму инвариантных кусков, значит мы полностью расщепили сложную систему на независимые процессы. Это главная цель линейной алгебры.
+                        </p>
+
+                        <h4 class="font-bold text-sky-400 mb-2 border-b border-slate-600 pb-1">Пример: Вращение в 3D</h4>
+                        <p class="text-slate-300 text-sm mb-3">Вращение вокруг оси $Z$ расщепляет 3D на независимую плоскость $XY$ и ось $Z$. Матрица принимает идеальный блочно-диагональный вид:</p>
+                        
+                        <div class="text-center font-mono text-sky-200 bg-slate-900 p-3 rounded mb-3 overflow-x-auto text-lg">
+                            $$\begin{pmatrix} \cos\alpha & -\sin\alpha & 0 \\ \sin\alpha & \cos\alpha & 0 \\ 0 & 0 & 1 \end{pmatrix}$$
+                        </div>
+                        <p class="text-slate-400 text-xs">
+                            Верхний блок $2 \times 2$ — это $A_1$ (плоский поворот). Нижний блок $1 \times 1$ — это $A_2$ (ось $Z$ остается на месте). Они работают абсолютно независимо!
+                        </p>
                     </div>
                 </div>
             </section>
@@ -909,8 +1002,8 @@
             activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md', 'transform', 'hover:-translate-y-0.5');
         }
         
-        // Default to Ticket 5
-        switchTab('ticket-1');
+        // Default to Ticket 6
+        switchTab('ticket-6');
     </script>
 </body>
 </html>
