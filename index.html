@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Алгебра: Подготовка к коллоквиуму</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- KaTeX for Math -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
@@ -29,7 +26,8 @@
                             emerald: '#059669',
                             amber: '#d97706',
                             cyan: '#0891b2',
-                            rose: '#e11d48'
+                            rose: '#e11d48',
+                            sky: '#0ea5e9'
                         }
                     },
                     fontFamily: {
@@ -98,7 +96,6 @@
 </head>
 <body class="text-slate-800 antialiased min-h-screen pb-20">
 
-    <!-- Header -->
     <header class="bg-gradient-to-r from-slate-900 to-indigo-900 text-white pt-16 pb-24 px-4 sm:px-6 lg:px-8 shadow-xl relative overflow-hidden">
         <div class="absolute inset-0 pattern-bg opacity-10"></div>
         <div class="max-w-5xl mx-auto relative z-10 text-center">
@@ -106,7 +103,7 @@
                 <i class="fas fa-graduation-cap mr-2"></i> Подготовка к коллоквиуму
             </div>
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-                Абстрактная алгебра: Кольца и идеалы
+                Абстрактная и Линейная Алгебра
             </h1>
             <p class="text-lg md:text-xl text-indigo-100 max-w-3xl mx-auto font-light">
                 Визуальный конспект. Вся теория, геометрический смысл и полные доказательства теорем.
@@ -114,14 +111,16 @@
         </div>
     </header>
 
-    <!-- Navigation -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-8">
-        <div class="bg-white rounded-xl shadow-lg p-2 flex justify-center space-x-2 md:space-x-4">
-            <button id="btn-ticket-1" onclick="switchTab('ticket-1')" class="tab-btn bg-indigo-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center">
+        <div class="bg-white rounded-xl shadow-lg p-2 flex justify-center space-x-2 md:space-x-4 flex-wrap gap-y-2">
+            <button id="btn-ticket-1" onclick="switchTab('ticket-1')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-6 py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
                 <i class="fas fa-ticket-alt mr-2"></i> Билет 1
             </button>
             <button id="btn-ticket-2" onclick="switchTab('ticket-2')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-6 py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
                 <i class="fas fa-ticket-alt mr-2"></i> Билет 2
+            </button>
+            <button id="btn-ticket-3" onclick="switchTab('ticket-3')" class="tab-btn bg-indigo-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center">
+                <i class="fas fa-ticket-alt mr-2"></i> Билет 3
             </button>
         </div>
     </div>
@@ -131,9 +130,8 @@
         <!-- ==========================================
              БИЛЕТ 1
              ========================================== -->
-        <div id="ticket-1" class="ticket-section space-y-12">
+        <div id="ticket-1" class="ticket-section hidden space-y-12">
             
-            <!-- Формулировка билета -->
             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-sm uppercase tracking-wider text-indigo-500 font-bold mb-2">Полная формулировка</h2>
                 <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
@@ -141,7 +139,6 @@
                 </p>
             </div>
 
-            <!-- SECTION 1: Идеалы и факторкольца -->
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-bl-full -z-10 opacity-50"></div>
                 
@@ -153,7 +150,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Формулировка -->
                     <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
                         <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
                             <i class="fas fa-book-open mr-2"></i> Формулировка
@@ -168,7 +164,6 @@
                         </ul>
                     </div>
 
-                    <!-- Суть -->
                     <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-6">
                         <h3 class="text-lg font-bold text-amber-800 mb-3 flex items-center">
                             <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть «на пальцах»
@@ -177,7 +172,6 @@
                         <p><strong>Факторкольцо</strong> — это результат «схлопывания» всего идеала в ноль. Мы объявляем все элементы идеала нулями и смотрим, как после этого склеиваются остальные элементы кольца.</p>
                     </div>
 
-                    <!-- Геометрия -->
                     <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-6 pattern-bg">
                         <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center">
                             <i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрическая интерпретация
@@ -185,7 +179,6 @@
                         <p>Представь себе трехмерное векторное пространство (это наше кольцо $R$). Идеал $I$ — это плоскость, проходящая через начало координат. Когда мы строим факторкольцо, мы буквально смотрим на пространство <em>вдоль</em> этой плоскости. Вся плоскость сливается для нас в одну точку (нуль факторкольца), а все плоскости, параллельные ей, превращаются в отдельные точки новой прямой. Мы «отфакторизовали» пространство, понизив его размерность.</p>
                     </div>
 
-                    <!-- Пример -->
                     <div class="bg-purple-50/50 border border-purple-100 rounded-xl p-6">
                         <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center">
                             <i class="fas fa-code mr-2 text-purple-600"></i> Пример
@@ -198,7 +191,6 @@
                 </div>
             </section>
 
-            <!-- SECTION 2: Образ, ядро и проекция -->
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
@@ -208,7 +200,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <!-- Формулировка -->
                     <div class="col-span-1 lg:col-span-2 space-y-4">
                         <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
                             <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
@@ -233,7 +224,6 @@
                         </div>
                     </div>
 
-                    <!-- Суть и Геометрия -->
                     <div class="space-y-6">
                         <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5">
                             <h3 class="font-bold text-amber-800 mb-2 flex items-center text-sm uppercase tracking-wider">
@@ -252,7 +242,6 @@
                 </div>
             </section>
 
-            <!-- SECTION 3: Основная теорема -->
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-pink-500 shadow-xl">
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 rounded-xl bg-pink-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
@@ -271,29 +260,24 @@
                 <p class="text-slate-600 mb-6 italic border-l-4 border-slate-300 pl-4 py-1">В методичке предложен краткий путь (ссылка на теорию групп), но вот более полный и интуитивно понятный вариант для ответа у доски, так как преподаватели любят спрашивать про корректность отображения.</p>
 
                 <div class="pl-8 step-counter space-y-6 text-pink-500">
-                    <!-- Step 1 -->
                     <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
                         <h4 class="font-bold text-slate-900 mb-1">Зададим отображение</h4>
                         <p>Определим функцию $f: R/\text{Ker}\varphi \to \text{Im}\varphi$, где $f(a + \text{Ker}\varphi) = \varphi(a)$.</p>
                     </div>
-                    <!-- Step 2 -->
                     <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-pink-400">
                         <h4 class="font-bold text-slate-900 mb-1">Корректность (важный шаг!)</h4>
                         <p>Нужно доказать, что если мы возьмем другого представителя того же класса $b \in a + \text{Ker}\varphi$, результат функции не изменится.<br>
                         Если классы равны, то $a - b \in \text{Ker}\varphi$. Применим гомоморфизм:<br>
                         $\varphi(a-b) = 0 \implies \varphi(a) - \varphi(b) = 0 \implies \varphi(a) = \varphi(b)$. Отображение корректно!</p>
                     </div>
-                    <!-- Step 3 -->
                     <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
                         <h4 class="font-bold text-slate-900 mb-1">Сюръективность (накрытие)</h4>
                         <p>Любой элемент из $\text{Im}\varphi$ по определению имеет прообраз $a \in R$. Значит, класс $a + \text{Ker}\varphi$ перейдет в него.</p>
                     </div>
-                    <!-- Step 4 -->
                     <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
                         <h4 class="font-bold text-slate-900 mb-1">Инъективность (один к одному)</h4>
                         <p>Если $f(a + \text{Ker}\varphi) = 0$, то $\varphi(a) = 0$. Значит, $a \in \text{Ker}\varphi$, то есть класс $a + \text{Ker}\varphi$ совпадает с нулевым классом (самим ядром). Ядро тривиально $\implies$ инъективность есть.</p>
                     </div>
-                    <!-- Step 5 -->
                     <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
                         <h4 class="font-bold text-slate-900 mb-1">Сохранение операций</h4>
                         <p>Сложение и умножение сохраняются по определению. Например, для умножения: <br>
@@ -310,7 +294,6 @@
                 </div>
             </section>
 
-            <!-- SECTION 4: Простые и неприводимые -->
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
@@ -646,13 +629,200 @@
             </section>
         </div>
 
+
+        <!-- ==========================================
+             БИЛЕТ 3
+             ========================================== -->
+        <div id="ticket-3" class="ticket-section space-y-12">
+            
+            <div class="bg-gradient-to-r from-sky-50 to-teal-50 border border-sky-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-sky-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    3. Понятие линейного оператора (эндоморфизма на векторном пространстве). Ядро и образ оператора. Связь между размерностями ядра и образа оператора и размерностью пространства. Когда эндоморфизм на векторном пространстве является автоморфизмом.
+                </p>
+            </div>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-sky-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-sky-100 rounded-bl-full -z-10 opacity-50"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Линейный оператор (эндоморфизм)</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-sky-50/50 border border-sky-100 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-sky-800 mb-3 flex items-center">
+                            <i class="fas fa-book-open mr-2"></i> Формулировка
+                        </h3>
+                        <p class="mb-3">Линейный оператор (эндоморфизм) — это отображение $A: V \to V$ векторного пространства $V$ в себя.</p>
+                        <p class="mb-2 text-sm text-slate-600">Оно обязано удовлетворять двум условиям линейности:</p>
+                        <ul class="space-y-2 mt-2 font-mono text-sm bg-white p-3 rounded border border-sky-100 shadow-sm">
+                            <li>1) <span class="text-sky-700 font-bold">$A(x + y) = Ax + Ay$</span> (аддитивность)</li>
+                            <li>2) <span class="text-sky-700 font-bold">$A(\lambda x) = \lambda Ax$</span> (однородность)</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть «на пальцах»
+                            </h3>
+                            <p class="text-sm">Линейный оператор — это правило, по которому мы деформируем пространство. Линейность означает, что мы не можем гнуть или искривлять пространство. Мы можем его только растягивать, сжимать, вращать или проецировать.</p>
+                        </div>
+
+                        <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-emerald-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрия
+                            </h3>
+                            <p class="text-sm">Представь координатную сетку. При действии линейного оператора: <br>1. Сетка остается сеткой (все параллельные прямые остаются параллельными). <br>2. Начало координат $(0,0)$ всегда остается на своем месте. <br>Всё. Любое преобразование, удовлетворяющее этим правилам — линейный оператор.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-blue-500">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Ядро и образ оператора</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-400 transition-colors">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center border-b pb-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div> Ядро ($Ker A$)
+                        </h3>
+                        <div class="bg-slate-50 p-3 rounded-lg text-center font-bold text-blue-900 mb-4 border border-slate-200">
+                            $Ker(A) = \{x \in V \mid Ax = 0\}$
+                        </div>
+                        <p class="text-sm text-slate-700 mb-4">Множество всех векторов, которые оператор «схлопывает» в нулевой вектор.</p>
+                        <div class="bg-blue-50 text-blue-800 p-3 rounded-lg text-sm flex items-start">
+                            <i class="fas fa-eye mt-1 mr-2 text-blue-500"></i>
+                            <span><strong>Геометрия:</strong> Представь, что оператор сплющивает 3D-комнату в плоский пол. Ядро — это вертикальная линия (высота). Все точки на любой вертикальной линии сплющиваются в одну точку на полу. А сама ось $Z$ сплющивается ровно в ноль $(0,0,0)$.</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-400 transition-colors">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center border-b pb-2">
+                            <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div> Образ ($Im A$)
+                        </h3>
+                        <div class="bg-slate-50 p-3 rounded-lg text-center font-bold text-blue-900 mb-4 border border-slate-200">
+                            $Im(A) = \{Ax \mid x \in V\}$
+                        </div>
+                        <p class="text-sm text-slate-700 mb-4">Множество всех векторов, в которые мы вообще можем «попасть» с помощью оператора $A$.</p>
+                        <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm flex items-start">
+                            <i class="fas fa-eye mt-1 mr-2 text-green-500"></i>
+                            <span><strong>Геометрия:</strong> В том же примере со сплющиванием 3D-комнаты в плоский пол, этот самый плоский пол — и есть Образ. Это всё то пространство, которое выжило после преобразования.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-balance-scale-right"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Связь между размерностями</h2>
+                </div>
+
+                <div class="bg-indigo-50 border border-indigo-200 p-5 rounded-xl mb-8 text-center">
+                    <p class="text-lg font-medium text-indigo-900 mb-2">Для любого линейного оператора $A$ в конечномерном пространстве $V$ выполняется:</p>
+                    <div class="text-3xl font-bold text-indigo-700 bg-white inline-block px-6 py-3 rounded-lg shadow-sm">
+                        $\dim Im A + \dim Ker A = \dim V$
+                    </div>
+                    <p class="mt-4 text-indigo-800 text-sm max-w-2xl mx-auto">
+                        <strong>Геометрический смысл (Закон сохранения размерности):</strong> Если изначально у нас было $3$ измерения ($\dim V=3$), и мы сплющили пространство в двумерную плоскость ($\dim Im=2$), то ровно $1$ измерение должно было схлопнуться в ноль ($\dim Ker=1$). Мы не можем потерять измерения бесследно!
+                    </p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство</h3>
+                <p class="text-slate-600 mb-6 italic border-l-4 border-slate-300 pl-4 py-1">В твоем конспекте приведено очень изящное доказательство через дополнение базиса. Вот его подробный разбор.</p>
+
+                <div class="pl-8 step-counter space-y-5 text-indigo-500">
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 1: Базис Ядра</h4>
+                        <p>Пусть размерность ядра $\dim Ker A = k$. Выберем в ядре базис $e_1, e_2, \dots, e_k$.<br>
+                        <em>(Помни: $A(e_1)=0, \dots, A(e_k)=0$)</em>.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 2: Дополнение до базиса всего пространства</h4>
+                        <p>Дополним эти векторы до базиса всего пространства $V$. Пусть $\dim V = n$. Добавляем векторы $e_{k+1}, \dots, e_n$.<br>
+                        Теперь у нас есть полный базис $V$: $(e_1, \dots, e_k, e_{k+1}, \dots, e_n)$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-indigo-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 3: Главная идея</h4>
+                        <p>Мы хотим показать, что размерность Образа равна $n - k$. Для этого докажем, что векторы-образы добавленной части, а именно $A(e_{k+1}), \dots, A(e_n)$, образуют базис образа $Im A$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 4: Проверка 1 (Они порождают Образ)</h4>
+                        <p class="mb-2">Возьмем любой вектор $x \in V$. Разложим его по полному базису: $x = \sum_{i=1}^n \lambda_i e_i$. Применим оператор $A$:</p>
+                        <div class="bg-slate-50 p-2 rounded text-center mb-2 font-mono text-sm overflow-x-auto">
+                            $Ax = A(\sum_{i=1}^k \lambda_i e_i) + A(\sum_{j=k+1}^n \lambda_j e_j)$
+                        </div>
+                        <p>Но первая сумма уходит в ноль (ведь $e_1 \dots e_k$ лежат в ядре!). Остается $Ax = \sum_{j=k+1}^n \lambda_j A(e_j)$. Значит, любой вектор образа выражается через нашу систему.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 5: Проверка 2 (Они линейно независимы)</h4>
+                        <p>Предположим, есть линейная комбинация, дающая ноль: $\sum_{j=k+1}^n \lambda_j A(e_j) = 0$.<br>
+                        Внесем сумму под оператор (он же линейный!): $A(\sum_{j=k+1}^n \lambda_j e_j) = 0$.<br>
+                        Это означает, что вектор $\vec{v} = \sum_{j=k+1}^n \lambda_j e_j$ лежит в Ядре!<br>
+                        Но если он в Ядре, он должен выражаться через базис Ядра ($e_1 \dots e_k$). Получается, вектор $\vec{v}$ одновременно лежит в подпространстве добавленных векторов и в подпространстве ядра. Так как мы строили базис, это возможно *только* если этот вектор нулевой $\vec{v} = 0$, то есть все коэффициенты $\lambda_j = 0$. Линейная независимость доказана!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-violet-500">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-violet-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">4. Когда эндоморфизм является автоморфизмом</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-4">
+                        <p class="text-lg text-slate-700"><strong>Автоморфизм</strong> — это взаимно однозначное (биективное) отображение векторного пространства на само себя. По сути, это эндоморфизм, у которого есть обратный (обратимый оператор).</p>
+                        
+                        <div class="bg-violet-50 border border-violet-200 p-4 rounded-xl">
+                            <h3 class="font-bold text-violet-900 mb-2">Главный критерий</h3>
+                            <p class="text-violet-800">В конечномерном пространстве эндоморфизм $A$ является автоморфизмом тогда и только тогда, когда его <strong>Ядро состоит только из нулевого вектора</strong> ($Ker A = \{0\}$).</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-3 flex items-center text-violet-300">
+                            <i class="fas fa-link mr-2"></i> Как это связано с теоремой?
+                        </h3>
+                        <p class="text-slate-300 mb-3 text-sm">Вспомним формулу из предыдущего пункта:</p>
+                        <div class="text-center font-mono text-violet-400 bg-slate-900 p-2 rounded mb-3">
+                            $\dim Im A + \dim Ker A = \dim V$
+                        </div>
+                        <p class="text-slate-300 text-sm">Если $Ker A = \{0\}$, то $\dim Ker A = 0$.<br>Тогда уравнение превращается в:<br><span class="text-white font-bold">$\dim Im A = \dim V$</span>.</p>
+                        <p class="text-slate-300 text-sm mt-3">Это означает, что образ заполняет всё пространство $V$ целиком (сюръекция). Раз отображение инъективно (разные векторы переходят в разные, так как ядро нулевое) и сюръективно, оно биективно — это автоморфизм! </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-emerald-50/50 border border-emerald-100 rounded-xl p-6 pattern-bg">
+                    <h3 class="font-bold text-emerald-800 mb-2 flex items-center">
+                        <i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрический смысл автоморфизма
+                    </h3>
+                    <p class="text-slate-700">Пространство не сплющивается и не теряет размерности. Сетка может растягиваться, сжиматься, вращаться или скашиваться (сдвиг), но она остается полноценной $n$-мерной сеткой. Определитель матрицы такого оператора не равен нулю ($\det A \neq 0$). Мы всегда можем «отмотать» это преобразование назад.</p>
+                </div>
+            </section>
+
+        </div>
+
     </main>
 
     <footer class="text-center text-slate-500 mt-16 pb-8">
         <p><i class="fas fa-brain mr-2"></i> Удачи на коллоквиуме! Ты справишься.</p>
     </footer>
 
-    <!-- Scripts -->
     <script>
         // Init KaTeX Auto-Render
         document.addEventListener("DOMContentLoaded", function() {
@@ -687,6 +857,9 @@
             activeBtn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-50');
             activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md', 'transform', 'hover:-translate-y-0.5');
         }
+        
+        // Ensure initial tab matches visible one (defaults to Ticket 3 as requested in context flow)
+        switchTab('ticket-3');
     </script>
 </body>
 </html>
