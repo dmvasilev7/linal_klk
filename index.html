@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Билет 1: Кольца, идеалы и гомоморфизмы</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        math: {
+                            blue: '#2563eb',
+                            indigo: '#4f46e5',
+                            purple: '#7c3aed',
+                            pink: '#db2777',
+                            emerald: '#059669',
+                            amber: '#d97706'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .pattern-bg {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .step-counter {
+            counter-reset: step;
+        }
+        
+        .step-item {
+            position: relative;
+        }
+        
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 1.75rem;
+            height: 1.75rem;
+            background-color: #4f46e5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen pb-20">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-slate-900 to-indigo-900 text-white pt-16 pb-24 px-4 sm:px-6 lg:px-8 shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 pattern-bg opacity-10"></div>
+        <div class="max-w-5xl mx-auto relative z-10 text-center">
+            <div class="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full bg-white/10 border border-white/20 text-sm font-medium backdrop-blur-sm">
+                <i class="fas fa-graduation-cap mr-2"></i> Подготовка к коллоквиуму
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+                Билет 1: Кольца, идеалы и гомоморфизмы
+            </h1>
+            <p class="text-lg md:text-xl text-indigo-100 max-w-3xl mx-auto font-light">
+                Визуальный конспект по абстрактной алгебре. Вся теория, геометрический смысл и полные доказательства теорем.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 space-y-12">
+
+        <!-- SECTION 1: Идеалы и факторкольца -->
+        <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-bl-full -z-10 opacity-50"></div>
+            
+            <div class="flex items-center mb-8">
+                <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4">
+                    <i class="fas fa-ring"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900">1. Идеалы и факторкольца</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Формулировка -->
+                <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
+                        <i class="fas fa-book-open mr-2"></i> Формулировка
+                    </h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <span class="font-semibold text-slate-900">Идеал:</span> Подмножество $I$ кольца $R$ называется левым (правым) идеалом, если оно является подгруппой по сложению и выдерживает умножение на элементы кольца слева (справа): для любых $x \in I$ и $a \in R$ выполняется $ax \in I$ (левый идеал) или $xa \in I$ (правый идеал). Если идеал левый и правый одновременно, он называется двусторонним (или просто идеалом).
+                        </li>
+                        <li>
+                            <span class="font-semibold text-slate-900">Факторкольцо:</span> Это множество классов смежности $R/I$ с операциями сложения $(a+I)+(b+I)=(a+b)+I$ и умножения $(a+I)(b+I)=ab+I$.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Суть -->
+                <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-amber-800 mb-3 flex items-center">
+                        <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть «на пальцах»
+                    </h3>
+                    <p class="mb-2"><strong>Идеал</strong> — это математическая «черная дыра» для умножения. На что бы ты ни умножил элемент идеала, результат всё равно засосет обратно в идеал.</p>
+                    <p><strong>Факторкольцо</strong> — это результат «схлопывания» всего идеала в ноль. Мы объявляем все элементы идеала нулями и смотрим, как после этого склеиваются остальные элементы кольца.</p>
+                </div>
+
+                <!-- Геометрия -->
+                <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-6 pattern-bg">
+                    <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center">
+                        <i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрическая интерпретация
+                    </h3>
+                    <p>Представь себе трехмерное векторное пространство (это наше кольцо $R$). Идеал $I$ — это плоскость, проходящая через начало координат. Когда мы строим факторкольцо, мы буквально смотрим на пространство <em>вдоль</em> этой плоскости. Вся плоскость сливается для нас в одну точку (нуль факторкольца), а все плоскости, параллельные ей, превращаются в отдельные точки новой прямой. Мы «отфакторизовали» пространство, понизив его размерность.</p>
+                </div>
+
+                <!-- Пример -->
+                <div class="bg-purple-50/50 border border-purple-100 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center">
+                        <i class="fas fa-code mr-2 text-purple-600"></i> Пример
+                    </h3>
+                    <p>Кольцо целых чисел $\mathbb{Z}$. Множество всех четных чисел $2\mathbb{Z}$ — это идеал. Умножь любое четное число на что угодно — получишь четное.</p>
+                    <p class="mt-2 text-center bg-white p-3 rounded shadow-sm border border-purple-100 font-medium">
+                        Факторкольцо $\mathbb{Z}/2\mathbb{Z}$ состоит всего из двух элементов: класса четных чисел ($0$) и класса нечетных ($1$).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Образ, ядро и проекция -->
+        <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500">
+            <div class="flex items-center mb-8">
+                <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg mr-4">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900">2. Образ, ядро и каноническая проекция</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Формулировка -->
+                <div class="col-span-1 lg:col-span-2 space-y-4">
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                            <i class="fas fa-book-open mr-2 text-indigo-600"></i> Определения
+                        </h3>
+                        <p class="mb-4">Пусть задан гомоморфизм колец $\varphi: R \to Q$, то есть отображение, сохраняющее операции: $\varphi(a+b)=\varphi(a)+\varphi(b)$ и $\varphi(ab)=\varphi(a)\varphi(b)$.</p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border border-slate-100">
+                                <div class="w-2 h-2 rounded-full bg-red-500 mt-2 mr-3 flex-shrink-0"></div>
+                                <div><span class="font-bold">Ядро:</span> $\text{Ker}\varphi = \{x \in R \mid \varphi(x)=0\}$</div>
+                            </div>
+                            <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border border-slate-100">
+                                <div class="w-2 h-2 rounded-full bg-green-500 mt-2 mr-3 flex-shrink-0"></div>
+                                <div><span class="font-bold">Образ:</span> $\text{Im}\varphi = \{y \in Q \mid \exists x \in R: \varphi(x)=y\}$</div>
+                            </div>
+                            <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border border-slate-100">
+                                <div class="w-2 h-2 rounded-full bg-blue-500 mt-2 mr-3 flex-shrink-0"></div>
+                                <div><span class="font-bold">Каноническая проекция:</span> Естественный гомоморфизм $\pi_I: R \to R/I$, который переводит элемент $a$ в его класс смежности $a+I$. Ядром этого гомоморфизма является сам идеал $I$.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Суть и Геометрия -->
+                <div class="space-y-6">
+                    <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5">
+                        <h3 class="font-bold text-amber-800 mb-2 flex items-center text-sm uppercase tracking-wider">
+                            <i class="fas fa-lightbulb mr-2"></i> Суть
+                        </h3>
+                        <p class="text-sm"><strong>Гомоморфизм</strong> — перевод с одного математического языка на другой с сохранением смысла. <strong>Образ</strong> — словарный запас, который мы реально использовали. <strong>Ядро</strong> — слова, превратившиеся при переводе в «пустоту» (ноль). <strong>Проекция</strong> — самый ленивый перевод: мы принудительно забываем часть информации, отправляя её в идеал.</p>
+                    </div>
+                    
+                    <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-5 pattern-bg">
+                        <h3 class="font-bold text-emerald-800 mb-2 flex items-center text-sm uppercase tracking-wider">
+                            <i class="fas fa-shapes mr-2"></i> Геометрия
+                        </h3>
+                        <p class="text-sm">Снова представим проекцию. Гомоморфизм — это свет, падающий на 3D-объект и создающий 2D-тень на стене. Сама тень — это <strong>образ</strong>. Направление лучей света — это <strong>ядро</strong> (все точки, лежащие на одном луче, проецируются в одну точку, а луч, проходящий через центр, схлопывается в ноль).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Основная теорема -->
+        <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-pink-500 shadow-xl">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-xl bg-pink-600 text-white flex items-center justify-center text-xl shadow-lg mr-4">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900">3. Основная теорема о гомоморфизме колец</h2>
+            </div>
+
+            <div class="bg-pink-50 border border-pink-200 p-5 rounded-xl mb-8 text-center">
+                <p class="text-xl font-medium text-pink-900 mb-2">Для любого гомоморфизма колец $\varphi: R \to Q$ факторкольцо по ядру изоморфно образу:</p>
+                <div class="text-3xl font-bold text-pink-700 bg-white inline-block px-6 py-3 rounded-lg shadow-sm">$R/\text{Ker}\varphi \cong \text{Im}\varphi$</div>
+                <p class="mt-4 text-pink-800 text-sm max-w-2xl mx-auto"><strong>Суть:</strong> Если отображение склеило какие-то элементы исходного кольца (отправило их в ядро), то мы можем добиться абсолютно того же результата, просто построив факторкольцо по этому ядру.</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Полное доказательство</h3>
+            <p class="text-slate-600 mb-6 italic border-l-4 border-slate-300 pl-4 py-1">В методичке предложен краткий путь (ссылка на теорию групп), но вот более полный и интуитивно понятный вариант для ответа у доски, так как преподаватели любят спрашивать про корректность отображения.</p>
+
+            <div class="pl-8 step-counter space-y-6">
+                <!-- Step 1 -->
+                <div class="step-item bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                    <h4 class="font-bold text-slate-900 mb-1">Зададим отображение</h4>
+                    <p>Определим функцию $f: R/\text{Ker}\varphi \to \text{Im}\varphi$, где $f(a + \text{Ker}\varphi) = \varphi(a)$.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-item bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-pink-400">
+                    <h4 class="font-bold text-slate-900 mb-1">Корректность (важный шаг!)</h4>
+                    <p>Нужно доказать, что если мы возьмем другого представителя того же класса $b \in a + \text{Ker}\varphi$, результат функции не изменится.<br>
+                    Если классы равны, то $a - b \in \text{Ker}\varphi$. Применим гомоморфизм:<br>
+                    $\varphi(a-b) = 0 \implies \varphi(a) - \varphi(b) = 0 \implies \varphi(a) = \varphi(b)$. Отображение корректно!</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-item bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                    <h4 class="font-bold text-slate-900 mb-1">Сюръективность (накрытие)</h4>
+                    <p>Любой элемент из $\text{Im}\varphi$ по определению имеет прообраз $a \in R$. Значит, класс $a + \text{Ker}\varphi$ перейдет в него.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="step-item bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                    <h4 class="font-bold text-slate-900 mb-1">Инъективность (один к одному)</h4>
+                    <p>Если $f(a + \text{Ker}\varphi) = 0$, то $\varphi(a) = 0$. Значит, $a \in \text{Ker}\varphi$, то есть класс $a + \text{Ker}\varphi$ совпадает с нулевым классом (самим ядром). Ядро тривиально $\implies$ инъективность есть.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="step-item bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                    <h4 class="font-bold text-slate-900 mb-1">Сохранение операций</h4>
+                    <p>Сложение и умножение сохраняются по определению. Например, для умножения: <br>
+                    $f((a+\text{Ker}\varphi)(b+\text{Ker}\varphi)) = f(ab+\text{Ker}\varphi) = \varphi(ab) = \varphi(a)\varphi(b) = f(a+\text{Ker}\varphi)f(b+\text{Ker}\varphi)$.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-purple-50/80 border border-purple-200 rounded-xl p-5 flex items-start">
+                <i class="fas fa-flask text-purple-500 mt-1 mr-4 text-xl"></i>
+                <div>
+                    <h4 class="font-bold text-purple-900 mb-1">Пример</h4>
+                    <p class="text-purple-800">Рассмотрим кольцо многочленов $\mathbb{Z}[x]$ и гомоморфизм, который подставляет вместо икса ноль: $\varphi(P(x)) = P(0)$. Образом будут все целые числа $\mathbb{Z}$. Ядром будут все многочлены, у которых свободный член равен нулю (то есть многочлены, кратные $x$, идеал $(x)$). По теореме: $\mathbb{Z}[x]/(x) \cong \mathbb{Z}$.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Простые и неприводимые -->
+        <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500">
+            <div class="flex items-center mb-8">
+                <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900">4. Простые и неприводимые элементы</h2>
+            </div>
+
+            <p class="text-lg text-slate-700 mb-6">Пусть $R$ — область целостности (коммутативное кольцо с единицей без делителей нуля). Элемент $p$ (не равный нулю и не являющийся обратимым, $p \notin R^*$) называется:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-emerald-400 transition-colors">
+                    <h3 class="text-xl font-bold text-emerald-700 mb-2">Неприводимым</h3>
+                    <p class="mb-4">Если из равенства $p = ab$ следует, что либо $a$, либо $b$ является обратимым элементом ($a \in R^*$ или $b \in R^*$).</p>
+                    <div class="bg-emerald-50 text-emerald-800 p-3 rounded-lg text-sm flex items-start">
+                        <i class="fas fa-atom mt-1 mr-2"></i>
+                        <span><strong>Атом:</strong> Его нельзя расщепить на два нетривиальных множителя.</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-400 transition-colors">
+                    <h3 class="text-xl font-bold text-blue-700 mb-2">Простым</h3>
+                    <p class="mb-4">Если из того, что $p \mid ab$, следует, что $p \mid a$ или $p \mid b$.</p>
+                    <div class="bg-blue-50 text-blue-800 p-3 rounded-lg text-sm flex items-start">
+                        <i class="fas fa-bolt mt-1 mr-2"></i>
+                        <span><strong>Пробивная способность:</strong> Если он делит произведение площадей двух фигур, то он обязан целиком делить хотя бы одну из них.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 text-white rounded-xl p-6 mb-8 shadow-lg">
+                <h3 class="text-xl font-bold mb-4 flex items-center text-emerald-300">
+                    <i class="fas fa-check-circle mr-2"></i> Доказательство: Всякий простой является неприводимым
+                </h3>
+                <p class="text-slate-300 mb-4 italic text-sm">В факториальном кольце они совпадают, докажем базовую импликацию для области целостности.</p>
+                <div class="space-y-3 font-mono text-sm">
+                    <div class="flex"><span class="text-slate-500 w-6">1.</span> <span>Пусть $p$ — простой элемент, и мы разложили его: $p = ab$.</span></div>
+                    <div class="flex"><span class="text-slate-500 w-6">2.</span> <span>Значит, $p$ делит произведение $ab$.</span></div>
+                    <div class="flex"><span class="text-slate-500 w-6">3.</span> <span>Так как $p$ — простой, он делит либо $a$, либо $b$.</span></div>
+                    <div class="flex"><span class="text-slate-500 w-6">4.</span> <span>Пусть $p$ делит $a$. Тогда $a = cp$ для некоторого $c$.</span></div>
+                    <div class="flex"><span class="text-slate-500 w-6">5.</span> <span>Подставляем обратно: $p = cpb$, что равносильно $p(cb - 1) = 0$.</span></div>
+                    <div class="flex"><span class="text-slate-500 w-6">6.</span> <span>Поскольку в области целостности нет делителей нуля и $p \neq 0$, получаем $cb - 1 = 0 \implies cb = 1$.</span></div>
+                    <div class="flex text-emerald-300 mt-2 font-bold"><span class="text-emerald-500 w-6"></span> <span>Это означает, что $b$ — обратимый элемент ($b \in R^*$). Значит, $p$ нельзя разложить на нетривиальные множители — он неприводимый.</span></div>
+                </div>
+            </div>
+
+            <div class="bg-rose-50 border border-rose-200 rounded-xl p-6">
+                <h3 class="text-lg font-bold text-rose-800 mb-2 flex items-center">
+                    <i class="fas fa-exclamation-triangle mr-2 text-rose-500"></i> Пример из конспекта (неприводимый, но не простой)
+                </h3>
+                <p class="text-rose-900">В нефакториальном кольце элемент может быть неприводимым, но не простым. В кольце $\mathbb{Z}[\sqrt{5}]$ число $4$ можно разложить двумя способами:</p>
+                <div class="text-center my-3 text-xl font-semibold text-slate-800">
+                    $4 = 2 \cdot 2 = (\sqrt{5}-1)(\sqrt{5}+1)$
+                </div>
+                <p class="text-rose-900">Здесь число $2$ является неприводимым, но оно <strong>не является простым</strong>, так как делит произведение $(\sqrt{5}-1)(\sqrt{5}+1)$, но не делит ни один из множителей по отдельности.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center text-slate-500 mt-16 pb-8">
+        <p><i class="fas fa-brain mr-2"></i> Удачи на коллоквиуме! Ты справишься.</p>
+    </footer>
+
+    <!-- Initialize KaTeX Auto-Render -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError : false,
+                output: 'html'
+            });
+        });
+    </script>
+</body>
+</html>
