@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -113,23 +113,29 @@
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-8">
         <div class="bg-white rounded-xl shadow-lg p-2 flex justify-center space-x-2 md:space-x-4 flex-wrap gap-y-2">
-            <button id="btn-ticket-1" onclick="switchTab('ticket-1')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-6 py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
+            <button id="btn-ticket-1" onclick="switchTab('ticket-1')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
                 <i class="fas fa-ticket-alt mr-2"></i> Билет 1
             </button>
-            <button id="btn-ticket-2" onclick="switchTab('ticket-2')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-6 py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
+            <button id="btn-ticket-2" onclick="switchTab('ticket-2')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
                 <i class="fas fa-ticket-alt mr-2"></i> Билет 2
             </button>
-            <button id="btn-ticket-3" onclick="switchTab('ticket-3')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-6 py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
+            <button id="btn-ticket-3" onclick="switchTab('ticket-3')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
                 <i class="fas fa-ticket-alt mr-2"></i> Билет 3
             </button>
-            <button id="btn-ticket-4" onclick="switchTab('ticket-4')" class="tab-btn bg-indigo-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center">
+            <button id="btn-ticket-4" onclick="switchTab('ticket-4')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
                 <i class="fas fa-ticket-alt mr-2"></i> Билет 4
+            </button>
+            <button id="btn-ticket-5" onclick="switchTab('ticket-5')" class="tab-btn bg-indigo-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center">
+                <i class="fas fa-ticket-alt mr-2"></i> Билет 5
             </button>
         </div>
     </div>
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative">
 
+        <!-- ==========================================
+             БИЛЕТ 1
+             ========================================== -->
         <div id="ticket-1" class="ticket-section hidden space-y-12">
             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-sm uppercase tracking-wider text-indigo-500 font-bold mb-2">Полная формулировка</h2>
@@ -289,6 +295,9 @@
             </section>
         </div>
 
+        <!-- ==========================================
+             БИЛЕТ 2
+             ========================================== -->
         <div id="ticket-2" class="ticket-section hidden space-y-12">
             <div class="bg-gradient-to-r from-teal-50 to-cyan-50 border border-cyan-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-sm uppercase tracking-wider text-cyan-600 font-bold mb-2">Полная формулировка</h2>
@@ -586,7 +595,7 @@
             </section>
         </div>
 
-        <div id="ticket-4" class="ticket-section space-y-12">
+        <div id="ticket-4" class="ticket-section hidden space-y-12">
             <div class="bg-gradient-to-r from-teal-50 to-emerald-50 border border-emerald-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-sm uppercase tracking-wider text-emerald-600 font-bold mb-2">Полная формулировка</h2>
                 <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
@@ -597,37 +606,24 @@
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-blue-500">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-bl-full -z-10 opacity-50"></div>
                 <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-table"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-table"></i></div>
                     <h2 class="text-3xl font-bold text-slate-900">1. Матрица линейного оператора</h2>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
-                        <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
-                            <i class="fas fa-book-open mr-2"></i> Формулировка
-                        </h3>
+                        <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center"><i class="fas fa-book-open mr-2"></i> Формулировка</h3>
                         <p class="mb-3">Если в $n$-мерном векторном пространстве $V$ выбран базис $e_1, e_2, \dots, e_n$, то линейный оператор $A$ можно однозначно задать квадратной матрицей.</p>
                         <p class="text-sm text-slate-700">Матрицей линейного оператора называется матрица $A = (a_{ij})$, столбцы которой состоят из координат образов базисных векторов:</p>
-                        <div class="text-center font-mono font-bold text-blue-700 my-3 bg-white p-2 rounded shadow-sm border border-blue-100">
-                            $Ae_j = \sum_{i=1}^n a_{ij}e_i$
-                        </div>
+                        <div class="text-center font-mono font-bold text-blue-700 my-3 bg-white p-2 rounded shadow-sm border border-blue-100">$Ae_j = \sum_{i=1}^n a_{ij}e_i$</div>
                         <p class="text-sm text-slate-700">Или в матричном виде: $(Ae_1, Ae_2, \dots, Ae_n) = (e_1, e_2, \dots, e_n)A$.</p>
                     </div>
-
                     <div class="space-y-6">
                         <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5">
-                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
-                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть «на пальцах»
-                            </h3>
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть «на пальцах»</h3>
                             <p class="text-sm">Матрица оператора — это шпаргалка, в которой записано, куда переехали базовые оси координат после того, как мы деформировали пространство. Знаем, куда переехали оси — значит, можем найти, куда переехала абсолютно любая точка.</p>
                         </div>
-
                         <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-5 pattern-bg">
-                            <h3 class="text-sm font-bold text-emerald-800 mb-2 uppercase tracking-wider flex items-center">
-                                <i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрия
-                            </h3>
+                            <h3 class="text-sm font-bold text-emerald-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрия</h3>
                             <p class="text-sm">Базисные векторы $e_1$ и $e_2$ — это стрелочки длиной 1, смотрящие вдоль осей. Оператор как-то исказил сетку. Новые положения этих стрелочек $Ae_1$ и $Ae_2$ — это и есть столбцы нашей матрицы.</p>
                         </div>
                     </div>
@@ -636,102 +632,62 @@
 
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-teal-500 shadow-xl">
                 <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-exchange-alt"></i></div>
                     <h2 class="text-3xl font-bold text-slate-900">2. Связь между матрицами в разных базисах</h2>
                 </div>
-
                 <div class="bg-teal-50 border border-teal-200 p-5 rounded-xl mb-8 flex flex-col md:flex-row items-center justify-between">
                     <div class="mb-4 md:mb-0 md:mr-6">
                         <p class="text-teal-900 text-lg">Если $A$ — матрица в старом базисе $e$, а $\tilde{A}$ — в новом базисе $\tilde{e}$, и $C$ — матрица перехода от $e$ к $\tilde{e}$, то они связаны (подобны):</p>
-                        <div class="text-3xl font-bold text-teal-700 bg-white inline-block px-6 py-3 mt-3 rounded-lg shadow-sm">
-                            $\tilde{A} = C^{-1} A C$
-                        </div>
+                        <div class="text-3xl font-bold text-teal-700 bg-white inline-block px-6 py-3 mt-3 rounded-lg shadow-sm">$\tilde{A} = C^{-1} A C$</div>
                     </div>
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-teal-100 flex-shrink-0 w-full md:w-1/3 text-center">
                         <div class="text-sm font-bold text-teal-800 uppercase tracking-wide"><i class="fas fa-lightbulb text-amber-500 mr-1"></i> Логика действий:</div>
-                        <p class="text-sm text-slate-600 mt-2 text-left">
-                            <strong>1.</strong> $C$: Переводим в старые координаты.<br>
-                            <strong>2.</strong> $A$: Применяем преобразование.<br>
-                            <strong>3.</strong> $C^{-1}$: Возвращаем результат в новые координаты.
-                        </p>
+                        <p class="text-sm text-slate-600 mt-2 text-left"><strong>1.</strong> $C$: Переводим в старые координаты.<br><strong>2.</strong> $A$: Применяем преобразование.<br><strong>3.</strong> $C^{-1}$: Возвращаем результат в новые координаты.</p>
                     </div>
                 </div>
-
                 <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство</h3>
                 <div class="pl-8 step-counter space-y-4 text-teal-600">
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p>По определению матрицы перехода: $(\tilde{e}_1, \dots, \tilde{e}_n) = (e_1, \dots, e_n)C$.</p>
-                    </div>
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-teal-400">
-                        <p>Применим линейный оператор $A$. Матрицу $C$ (константы) выносим:<br> $(A\tilde{e}_1, \dots, A\tilde{e}_n) = (Ae_1, \dots, Ae_n)C$.</p>
-                    </div>
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p>Мы знаем, что $(Ae_1, \dots, Ae_n) = (e_1, \dots, e_n)A$. Подставляем:<br> $(A\tilde{e}_1, \dots, A\tilde{e}_n) = (e_1, \dots, e_n)AC$.</p>
-                    </div>
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p>Выразим старый базис через новый: $(e_1, \dots, e_n) = (\tilde{e}_1, \dots, \tilde{e}_n)C^{-1}$. Подставляем:<br> $(A\tilde{e}_1, \dots, A\tilde{e}_n) = (\tilde{e}_1, \dots, \tilde{e}_n)C^{-1}AC$.</p>
-                    </div>
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p>По определению, то, что стоит справа от базиса — это и есть матрица оператора в этом базисе. Значит, $\tilde{A} = C^{-1}AC$.</p>
-                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm"><p>По определению матрицы перехода: $(\tilde{e}_1, \dots, \tilde{e}_n) = (e_1, \dots, e_n)C$.</p></div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-teal-400"><p>Применим линейный оператор $A$. Матрицу $C$ выносим:<br> $(A\tilde{e}_1, \dots, A\tilde{e}_n) = (Ae_1, \dots, Ae_n)C$.</p></div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm"><p>Мы знаем, что $(Ae_1, \dots, Ae_n) = (e_1, \dots, e_n)A$. Подставляем:<br> $(A\tilde{e}_1, \dots, A\tilde{e}_n) = (e_1, \dots, e_n)AC$.</p></div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm"><p>Выразим старый базис через новый: $(e_1, \dots, e_n) = (\tilde{e}_1, \dots, \tilde{e}_n)C^{-1}$. Подставляем:<br> $(A\tilde{e}_1, \dots, A\tilde{e}_n) = (\tilde{e}_1, \dots, \tilde{e}_n)C^{-1}AC$.</p></div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm"><p>По определению, то, что стоит справа от базиса — это и есть матрица оператора в этом базисе. Значит, $\tilde{A} = C^{-1}AC$.</p></div>
                 </div>
             </section>
 
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500">
                 <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-lock"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-lock"></i></div>
                     <h2 class="text-3xl font-bold text-slate-900">3. Инварианты оператора</h2>
                 </div>
-
-                <p class="text-lg text-slate-700 mb-6"><strong>Инварианты</strong> — это характеристики оператора, которые отражают объективный геометрический смысл и не меняются при смене базиса (линейки, которой мы измеряем).</p>
-
+                <p class="text-lg text-slate-700 mb-6"><strong>Инварианты</strong> — это характеристики оператора, которые отражают объективный геометрический смысл и не меняются при смене базиса.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div class="bg-white border-2 border-rose-100 rounded-xl p-5 hover:border-rose-400 transition-colors shadow-sm">
                         <h3 class="text-xl font-bold text-rose-800 mb-3 border-b pb-2">Определитель (det)</h3>
                         <div class="font-mono text-center text-lg text-rose-600 mb-3 font-bold">$\det(\tilde{A}) = \det(A)$</div>
                         <p class="text-sm text-slate-600 mb-4">Коэффициент изменения $n$-мерного объема.</p>
-                        <div class="bg-slate-50 p-3 rounded text-xs border border-slate-100 text-slate-700">
-                            <strong>Доказательство:</strong><br>
-                            $\det(C^{-1}AC) = \det(C^{-1})\det(A)\det(C)$.<br>
-                            Т.к. $\det(C^{-1}) = 1/\det(C)$, они сокращаются.
-                        </div>
+                        <div class="bg-slate-50 p-3 rounded text-xs border border-slate-100 text-slate-700"><strong>Доказательство:</strong><br>$\det(C^{-1}AC) = \det(C^{-1})\det(A)\det(C)$.<br>Т.к. $\det(C^{-1}) = 1/\det(C)$, они сокращаются.</div>
                     </div>
-
                     <div class="bg-white border-2 border-rose-100 rounded-xl p-5 hover:border-rose-400 transition-colors shadow-sm">
                         <h3 class="text-xl font-bold text-rose-800 mb-3 border-b pb-2">След (tr)</h3>
                         <div class="font-mono text-center text-lg text-rose-600 mb-3 font-bold">$\text{tr}(\tilde{A}) = \text{tr}(A)$</div>
-                        <p class="text-sm text-slate-600 mb-4">Сумма диагональных элементов (коэфф. «расширения/сжатия»).</p>
-                        <div class="bg-slate-50 p-3 rounded text-xs border border-slate-100 text-slate-700">
-                            <strong>Доказательство:</strong><br>
-                            Свойство следа: $\text{tr}(XY) = \text{tr}(YX)$.<br>
-                            $\text{tr}(C^{-1}A \cdot C) = \text{tr}(C \cdot C^{-1}A) = \text{tr}(EA) = \text{tr}(A)$.
-                        </div>
+                        <p class="text-sm text-slate-600 mb-4">Сумма диагональных элементов (коэфф. «расширения»).</p>
+                        <div class="bg-slate-50 p-3 rounded text-xs border border-slate-100 text-slate-700"><strong>Доказательство:</strong><br>Свойство следа: $\text{tr}(XY) = \text{tr}(YX)$.<br>$\text{tr}(C^{-1}A \cdot C) = \text{tr}(C \cdot C^{-1}A) = \text{tr}(EA) = \text{tr}(A)$.</div>
                     </div>
-
                     <div class="bg-white border-2 border-rose-100 rounded-xl p-5 hover:border-rose-400 transition-colors shadow-sm">
                         <h3 class="text-xl font-bold text-rose-800 mb-3 border-b pb-2">Ранг (rk)</h3>
                         <div class="font-mono text-center text-lg text-rose-600 mb-3 font-bold">$\text{rk}(\tilde{A}) = \text{rk}(A)$</div>
                         <p class="text-sm text-slate-600 mb-4">Размерность образа (тени) после преобразования.</p>
-                        <div class="bg-slate-50 p-3 rounded text-xs border border-slate-100 text-slate-700">
-                            <strong>Доказательство:</strong><br>
-                            По теореме $\dim \text{Im} A = \text{rk} A$. Образ — объективный геометрический объект, его размерность не зависит от координат.
-                        </div>
+                        <div class="bg-slate-50 p-3 rounded text-xs border border-slate-100 text-slate-700"><strong>Доказательство:</strong><br>По теореме $\dim \text{Im} A = \text{rk} A$. Образ — объективный геометрический объект.</div>
                     </div>
                 </div>
             </section>
 
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-fuchsia-500">
                 <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 rounded-xl bg-fuchsia-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-equals"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-fuchsia-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-equals"></i></div>
                     <h2 class="text-3xl font-bold text-slate-900">4. Алгебра операторов и изоморфизм матрицам</h2>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                     <div class="space-y-4">
                         <div class="bg-fuchsia-50 border border-fuchsia-100 p-5 rounded-xl">
@@ -740,17 +696,12 @@
                             </p>
                         </div>
                         <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5">
-                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
-                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть
-                            </h3>
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть</h3>
                             <p class="text-sm text-slate-700">Математики доказали, что играть с геометрическими преобразованиями — это абсолютно то же самое, что играть с квадратными табличками чисел. Складывать деформации = складывать матрицы. Выполнить две деформации подряд = умножить их матрицы.</p>
                         </div>
                     </div>
-
                     <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg">
-                        <h3 class="text-lg font-bold mb-4 flex items-center text-fuchsia-300">
-                            <i class="fas fa-cog mr-2"></i> Доказательство (Умножение)
-                        </h3>
+                        <h3 class="text-lg font-bold mb-4 flex items-center text-fuchsia-300"><i class="fas fa-cog mr-2"></i> Доказательство (Умножение)</h3>
                         <p class="text-xs text-slate-400 mb-3 uppercase tracking-wide">Докажем, что $(AB)e_k$ дает перемножение матриц:</p>
                         <div class="space-y-3 font-mono text-sm">
                             <div class="flex"><span class="text-fuchsia-400 w-6">1.</span> <span>$(AB)e_k = A(Be_k)$</span></div>
@@ -760,7 +711,157 @@
                             <div class="flex"><span class="text-fuchsia-400 w-6">5.</span> <span>Перегруппируем: $\sum_{i=1}^n (\sum_{j=1}^n a_{ij}b_{jk}) e_i$</span></div>
                         </div>
                         <div class="mt-4 bg-slate-700/50 border border-slate-600 p-3 rounded text-sm text-slate-200">
-                            Коэффициент $c_{ik} = \sum_{j=1}^n a_{ij}b_{jk}$ — это в точности формула умножения матриц «строка на столбец». Изоморфизм доказан!
+                            Коэффициент $c_{ik} = \sum_{j=1}^n a_{ij}b_{jk}$ — это формула умножения матриц.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <div id="ticket-5" class="ticket-section space-y-12">
+            <div class="bg-gradient-to-r from-emerald-50 to-purple-50 border border-emerald-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-emerald-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    5. Проектор на подпространство и его связь с идемпотентным оператором. Отражение относительно подпространства и его связь с инволюцией.
+                </p>
+            </div>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-100 rounded-bl-full -z-10 opacity-50"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Проектор и идемпотентный оператор</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center">
+                            <i class="fas fa-book-open mr-2"></i> Формулировки
+                        </h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <span class="font-semibold text-slate-900">Проектор:</span> Пусть пространство $V$ разложено в прямую сумму: $V = U \oplus W$. Тогда любой вектор $v \in V$ однозначно представляется как $v = u + w$, где $u \in U, w \in W$. Линейный оператор $P(v) = u$ называется проектором на $U$ параллельно $W$.
+                            </li>
+                            <li>
+                                <span class="font-semibold text-slate-900">Идемпотент:</span> Оператор $A$ называется идемпотентным, если его квадрат равен самому себе:
+                                <div class="text-center my-2 font-mono text-lg text-emerald-700 bg-white p-2 rounded border border-emerald-100">$A^2 = A$</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-shapes mr-2 text-amber-600"></i> Геометрия (Свет и Тень)
+                            </h3>
+                            <p class="text-sm">Представь, что $U$ — это пол, а $W$ — направление лучей света. Проектор — это тень от объекта на полу. Идемпотентность означает простую вещь: если точка уже является тенью (то есть уже лежит на полу), то повторное проецирование ничего не изменит, она останется на месте.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-balance-scale text-slate-400 mr-2"></i> Теорема о связи</h3>
+                    <p class="text-slate-700 mb-4 font-medium">Любой проектор является идемпотентом. Обратно, любой идемпотентный оператор $A$ является проектором на свой образ $Im A$ параллельно своему ядру $Ker A$.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-emerald-700 flex items-center"><i class="fas fa-arrow-right mr-2"></i> Проектор $\implies$ Идемпотент</h4>
+                            <p class="text-sm text-slate-600">Если $P(v) = u$, то применим проектор дважды:</p>
+                            <div class="bg-slate-50 p-3 rounded text-sm font-mono border border-slate-100">
+                                $P^2(v) = P(P(u+w)) = P(u)$<br>
+                                $u = u + 0 \implies P(u) = u = P(v)$
+                            </div>
+                            <p class="text-sm text-slate-600">Следовательно, $P^2 = P$.</p>
+                        </div>
+
+                        <div class="space-y-3 border-l-0 lg:border-l-2 lg:pl-8 border-slate-100">
+                            <h4 class="font-bold text-emerald-700 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Идемпотент $\implies$ Проектор</h4>
+                            <p class="text-sm text-slate-600">Пусть $A^2 = A$. Разложим любой вектор на два слагаемых:</p>
+                            <div class="bg-slate-50 p-3 rounded text-sm font-mono text-center border border-slate-100 mb-2">
+                                $v = \underbrace{A(v)}_{\in Im A} + \underbrace{(v - A(v))}_{?}$
+                            </div>
+                            <p class="text-sm text-slate-600">Очевидно, $A(v) \in Im A$. Проверим второе слагаемое, применив к нему оператор $A$:</p>
+                            <div class="bg-slate-50 p-3 rounded text-sm font-mono border border-slate-100 mb-2">
+                                $A(v - A(v)) = A(v) - A^2(v) =$ <br> $= A(v) - A(v) = 0$
+                            </div>
+                            <p class="text-sm text-slate-600">Значит, $(v - A(v)) \in Ker A$. То есть $V = Im A + Ker A$.</p>
+                            <p class="text-sm text-slate-600 mt-2"><strong>Докажем, что сумма прямая:</strong> Если $y \in Im A \cap Ker A$, то $y = A(x)$ и $A(y) = 0$. Тогда $A(y) = A^2(x) = A(x) = y \implies y = 0$. Значит, $V = Im A \oplus Ker A$.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-purple-500 shadow-xl">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-adjust"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Отражение и инволюция</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-purple-50/50 border border-purple-100 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center">
+                            <i class="fas fa-book-open mr-2"></i> Формулировки
+                        </h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <span class="font-semibold text-slate-900">Отражение:</span> Пусть $V = U \oplus W$. Оператор $R(v) = R(u+w) = u - w$ называется отражением относительно подпространства $U$ параллельно подпространству $W$.
+                            </li>
+                            <li>
+                                <span class="font-semibold text-slate-900">Инволюция:</span> Оператор $A$ называется инволюцией, если его квадрат равен тождественному оператору $E$:
+                                <div class="text-center my-2 font-mono text-lg text-purple-700 bg-white p-2 rounded border border-purple-100">$A^2 = E$</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-shapes mr-2 text-amber-600"></i> Геометрия (Зеркало)
+                            </h3>
+                            <p class="text-sm">Представь, что $U$ — это плоскость зеркала. Векторы, лежащие в самом зеркале, не меняются ($u \to u$). Векторы, торчащие перпендикулярно зеркалу, меняют направление на строго противоположное ($w \to -w$). А инволюция означает, что если отразить объект дважды, он вернется в исходное положение.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-balance-scale text-slate-400 mr-2"></i> Теорема о связи</h3>
+                    <p class="text-slate-700 mb-4 font-medium">Любое отражение является инволюцией. Обратно, любая инволюция $A$ является отражением относительно подпространства $V^+ = \{v \mid A(v) = v\}$ параллельно подпространству $V^- = \{v \mid A(v) = -v\}$.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-purple-700 flex items-center"><i class="fas fa-arrow-right mr-2"></i> Отражение $\implies$ Инволюция</h4>
+                            <p class="text-sm text-slate-600">Если $R(u+w) = u-w$, применим отражение дважды:</p>
+                            <div class="bg-slate-50 p-3 rounded text-sm font-mono border border-slate-100">
+                                $R^2(v) = R(u - w) = R(u + (-w))$<br>
+                                $R(u + (-w)) = u - (-w) = u + w = v$
+                            </div>
+                            <p class="text-sm text-slate-600">Так как $R^2(v) = v = E(v)$ для любого вектора, то $R^2 = E$.</p>
+                        </div>
+
+                        <div class="space-y-3 border-l-0 lg:border-l-2 lg:pl-8 border-slate-100">
+                            <h4 class="font-bold text-purple-700 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Инволюция $\implies$ Отражение</h4>
+                            <p class="text-sm text-slate-600">Пусть $A^2 = E$. Представим вектор $v$ как полусумму:</p>
+                            <div class="bg-slate-50 p-3 rounded text-sm font-mono text-center border border-slate-100 mb-2">
+                                $v = \underbrace{\frac{v + A(v)}{2}}_{\text{лежит ли в } V^+?} + \underbrace{\frac{v - A(v)}{2}}_{\text{лежит ли в } V^-?}$
+                            </div>
+                            <p class="text-sm text-slate-600">Применим $A$ к первому слагаемому:</p>
+                            <div class="bg-slate-50 p-2 rounded text-sm font-mono border border-slate-100 mb-2">
+                                $A(\frac{v + A(v)}{2}) = \frac{A(v) + A^2(v)}{2} = \frac{A(v) + v}{2}$
+                            </div>
+                            <p class="text-sm text-slate-600 mb-2">Знак не поменялся, значит оно лежит в $V^+$.</p>
+                            
+                            <p class="text-sm text-slate-600">Применим $A$ ко второму слагаемому:</p>
+                            <div class="bg-slate-50 p-2 rounded text-sm font-mono border border-slate-100 mb-2">
+                                $A(\frac{v - A(v)}{2}) = \frac{A(v) - A^2(v)}{2} = \frac{A(v) - v}{2} = - \frac{v - A(v)}{2}$
+                            </div>
+                            <p class="text-sm text-slate-600">Знак поменялся на минус, значит оно лежит в $V^-$.</p>
+                            <p class="text-sm text-slate-600 mt-2">Пересечение $V^+ \cap V^-$ состоит только из нуля (ведь если $x = -x$, то $2x = 0 \implies x = 0$). Значит, $V = V^+ \oplus V^-$, и оператор действует как отражение.</p>
                         </div>
                     </div>
                 </div>
@@ -808,8 +909,8 @@
             activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md', 'transform', 'hover:-translate-y-0.5');
         }
         
-        // Default to Ticket 4
-        switchTab('ticket-4');
+        // Default to Ticket 5
+        switchTab('ticket-5');
     </script>
 </body>
 </html>
