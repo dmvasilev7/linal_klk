@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -111,25 +111,40 @@
         </div>
     </header>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-8">
         <div class="bg-white rounded-xl shadow-lg p-2 flex justify-center space-x-2 md:space-x-4 flex-wrap gap-y-2">
-            <button id="btn-ticket-1" onclick="switchTab('ticket-1')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
-                <i class="fas fa-ticket-alt mr-2"></i> Билет 1
+            <button id="btn-ticket-1" onclick="switchTab('ticket-1')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 1
             </button>
-            <button id="btn-ticket-2" onclick="switchTab('ticket-2')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
-                <i class="fas fa-ticket-alt mr-2"></i> Билет 2
+            <button id="btn-ticket-2" onclick="switchTab('ticket-2')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 2
             </button>
-            <button id="btn-ticket-3" onclick="switchTab('ticket-3')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
-                <i class="fas fa-ticket-alt mr-2"></i> Билет 3
+            <button id="btn-ticket-3" onclick="switchTab('ticket-3')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 3
             </button>
-            <button id="btn-ticket-4" onclick="switchTab('ticket-4')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
-                <i class="fas fa-ticket-alt mr-2"></i> Билет 4
+            <button id="btn-ticket-4" onclick="switchTab('ticket-4')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 4
             </button>
-            <button id="btn-ticket-5" onclick="switchTab('ticket-5')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold border border-slate-200 transition-colors flex items-center">
-                <i class="fas fa-ticket-alt mr-2"></i> Билет 5
+            <button id="btn-ticket-5" onclick="switchTab('ticket-5')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 5
             </button>
-            <button id="btn-ticket-6" onclick="switchTab('ticket-6')" class="tab-btn bg-indigo-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center">
-                <i class="fas fa-ticket-alt mr-2"></i> Билет 6
+            <button id="btn-ticket-6" onclick="switchTab('ticket-6')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 6
+            </button>
+            <button id="btn-ticket-7" onclick="switchTab('ticket-7')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 7
+            </button>
+            <button id="btn-ticket-8" onclick="switchTab('ticket-8')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 8
+            </button>
+            <button id="btn-ticket-9" onclick="switchTab('ticket-9')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 9
+            </button>
+            <button id="btn-ticket-10" onclick="switchTab('ticket-10')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 10
+            </button>
+            <button id="btn-ticket-11" onclick="switchTab('ticket-11')" class="tab-btn bg-indigo-600 text-white px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center text-sm md:text-base">
+                <i class="fas fa-ticket-alt mr-2"></i> Билет 11
             </button>
         </div>
     </div>
@@ -164,7 +179,7 @@
                     </div>
                     <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-6 pattern-bg">
                         <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center"><i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрическая интерпретация</h3>
-                        <p>Представ себе трехмерное векторное пространство. Идеал $I$ — это плоскость, проходящая через начало координат. Когда мы строим факторкольцо, мы буквально смотрим на пространство <em>вдоль</em> этой плоскости. Вся плоскость сливается для нас в одну точку (нуль факторкольца), а все плоскости, параллельные ей, превращаются в отдельные точки новой прямой.</p>
+                        <p>Представь себе трехмерное векторное пространство. Идеал $I$ — это плоскость, проходящая через начало координат. Когда мы строим факторкольцо, мы буквально смотрим на пространство <em>вдоль</em> этой плоскости. Вся плоскость сливается для нас в одну точку (нуль факторкольца), а все плоскости, параллельные ей, превращаются в отдельные точки новой прямой.</p>
                     </div>
                     <div class="bg-purple-50/50 border border-purple-100 rounded-xl p-6">
                         <h3 class="text-lg font-bold text-purple-800 mb-3 flex items-center"><i class="fas fa-code mr-2 text-purple-600"></i> Пример</h3>
@@ -260,7 +275,7 @@
                     <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-gem"></i></div>
                     <h2 class="text-3xl font-bold text-slate-900">4. Простые и неприводимые элементы</h2>
                 </div>
-                <p class="text-lg text-slate-700 mb-6">Пусть $R$ — область целостности (коммутативное кольцо с единицей без делителей нуля). Элемент $p$ ($p \notin R^*$, $p \neq 0$) называется:</p>
+                <p class="text-lg text-slate-700 mb-6">Пусть $R$ — область целостности <strong>(ассоциативное коммутативное кольцо с единицей, в котором нет делителей нуля)</strong>. Элемент $p$ ($p \notin R^*$, $p \neq 0$) называется:</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-emerald-400 transition-colors">
                         <h3 class="text-xl font-bold text-emerald-700 mb-2">Неприводимым</h3>
@@ -313,7 +328,7 @@
                         <h3 class="text-lg font-bold text-cyan-800 mb-3 flex items-center"><i class="fas fa-book-open mr-2"></i> Формулировка</h3>
                         <ul class="space-y-4">
                             <li><span class="font-semibold text-slate-900">Главный идеал:</span> Идеал $I$ в коммутативном кольце $R$ с единицей называется <em>главным</em>, если он порождается одним элементом $a \in R$. Обозначается $(a) = \{ra \mid r \in R\}$.</li>
-                            <li><span class="font-semibold text-slate-900">Область главных идеалов (ОГИ):</span> Это область целостности, в которой <em>каждый</em> идеал является главным.</li>
+                            <li><span class="font-semibold text-slate-900">Область главных идеалов (ОГИ):</span> Это область целостности <strong>(ассоциативное коммутативное кольцо с единицей, в котором нет делителей нуля)</strong>, в которой <em>каждый</em> идеал является главным.</li>
                         </ul>
                     </div>
                     <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-6">
@@ -352,7 +367,7 @@
                         </div>
                         <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-5 pattern-bg">
                             <h3 class="font-bold text-emerald-800 mb-2 text-sm uppercase tracking-wider"><i class="fas fa-shapes mr-2"></i> Геометрия</h3>
-                            <p class="text-sm">Представь векторы $a$ и $b$, порождающие решетку на плоскости. НОД $d$ — это размер минимальной ячейки этой решетки в проекции на прямую.</p>
+                            <p class="text-sm">Представь векторы $a$ и $b$, порождающие решетку на плоскости. НОД $d$ — это размер минима ячейки этой решетки в проекции на прямую.</p>
                         </div>
                     </div>
                 </div>
@@ -381,7 +396,7 @@
                 <div class="bg-rose-50 border border-rose-200 p-5 rounded-xl mb-8 flex flex-col md:flex-row items-center justify-between">
                     <div class="mb-4 md:mb-0 md:mr-6">
                         <h3 class="text-xl font-bold text-rose-900 mb-2">Формулировка</h3>
-                        <p class="text-rose-800">Пусть $R$ — ОГИ. Факторкольцо $R/(u)$ является полем тогда и только тогда, когда элемент $u$ — простой (неприводимый).</p>
+                        <p class="text-rose-800">Пусть $R$ — ОГИ. Факторкольцо $R/(u)$ является <strong>полем (ассоциативным коммутативным кольцом с единицей, в котором каждый ненулевой элемент обратим)</strong> тогда и только тогда, когда элемент $u$ — простой (неприводимый).</p>
                     </div>
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-rose-100 flex-shrink-0 w-full md:w-auto text-center">
                         <div class="text-lg font-bold text-rose-700">Суть:</div>
@@ -625,7 +640,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-teal-500 shadow-xl">
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-exchange-alt"></i></div>
@@ -650,7 +664,6 @@
                     <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm"><p>По определению, то, что стоит справа от базиса — это и есть матрица оператора в этом базисе. Значит, $\tilde{A} = C^{-1}AC$.</p></div>
                 </div>
             </section>
-
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-lock"></i></div>
@@ -678,7 +691,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-fuchsia-500">
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 rounded-xl bg-fuchsia-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-equals"></i></div>
@@ -721,7 +733,6 @@
                     5. Проектор на подпространство и его связь с идемпотентным оператором. Отражение относительно подпространства и его связь с инволюцией.
                 </p>
             </div>
-
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-100 rounded-bl-full -z-10 opacity-50"></div>
                 <div class="flex items-center mb-8">
@@ -774,7 +785,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-purple-500 shadow-xl">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-adjust"></i></div>
@@ -833,129 +843,596 @@
             </section>
         </div>
 
-
-        <div id="ticket-6" class="ticket-section space-y-12">
+        <div id="ticket-6" class="ticket-section hidden space-y-12">
             <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-sm uppercase tracking-wider text-amber-600 font-bold mb-2">Полная формулировка</h2>
                 <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
                     6. Инвариантное подпространство. Ограничение оператора на него. Связь между матрицей оператора и матрицей ограничения на инвариантное подпространство. Блочно-диагональная матрица и разложение пространства в прямую сумму инвариантных подпространств.
                 </p>
             </div>
-
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-amber-500">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-amber-100 rounded-bl-full -z-10 opacity-50"></div>
-                
                 <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-box"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-box"></i></div>
                     <h2 class="text-3xl font-bold text-slate-900">1. Инвариантное подпространство и ограничение</h2>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-6">
-                        <h3 class="text-lg font-bold text-amber-800 mb-3 flex items-center">
-                            <i class="fas fa-book-open mr-2"></i> Формулировки
-                        </h3>
+                        <h3 class="text-lg font-bold text-amber-800 mb-3 flex items-center"><i class="fas fa-book-open mr-2"></i> Формулирки</h3>
                         <ul class="space-y-4">
-                            <li>
-                                <span class="font-semibold text-slate-900">Инвариантное подпространство:</span> Подпространство $U$ векторного пространства $V$ называется инвариантным относительно линейного оператора $\mathcal{A}$ (или $\mathcal{A}$-инвариантным), если $\mathcal{A}(U) \le U$, то есть для любого вектора $x \in U$ его образ $\mathcal{A}(x)$ снова принадлежит $U$.
-                            </li>
-                            <li>
-                                <span class="font-semibold text-slate-900">Ограничение (сужение) оператора:</span> Ограничение $\mathcal{A}|_U$ линейного оператора $\mathcal{A}$ на инвариантное подпространство $U$ само по себе является полноценным линейным оператором в пространстве $U$.
-                            </li>
+                            <li><span class="font-semibold text-slate-900">Инвариантное подпространство:</span> Подпространство $U$ векторного пространства $V$ называется инвариантным относительно оператора $\mathcal{A}$, если $\mathcal{A}(U) \le U$, то есть для любого вектора $x \in U$ его образ $\mathcal{A}(x)$ снова принадлежит $U$.</li>
+                            <li><span class="font-semibold text-slate-900">Ограничение (сужение) оператора:</span> Ограничение $\mathcal{A}|_U$ оператора $\mathcal{A}$ на инвариантное подпространство $U$ само по себе является полноценным линейным оператором в пространстве $U$.</li>
                         </ul>
                     </div>
-
                     <div class="space-y-6">
                         <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-5">
-                            <h3 class="text-sm font-bold text-blue-800 mb-2 uppercase tracking-wider flex items-center">
-                                <i class="fas fa-lightbulb mr-2 text-blue-500"></i> Суть «на пальцах»
-                            </h3>
+                            <h3 class="text-sm font-bold text-blue-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-lightbulb mr-2 text-blue-500"></i> Суть «на пальцах»</h3>
                             <p class="text-sm">Для инвариантных подпространств действует «правило Вегаса»: всё, что происходит в $U$, остаётся в $U$. Оператор может как угодно мять или растягивать векторы внутри этого подпространства, но он никогда не сможет выкинуть вектор наружу.</p>
                         </div>
                         <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-5 pattern-bg">
-                            <h3 class="text-sm font-bold text-emerald-800 mb-2 uppercase tracking-wider flex items-center">
-                                <i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрия
-                            </h3>
+                            <h3 class="text-sm font-bold text-emerald-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрия</h3>
                             <p class="text-sm">Представь себе 3D-пространство и оператор, который вращает всё вокруг вертикальной оси $Z$. Сама ось $Z$ — это инвариантное 1D-подпространство. А пол (плоскость $XY$) — это инвариантное 2D-подпространство. Любой вектор, лежащий на полу, после вращения останется лежать на полу.</p>
                         </div>
                     </div>
                 </div>
             </section>
-
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-orange-500 shadow-xl">
                 <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 rounded-xl bg-orange-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-th-large"></i>
-                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-orange-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-th-large"></i></div>
                     <h2 class="text-3xl font-bold text-slate-900">2. Матрица оператора и матрица ограничения</h2>
                 </div>
-
                 <div class="bg-orange-50 border border-orange-200 p-5 rounded-xl mb-8 flex flex-col md:flex-row items-center justify-between">
                     <div class="mb-4 md:mb-0 md:mr-6">
                         <p class="text-orange-900 text-lg">Если выбрать базис $V$ так, чтобы инвариантное $U$ было линейной оболочкой первых $k$ векторов, матрица оператора примет вид:</p>
                     </div>
-                    <div class="text-3xl font-bold text-orange-700 bg-white inline-block px-8 py-4 rounded-lg shadow-sm border border-orange-100">
-                        $$\begin{pmatrix} B & D \\ 0 & C \end{pmatrix}$$
-                    </div>
+                    <div class="text-3xl font-bold text-orange-700 bg-white inline-block px-8 py-4 rounded-lg shadow-sm border border-orange-100">$$\begin{pmatrix} B & D \\ 0 & C \end{pmatrix}$$</div>
                 </div>
-
                 <h3 class="text-2xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-search text-slate-400 mr-2"></i> Почему под $B$ одни нули?</h3>
                 <div class="pl-8 step-counter space-y-4 text-orange-600">
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p>Матрица оператора строится по столбцам — это координаты образов базисных векторов.</p>
-                    </div>
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-orange-400">
-                        <p>Возьмем любой из первых $k$ базисных векторов (назовем его $e_j$, где $j \le k$). Он по построению лежит в $U$.</p>
-                    </div>
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p>Так как $U$ <strong>инвариантно</strong>, его образ $\mathcal{A}(e_j)$ тоже обязан лежать в $U$.</p>
-                    </div>
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p>А значит, $\mathcal{A}(e_j)$ можно выразить <em>только</em> через первые $k$ базисных векторов. Коэффициенты при остальных векторах ($e_{k+1}, \dots, e_n$) будут строго равны нулю.</p>
-                    </div>
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm font-medium">
-                        <p>Именно поэтому под матрицей $B$ образуется прямоугольник из нулей. Блок $B$ забирает на себя всю работу оператора внутри $U$, становясь <strong>матрицей ограничения</strong> $\mathcal{A}|_U$.</p>
-                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm"><p>Матрица оператора строится по столбцам — это координаты образов базисных векторов.</p></div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-orange-400"><p>Возьмем любой из первых $k$ базисных векторов (назовем его $e_j$, где $j \le k$). Он по построению лежит в $U$.</p></div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm"><p>Так как $U$ <strong>инвариантно</strong>, его образ $\mathcal{A}(e_j)$ тоже обязан лежать в $U$.</p></div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm"><p>А значит, $\mathcal{A}(e_j)$ можно выразить <em>только</em> через первые $k$ базисных векторов. Коэффициенты при остальных векторах ($e_{k+1}, \dots, e_n$) будут строго равны нулю.</p></div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm font-medium"><p>Именно поэтому под матрицей $B$ образуется прямоугольник из нулей. Блок $B$ забирает на себя всю работу оператора внутри $U$, становясь <strong>матрицей ограничения</strong> $\mathcal{A}|_U$.</p></div>
                 </div>
             </section>
-
             <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-sky-500">
                 <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold text-slate-900">3. Разложение в прямую сумму (Блочно-диагональная матрица)</h2>
+                    <div class="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-layer-group"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Разложение в прямую сумму</h2>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div class="space-y-4">
                         <p class="text-lg text-slate-700">Если удаётся разложить пространство $V$ в прямую сумму инвариантных подпространств $V = V_1 \oplus V_2 \oplus \dots \oplus V_k$, то матрица оператора принимает <strong>блочно-диагональный вид</strong>:</p>
-                        
                         <div class="bg-white p-6 rounded-xl shadow-sm border border-sky-100 text-center text-xl font-bold text-sky-800 overflow-x-auto">
                             $$\begin{pmatrix} A_1 & 0 & \dots & 0 \\ 0 & A_2 & \dots & 0 \\ \dots & \dots & \dots & \dots \\ 0 & 0 & \dots & A_k \end{pmatrix}$$
                         </div>
                         <p class="text-sm text-slate-500 text-center">где $A_i$ — матрица оператора $\mathcal{A}|_{V_i}$.</p>
                     </div>
-
                     <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg">
-                        <h3 class="text-xl font-bold mb-3 flex items-center text-sky-300">
-                            <i class="fas fa-magic mr-2"></i> Суть (Святой Грааль)
-                        </h3>
-                        <p class="text-slate-300 mb-6 text-sm leading-relaxed">
-                            Если мы смогли разбить всё пространство на прямую сумму инвариантных кусков, значит мы полностью расщепили сложную систему на независимые процессы. Это главная цель линейной алгебры.
-                        </p>
-
+                        <h3 class="text-xl font-bold mb-3 flex items-center text-sky-300"><i class="fas fa-magic mr-2"></i> Суть (Святой Грааль)</h3>
+                        <p class="text-slate-300 mb-6 text-sm leading-relaxed">Если мы смогли разбить всё пространство на прямую сумму инвариантных кусков, значит мы полностью расщепили сложную систему на независимые процессы. Это главная цель линейной алгебры.</p>
                         <h4 class="font-bold text-sky-400 mb-2 border-b border-slate-600 pb-1">Пример: Вращение в 3D</h4>
                         <p class="text-slate-300 text-sm mb-3">Вращение вокруг оси $Z$ расщепляет 3D на независимую плоскость $XY$ и ось $Z$. Матрица принимает идеальный блочно-диагональный вид:</p>
-                        
-                        <div class="text-center font-mono text-sky-200 bg-slate-900 p-3 rounded mb-3 overflow-x-auto text-lg">
-                            $$\begin{pmatrix} \cos\alpha & -\sin\alpha & 0 \\ \sin\alpha & \cos\alpha & 0 \\ 0 & 0 & 1 \end{pmatrix}$$
+                        <div class="text-center font-mono text-sky-200 bg-slate-900 p-3 rounded mb-3 overflow-x-auto text-lg">$$\begin{pmatrix} \cos\alpha & -\sin\alpha & 0 \\ \sin\alpha & \cos\alpha & 0 \\ 0 & 0 & 1 \end{pmatrix}$$</div>
+                        <p class="text-slate-400 text-xs">Верхний блок $2 \times 2$ — это $A_1$ (плоский поворот). Нижний блок $1 \times 1$ — это $A_2$ (ось $Z$ остается на месте). Они работают абсолютно независимо!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="ticket-7" class="ticket-section hidden space-y-12">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-indigo-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    7. Фактороператор, связь между матрицами оператора и фактороператора.
+                </p>
+            </div>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-100 rounded-bl-full -z-10 opacity-50"></div>
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-compress-arrows-alt"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Фактороператор (Определение и Корректность)</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-indigo-50/50 border border-indigo-100 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-indigo-800 mb-3 flex items-center"><i class="fas fa-book-open mr-2"></i> Формулировка</h3>
+                        <p class="mb-3 text-slate-700">Пусть $U \le V$ — инвариантное подпространство линейного оператора $\mathcal{A}$.</p>
+                        <p class="mb-3 text-slate-700"><strong>Фактороператор</strong> $\overline{\mathcal{A}}_{V/U}$ действует на факторпространстве $V/U$ (множестве классов смежности $v + U$) по правилу:</p>
+                        <div class="text-center font-mono font-bold text-indigo-700 my-4 bg-white p-3 rounded shadow-sm border border-indigo-100 text-lg">$\overline{\mathcal{A}}_{V/U}(v + U) = \mathcal{A}(v) + U$</div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть «на пальцах»</h3>
+                            <p class="text-sm text-slate-700">Факторпространство «склеивает» всё подпространство $U$ в один нулевой вектор. Фактороператор показывает, как исходный оператор $\mathcal{A}$ действует на это «схлопнутое» пространство, игнорируя любые изменения, которые происходят чисто внутри $U$.</p>
                         </div>
-                        <p class="text-slate-400 text-xs">
-                            Верхний блок $2 \times 2$ — это $A_1$ (плоский поворот). Нижний блок $1 \times 1$ — это $A_2$ (ось $Z$ остается на месте). Они работают абсолютно независимо!
+                    </div>
+                </div>
+                <div class="mt-8 bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-check-double text-slate-400 mr-2"></i> Доказательство корректности</h3>
+                    <p class="text-slate-600 mb-4 italic text-sm">Самый важный шаг! Нужно доказать, что результат действия фактороператора не зависит от того, какой вектор-представитель $v$ мы выбрали для класса смежности.</p>
+                    <div class="space-y-3 font-mono text-sm text-indigo-700">
+                        <div class="flex items-start"><span class="w-6 shrink-0 font-bold">1.</span> <span>Пусть мы взяли два вектора из одного класса: $v_1 + U = v_2 + U$. Это значит, что их разность лежит в $U$: $\mathbf{v_1 - v_2 \in U}$.</span></div>
+                        <div class="flex items-start border-l-4 border-indigo-300 pl-3 ml-1 bg-indigo-50/50 py-2 rounded-r"><span class="w-6 shrink-0 font-bold">2.</span> <span>Применим оператор $\mathcal{A}$. Так как $U$ <strong>инвариантно</strong>, образ разности тоже попадает в $U$: $\mathbf{\mathcal{A}(v_1 - v_2) \in U}$.</span></div>
+                        <div class="flex items-start"><span class="w-6 shrink-0 font-bold">3.</span> <span>В силу линейности оператора $\mathcal{A}$, раскрываем скобки: $\mathbf{\mathcal{A}(v_1) - \mathcal{A}(v_2) \in U}$.</span></div>
+                        <div class="flex items-start font-bold"><span class="w-6 shrink-0">4.</span> <span>Это равносильно тому, что классы смежности их образов совпадают: $\mathbf{\mathcal{A}(v_1) + U = \mathcal{A}(v_2) + U}$.</span></div>
+                    </div>
+                    <div class="mt-4 bg-emerald-50 text-emerald-800 p-3 rounded text-sm flex items-center"><i class="fas fa-check-circle mr-2"></i> Вывод: отображение задано корректно (и линейность проверяется так же тривиально).</div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-teal-500 shadow-xl">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-th"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Связь матриц оператора и фактороператора</h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="col-span-1 lg:col-span-2">
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 h-full">
+                            <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center"><i class="fas fa-book-open mr-2 text-teal-600"></i> Теорема</h3>
+                            <p class="mb-4 text-slate-700">Выберем базис $e_1, \dots, e_k$ в подпространстве $U$ и дополним его векторами $e_{k+1}, \dots, e_n$ до базиса всего пространства $V$. В этом согласованном базисе матрица оператора $\mathcal{A}$ имеет блочно-треугольный вид:</p>
+                            <div class="text-center font-mono font-bold text-teal-800 my-4 bg-white p-4 rounded shadow-sm border border-teal-100 text-2xl inline-block mx-auto">$[\mathcal{A}]_e = \begin{pmatrix} A & B \\ 0 & C \end{pmatrix}$</div>
+                            <p class="text-slate-700">Тогда:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-2 text-slate-700">
+                                <li>Блок $\mathbf{A}$ (размера $k \times k$) — это матрица ограничения $\mathcal{A}|_U$.</li>
+                                <li>Блок $\mathbf{C}$ (размера $(n-k) \times (n-k)$) — это <strong>в точности матрица фактороператора</strong> $\overline{\mathcal{A}}_{V/U}$ в базисе $(e_{k+1}+U, \dots, e_n+U)$.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-span-1">
+                        <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-5 pattern-bg h-full">
+                            <h3 class="font-bold text-emerald-800 mb-3 text-sm uppercase tracking-wider"><i class="fas fa-shapes mr-2"></i> Геометрия (Тень преобразования)</h3>
+                            <p class="text-sm text-slate-700 mb-4">Представь проекцию 3D-пространства на 2D-плоскость. Ось $Z$ — наше инвариантное подпространство $U$ (все точки на ней проецируются в $0$).</p>
+                            <p class="text-sm text-slate-700">Фактороператор — это то, как исходное 3D-преобразование выглядит <em>только</em> для плоских теней, если мы вообще забудем про существование высоты. Блок $C$ описывает именно эту 2D-тень преобразования.</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 mt-8 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство связи матриц</h3>
+                <div class="pl-8 step-counter space-y-5 text-teal-600">
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 1: Разложение добавочных векторов</h4>
+                        <p class="text-sm">Возьмем базисный вектор $e_j$ для $j > k$. Его образ при действии оператора $\mathcal{A}$ раскладывается по всему базису $V$:<br>
+                        <span class="font-mono bg-slate-50 px-2 py-1 rounded inline-block mt-2">$\mathcal{A}(e_j) = \sum_{i=1}^k b_{ij}e_i + \sum_{i=k+1}^n c_{ij}e_i$</span></p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-teal-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 2: Переход к факторпространству</h4>
+                        <p class="text-sm">Применим фактороператор к базисному классу $e_j + U$. По определению:<br>
+                        <span class="font-mono bg-slate-50 px-2 py-1 rounded inline-block mt-2">$\overline{\mathcal{A}}(e_j + U) = \mathcal{A}(e_j) + U = (\sum_{i=1}^k b_{ij}e_i + \sum_{i=k+1}^n c_{ij}e_i) + U$</span></p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 3: Поглощение ядром</h4>
+                        <p class="text-sm">Поскольку векторы $e_1, \dots, e_k$ лежат в $U$, вся первая сумма $\sum b_{ij}e_i$ принадлежит $U$. В факторпространстве (где $U$ выступает нулем) она просто «растворяется» ($+ U$ её съедает). Остается:<br>
+                        <span class="font-mono font-bold text-teal-700 bg-slate-50 px-2 py-1 rounded inline-block mt-2">$\overline{\mathcal{A}}(e_j + U) = \sum_{i=k+1}^n c_{ij}(e_i + U)$</span></p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 4: Финал</h4>
+                        <p class="text-sm">Мы видим, что координаты образов базисных классов $(e_j + U)$ выражаются исключительно через коэффициенты $c_{ij}$. А эти коэффициенты как раз и составляют блок $C$ матриц. Теорема доказана!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="ticket-8" class="ticket-section hidden space-y-12">
+            <div class="bg-gradient-to-r from-sky-50 to-indigo-50 border border-indigo-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-indigo-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    8. Собственные значения и собственные векторы. Собственные подпространства. Размерность собственного подпространства. Собственный базис. Линейная независимость собственных подпространств, соответствующих разным собственным значениям.
+                </p>
+            </div>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-sky-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-sky-100 rounded-bl-full -z-10 opacity-50"></div>
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-arrows-alt-v"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Векторы, значения и подпространства</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-sky-50/50 border border-sky-100 rounded-xl p-5">
+                            <h3 class="font-bold text-sky-800 mb-2 border-b border-sky-200 pb-1">Определения</h3>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li><strong>Собственный вектор:</strong> Ненулевой вектор $x \in V$ называется собственным вектором оператора $\mathcal{A}$, если $\mathcal{A}x = \lambda x$.</li>
+                                <li><strong>Собственное значение:</strong> Число $\lambda \in F$ называется собственным значением оператора $\mathcal{A}$, отвечающим собственному вектору $x$.</li>
+                                <li><strong>Собственное подпространство:</strong> $V_\lambda = \text{Ker}(\mathcal{A} - \lambda\mathcal{E})$. Множество всех собственных векторов, отвечающих значению $\lambda$, вместе с нулевым вектором.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть «на пальцах»</h3>
+                            <p class="text-sm text-slate-700">Собственные векторы — это "идеальные" направления в пространстве, которые оператор не искривляет и не сбивает с пути. Он может их только растянуть, сжать или развернуть. Коэффициент этого растяжения — это и есть собственное значение $\lambda$.</p>
+                        </div>
+                        <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-emerald-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-shapes mr-2 text-emerald-600"></i> Геометрия</h3>
+                            <p class="text-sm text-slate-700">Представь, что ты растягиваешь резиновый квадрат вдоль оси X. Векторы, лежащие на оси X (растягиваются) и на оси Y (стоят на месте), не меняют своего направления — они собственные. А вот диагональные векторы наклоняются ближе к оси X — они не собственные.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-ruler-combined"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Размерность и Собственный базис</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div class="bg-white border-2 border-indigo-100 rounded-xl p-6 shadow-sm">
+                        <h3 class="text-xl font-bold text-indigo-800 mb-4 border-b pb-2">Размерность $V_\lambda$</h3>
+                        <p class="text-slate-700 mb-4"><strong>Геометрическая кратность</strong> $g(\lambda)$ — это размерность собственного подпространства $V_\lambda$.</p>
+                        <p class="text-slate-700 mb-4"><strong>Алгебраическая кратность $a(\lambda)$</strong> — это кратность $\lambda$ как корня характеристического многочлена.</p>
+                        <div class="bg-indigo-50 p-4 rounded-lg font-bold text-indigo-900 text-center text-lg border border-indigo-200">$g(\lambda) \le a(\lambda)$</div>
+                        <p class="text-xs text-slate-500 mt-3 italic">Геометрическая кратность никогда не превосходит алгебраическую (Лемма 5.1).</p>
+                    </div>
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-indigo-300 mb-4 border-b border-slate-600 pb-2"><i class="fas fa-th-list mr-2"></i> Собственный базис</h3>
+                        <p class="text-slate-300 mb-4 text-sm leading-relaxed">Если мы можем найти $n$ линейно независимых собственных векторов, мы можем составить из них базис. Этот базис называется <strong>собственным</strong>.</p>
+                        <p class="text-slate-300 mb-4 text-sm leading-relaxed">В таком базисе матрица оператора принимает свой самый идеальный, <strong>диагональный вид</strong>, где на главной диагонали стоят собственные значения. Оператор называется диагонализируемым.</p>
+                        <div class="bg-slate-900 p-3 rounded font-mono text-center text-emerald-400 border border-slate-700 text-sm">$V = \bigoplus_{i=1}^k V_{\lambda_i}$</div>
+                    </div>
+                </div>
+            </section>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-project-diagram"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Линейная независимость подпространств</h2>
+                </div>
+                <div class="bg-rose-50 border border-rose-200 p-5 rounded-xl mb-8 text-center">
+                    <p class="text-xl font-bold text-rose-900">Теорема 6.1</p>
+                    <p class="mt-2 text-rose-800 text-lg max-w-3xl mx-auto">Собственные подпространства, отвечающие попарно различным собственным значениям $\lambda_1, \dots, \lambda_k$ оператора $\mathcal{A}$, <strong>линейно независимы</strong>.</p>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство (по индукции)</h3>
+                <div class="pl-8 step-counter space-y-5 text-rose-600">
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">База индукции</h4>
+                        <p class="text-sm">Для $k=1$ доказывать нечего (один ненулевой вектор всегда линейно независим).</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-rose-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Предположение от противного (Шаг)</h4>
+                        <p class="text-sm mb-2">Пусть $k > 1$. Предположим, что существует линейная комбинация собственных векторов (где каждый $x_i \in V_{\lambda_i}$), равная нулю:</p>
+                        <div class="bg-slate-50 px-3 py-2 rounded font-mono text-center border border-slate-200 text-rose-700 font-bold">$x_1 + x_2 + \dots + x_k = 0$</div>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Действие оператором</h4>
+                        <p class="text-sm mb-2">Применим к обеим частям равенства наш оператор $\mathcal{A}$. Так как каждый вектор собственный ($\mathcal{A}x_i = \lambda_i x_i$), получим:</p>
+                        <div class="bg-slate-50 px-3 py-2 rounded font-mono text-center border border-slate-200">$\lambda_1 x_1 + \lambda_2 x_2 + \dots + \lambda_k x_k = 0$</div>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Фокус с вычитанием</h4>
+                        <p class="text-sm mb-2">Умножим наше самое первое равенство на $\lambda_k$ и вычтем его из второго равенства. Слагаемое с $x_k$ сократится (так как $\lambda_k x_k - \lambda_k x_k = 0$):</p>
+                        <div class="bg-slate-50 px-3 py-2 rounded font-mono text-center border border-slate-200 text-indigo-700">$(\lambda_1 - \lambda_k)x_1 + \dots + (\lambda_{k-1} - \lambda_k)x_{k-1} = 0$</div>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Финал (Применяем индукцию)</h4>
+                        <p class="text-sm mb-2">Мы получили линейную комбинацию из $k-1$ векторов, равную нулю. По предположению индукции, они линейно независимы. Значит, каждый коэффициент перед векторами равен нулю. Но все $\lambda$ по условию <em>попарно различны</em>, поэтому скобки $(\lambda_i - \lambda_k) \neq 0$.</p>
+                        <p class="text-sm font-bold text-emerald-600 mt-2">Вывод: Это возможно только если сами векторы $x_1 = x_2 = \dots = x_{k-1} = 0$. Но тогда из первого равенства следует, что и $x_k = 0$. Подпространства линейно независимы!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="ticket-9" class="ticket-section hidden space-y-12">
+            <div class="bg-gradient-to-r from-cyan-50 to-teal-50 border border-cyan-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-cyan-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    9. Характеристический многочлен и его корни. Алгебраическая и геометрическая кратности собственного значения, неравенство для них. Смысл этих кратностей.
+                </p>
+            </div>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-cyan-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-100 rounded-bl-full -z-10 opacity-50"></div>
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-superscript"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Характеристический многочлен и его корни</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-cyan-50/50 border border-cyan-100 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-cyan-800 mb-3 flex items-center"><i class="fas fa-book-open mr-2"></i> Определение</h3>
+                        <p class="mb-3 text-slate-700">Многочлен $\chi_{\mathcal{A}}(t) = (-1)^n \det(\mathcal{A} - t\mathcal{E}) = \det(t\mathcal{E} - \mathcal{A})$ называется <strong>характеристическим многочленом</strong> оператора $\mathcal{A}$.</p>
+                        <ul class="space-y-3 text-sm text-slate-700">
+                            <li>Корни этого многочлена называются <strong>спектром</strong> оператора (это в точности его собственные значения $\lambda$).</li>
+                            <li>Он не зависит от выбора базиса, так как определитель подобных матриц совпадает.</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-lightbulb mr-2 text-amber-600"></i> Суть</h3>
+                            <p class="text-sm text-slate-700">Чтобы найти направления, которые оператор просто растягивает ($Ax = \lambda x$), нам нужно решить уравнение $(A - \lambda E)x = 0$. Чтобы у него было ненулевое решение, матрица $A - \lambda E$ должна быть вырожденной, то есть её определитель должен быть равен нулю. Раскрывая определитель, мы и получаем многочлен от переменной $t$.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-balance-scale"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Две кратности: Ожидание vs Реальность</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-8">
+                    <div class="bg-white border-2 border-rose-100 rounded-xl p-6 shadow-sm hover:border-rose-300 transition-colors">
+                        <h3 class="text-xl font-bold text-rose-800 mb-4 border-b pb-2">Алгебраическая $a(\lambda)$</h3>
+                        <p class="text-slate-700 mb-4">Кратность собственного значения $\lambda$ как корня характеристического многочлена $\chi_{\mathcal{A}}(t)$.</p>
+                        <div class="bg-rose-50 p-4 rounded-lg text-sm text-rose-900 border border-rose-200">
+                            <strong>Смысл ("Ожидание"):</strong> Сколько раз число $\lambda$ "заложено" в ДНК оператора. Это теоретическая "вместимость" — сколько максимум собственных векторов мы надеемся получить для этого $\lambda$.
+                        </div>
+                    </div>
+                    <div class="bg-white border-2 border-indigo-100 rounded-xl p-6 shadow-sm hover:border-indigo-300 transition-colors">
+                        <h3 class="text-xl font-bold text-indigo-800 mb-4 border-b pb-2">Геометрическая $g(\lambda)$</h3>
+                        <p class="text-slate-700 mb-4">Размерность собственного подпространства $V_\lambda = \text{Ker}(\mathcal{A} - \lambda\mathcal{E})$.</p>
+                        <div class="bg-indigo-50 p-4 rounded-lg text-sm text-indigo-900 border border-indigo-200">
+                            <strong>Смысл ("Реальность"):</strong> Сколько <em>реально</em> независимых собственных направлений (векторов) мы смогли найти в пространстве для этого коэффициента растяжения $\lambda$.
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg text-center">
+                    <p class="text-lg font-medium text-slate-300 mb-2">Главное неравенство линейной алгебры (Лемма 5.1):</p>
+                    <div class="text-4xl font-bold text-emerald-400 bg-slate-900 inline-block px-8 py-4 rounded-lg shadow-inner border border-slate-700 tracking-wider">$g(\lambda) \le a(\lambda)$</div>
+                    <p class="mt-4 text-slate-400 text-sm max-w-2xl mx-auto">Реальность никогда не превосходит ожидания. Если $g(\lambda) = a(\lambda)$ для всех корней, оператор имеет идеальную диагональную структуру (диагонализируем).</p>
+                </div>
+            </section>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-hammer"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Доказательство неравенства</h2>
+                </div>
+                <div class="pl-8 step-counter space-y-5 text-emerald-600">
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 1: Инвариантность $V_\lambda$</h4>
+                        <p class="text-sm">Собственное подпространство $V_\lambda$ инвариантно относительно оператора $\mathcal{A}$. (Если $\mathcal{A}x = \lambda x$, то образ вектора остаётся на той же прямой, а значит, внутри $V_\lambda$).</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-emerald-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 2: Выбор базиса</h4>
+                        <p class="text-sm mb-2">Выберем в $V_\lambda$ базис из $g(\lambda)$ векторов. Затем дополним его до базиса всего пространства $V$. В этом базисе матрица оператора примет уже знакомый нам блочно-треугольный вид:</p>
+                        <div class="bg-slate-50 px-3 py-2 rounded font-mono text-center border border-slate-200 font-bold text-lg">$A = \begin{pmatrix} \lambda E & D \\ 0 & C \end{pmatrix}$</div>
+                        <p class="text-xs text-slate-500 mt-2 text-center">Блок слева вверху равен $\lambda E$ размера $g(\lambda) \times g(\lambda)$, потому что на этих векторах оператор действует как умножение на $\lambda$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 3: Считаем определитель</h4>
+                        <p class="text-sm mb-2">Запишем характеристический многочлен для этой блочной матрицы. По свойству блочно-треугольных матриц, её определитель равен произведению определителей блоков на диагонали:</p>
+                        <div class="bg-slate-50 px-3 py-2 rounded font-mono text-center border border-slate-200">$\chi(t) = \det(tE - A) = \det(tE - \lambda E) \cdot \det(tE - C)$</div>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Финал</h4>
+                        <p class="text-sm mb-2">Блок $(tE - \lambda E)$ — это диагональная матрица размера $g(\lambda) \times g(\lambda)$, на диагонали которой стоят $(t - \lambda)$. Значит, её определитель равен $(t - \lambda)^{g(\lambda)}$.</p>
+                        <div class="bg-slate-50 px-3 py-2 rounded font-mono text-center border border-slate-200 text-emerald-800 mb-2">$\chi(t) = (t - \lambda)^{g(\lambda)} \cdot f(t)$</div>
+                        <p class="text-sm">Мы видим, что корень $\lambda$ встречается в многочлене $\chi(t)$ как минимум $g(\lambda)$ раз. Возможно, он есть ещё и внутри остатка $f(t)$, тогда его кратность будет больше. Но меньше $g(\lambda)$ она быть не может! Значит, $a(\lambda) \ge g(\lambda)$.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="ticket-10" class="ticket-section hidden space-y-12">
+            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-indigo-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    10. Диагонализируемый оператор. Критерий диагонализируемости оператора. Спектральное разложение диагонализируемого оператора.
+                </p>
+            </div>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-100 rounded-bl-full -z-10 opacity-50"></div>
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-grip-lines"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Понятие диагонализируемости</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white border-2 border-indigo-100 rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-indigo-800 mb-3 flex items-center"><i class="fas fa-book-open mr-2"></i> Определение</h3>
+                        <p class="text-slate-700 mb-4">Линейный оператор $\mathcal{A}$ в конечномерном пространстве называется <strong>диагонализируемым</strong>, если существует базис, в котором его матрица имеет диагональный вид:</p>
+                        <div class="text-center font-mono font-bold text-indigo-700 my-4 bg-indigo-50 p-3 rounded border border-indigo-100 text-lg">$A = \text{diag}(\lambda_1, \lambda_2, \dots, \lambda_n)$</div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-lightbulb mr-2 text-amber-600"></i> Суть (Связь с базисом)</h3>
+                            <p class="text-sm text-slate-700">Наличие диагональной матрицы означает, что все базисные векторы при действии оператора переходят в себя же с какими-то коэффициентами. То есть, <strong>диагонализируемость эквивалентна существованию базиса из собственных векторов</strong>. Это идеальная ситуация для любого оператора!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-check-double"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Критерий диагонализируемости (Теорема 6.2)</h2>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-xl mb-8">
+                    <p class="text-lg font-medium text-emerald-900 mb-3 text-center">Оператор диагонализируем <strong>тогда и только тогда</strong>, когда выполнены два условия:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-emerald-100">
+                            <h4 class="font-bold text-emerald-700 mb-1">1. Все корни в поле</h4>
+                            <p class="text-sm text-slate-600">Характеристический многочлен $\chi_{\mathcal{A}}(t)$ полностью раскладывается на линейные множители над полем $F$ (т.е. все его корни лежат в $F$).</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-emerald-100">
+                            <h4 class="font-bold text-emerald-700 mb-1">2. Ожидание = Реальность</h4>
+                            <p class="text-sm text-slate-600">Для <strong>каждого</strong> собственного значения $\lambda$ его геометрическая кратность равна алгебраической: $\mathbf{g(\lambda) = a(\lambda)}$.</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство</h3>
+                <div class="space-y-4 text-slate-700">
+                    <p>Диагонализируемость эквивалентна наличию собственного базиса. А базис из собственных векторов существует тогда и только тогда, когда пространство раскладывается в прямую сумму собственных подпространств:</p>
+                    <div class="text-center font-mono text-emerald-700 font-bold bg-slate-50 py-2 rounded border border-slate-200 w-full md:w-1/2 mx-auto">$V = \bigoplus_{i=1}^k V_{\lambda_i}$</div>
+                    <p>Возьмем размерности от обеих частей. Размерность всего пространства равна сумме размерностей подпространств (то есть сумме геометрических кратностей):</p>
+                    <div class="text-center font-mono text-slate-800 font-bold">$n = \dim V = g(\lambda_1) + g(\lambda_2) + \dots + g(\lambda_k)$</div>
+                    <p>С другой стороны, из предыдущего билета мы знаем, что $g(\lambda_i) \le a(\lambda_i)$. Также мы знаем, что сумма всех алгебраических кратностей не может превышать степень характеристического многочлена $n$:</p>
+                    <div class="text-center font-mono text-slate-800 font-bold">$\sum g(\lambda_i) \le \sum a(\lambda_i) \le n$</div>
+                    <div class="bg-slate-800 text-white p-4 rounded-xl shadow-md mt-4">
+                        <p class="text-sm font-medium"><strong>Вывод:</strong> Чтобы сумма геометрических кратностей $g(\lambda_i)$ дотянула до $n$ (и мы смогли собрать полный базис), необходимо и достаточно, чтобы выполнялись сразу две вещи: сумма $a(\lambda_i)$ должна быть равна $n$ (все корни в поле), и каждый $g(\lambda_i)$ должен быть обязан равен $a(\lambda_i)$.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-purple-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0"><i class="fas fa-layer-group"></i></div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Спектральное разложение</h2>
+                </div>
+                <p class="text-lg text-slate-700 mb-6">Если оператор диагонализируем, то $V = \bigoplus_{i=1}^k V_{\lambda_i}$. Это позволяет разложить сам оператор на простейшие составляющие — проекторы.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-6">
+                    <div class="bg-white border-2 border-purple-100 rounded-xl p-6 shadow-sm">
+                        <h3 class="text-xl font-bold text-purple-800 mb-3 border-b pb-2">Проекторы $\mathcal{P}_i$</h3>
+                        <p class="text-sm text-slate-600 mb-4">Определим оператор $\mathcal{P}_i$ как проектор на собственное подпространство $V_{\lambda_i}$ параллельно сумме всех остальных собственных подпространств. Для них выполняются свойства:</p>
+                        <ul class="space-y-2 text-sm font-mono text-purple-900 bg-purple-50 p-3 rounded">
+                            <li>1. $\mathcal{P}_i^2 = \mathcal{P}_i$ (идемпотентность)</li>
+                            <li>2. $\mathcal{P}_i \mathcal{P}_j = \mathcal{O}$ при $i \ne j$ (ортогональность проекторов)</li>
+                            <li>3. $\sum_{i=1}^k \mathcal{P}_i = \mathcal{E}$ (разложение тождественного оператора)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg h-full flex flex-col justify-center">
+                        <h3 class="text-xl font-bold mb-4 flex items-center text-purple-300"><i class="fas fa-magic mr-2"></i> Формула разложения</h3>
+                        <p class="text-slate-300 mb-4 text-sm">Любой диагонализируемый оператор можно представить как линейную комбинацию этих проекторов:</p>
+                        <div class="text-3xl font-bold text-emerald-400 bg-slate-900 py-4 px-2 rounded-lg shadow-inner border border-slate-700 text-center tracking-wider font-mono">$\mathcal{A} = \sum_{i=1}^k \lambda_i \mathcal{P}_i$</div>
+                    </div>
+                </div>
+                <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg mt-2">
+                    <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center"><i class="fas fa-eye mr-2 text-amber-600"></i> Физический смысл спектрального разложения</h3>
+                    <p class="text-sm text-slate-700">Мы берем любой сложный вектор и пропускаем его через систему «фильтров» $\mathcal{P}_i$. Каждый фильтр выделяет из вектора ту часть, которая живёт в его собственном пространстве $V_{\lambda_i}$. Затем оператор $\mathcal{A}$ просто домножает каждую отфильтрованную часть на её личный коэффициент растяжения $\lambda_i$, и мы складываем всё обратно. Сложная деформация расщепилась на набор независимых простых одномерных растяжений!</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="ticket-11" class="ticket-section space-y-12">
+            
+            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-emerald-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    11. Корневые векторы и корневое подпространство. Высота корневого вектора. Свойства корневых подпространств. Нильпотентный оператор.
+                </p>
+            </div>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-100 rounded-bl-full -z-10 opacity-50"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Корневые векторы и корневое подпространство</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white border border-emerald-200 rounded-xl p-6 shadow-sm">
+                        <h3 class="font-bold text-emerald-800 mb-3 border-b border-emerald-100 pb-2">Определения</h3>
+                        <ul class="space-y-4 text-sm text-slate-700">
+                            <li>
+                                <strong>Корневой вектор:</strong> Вектор $x \in V$ называется корневым вектором оператора $\mathcal{A}$, отвечающим собственному значению $\lambda$, если существует целое неотрицательное число $k$, такое что:
+                                <div class="bg-emerald-50 text-center font-mono font-bold py-2 my-2 rounded border border-emerald-100 text-emerald-800">
+                                    $(\mathcal{A} - \lambda\mathcal{E})^k x = 0$
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Высота корневого вектора:</strong> Наименьшее такое $k$ называется высотой вектора. (Собственные векторы — это корневые векторы высоты 1).
+                            </li>
+                            <li>
+                                <strong>Корневое подпространство ($V^\lambda$):</strong> Множество всех корневых векторов, отвечающих значению $\lambda$. Это объединение ядер всех степеней:
+                                <div class="bg-emerald-50 text-center font-mono font-bold py-2 my-2 rounded border border-emerald-100 text-emerald-800">
+                                    $V^\lambda = \bigcup_{i=1}^\infty \text{Ker}(\mathcal{A} - \lambda\mathcal{E})^i$
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть «на пальцах»
+                            </h3>
+                            <p class="text-sm text-slate-700">Если собственные векторы — это «идеальные» направления, которые оператор просто растягивает, то корневые векторы — это «почти идеальные» направления. Оператор их немного сдвигает, но если вычесть идеальное растяжение $\lambda\mathcal{E}$ несколько раз (высота $k$), то вектор окончательно выровняется и схлопнется в ноль.</p>
+                        </div>
+                        <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-blue-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-layer-group mr-2 text-blue-500"></i> Структура-Матрешка
+                            </h3>
+                            <p class="text-sm text-slate-700">Корневое подпространство образует цепочку вложенных ядер: 
+                            <br> $\text{Ker}(\mathcal{A}-\lambda \mathcal{E}) \le \text{Ker}(\mathcal{A}-\lambda \mathcal{E})^2 \le \dots \le V^\lambda$.
+                            <br>Каждое следующее ядро включает векторы всё большей высоты, пока рост не прекратится.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-teal-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-list-ol"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Свойства корневых подпространств (Теорема 7.1)</h2>
+                </div>
+
+                <div class="bg-teal-50 border border-teal-200 p-5 rounded-xl mb-8">
+                    <p class="text-lg font-medium text-teal-900 mb-3">Для корневого подпространства $V^\lambda$ выполняются 4 важнейших свойства:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-teal-100 flex items-start">
+                            <span class="font-bold text-teal-600 mr-2">1.</span>
+                            <p class="text-sm text-slate-700">Подпространство $V^\lambda$ <strong>инвариантно</strong> относительно оператора $\mathcal{A}$.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-teal-100 flex items-start">
+                            <span class="font-bold text-teal-600 mr-2">2.</span>
+                            <p class="text-sm text-slate-700">Ограничение $(\mathcal{A} - \lambda\mathcal{E})|_{V^\lambda}$ является <strong>нильпотентным</strong> оператором.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-teal-100 flex items-start">
+                            <span class="font-bold text-teal-600 mr-2">3.</span>
+                            <p class="text-sm text-slate-700">Ограничение $(\mathcal{A} - \mu\mathcal{E})|_{V^\lambda}$ <strong>невырождено</strong> при любом $\mu \ne \lambda$.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-teal-100 flex items-start">
+                            <span class="font-bold text-teal-600 mr-2">4.</span>
+                            <p class="text-sm text-slate-700">Размерность $\dim V^\lambda$ равна <strong>алгебраической кратности</strong> $a(\lambda)$.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательства свойств</h3>
+                <div class="pl-8 step-counter space-y-5 text-teal-600">
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Свойство 1 (Инвариантность)</h4>
+                        <p class="text-sm">Операторы $\mathcal{A}$ и $(\mathcal{A}-\lambda\mathcal{E})^k$ коммутируют. Если $x \in V^\lambda$, то $(\mathcal{A}-\lambda\mathcal{E})^k x = 0$. Применим к образу $\mathcal{A}x$: <br> $(\mathcal{A}-\lambda\mathcal{E})^k (\mathcal{A}x) = \mathcal{A} ((\mathcal{A}-\lambda\mathcal{E})^k x) = \mathcal{A}(0) = 0$. Следовательно, $\mathcal{A}x$ тоже лежит в $V^\lambda$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Свойство 2 (Нильпотентность)</h4>
+                        <p class="text-sm">Так как пространство конечномерно, цепочка вложенных ядер $\text{Ker}(\mathcal{A}-\lambda\mathcal{E})^i$ не может расти бесконечно. На каком-то шаге $m$ она стабилизируется, и $V^\lambda = \text{Ker}(\mathcal{A}-\lambda\mathcal{E})^m$. А это и значит, что оператор $(\mathcal{A}-\lambda\mathcal{E})^m = 0$ на всём $V^\lambda$, то есть он нильпотентен.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Свойство 3 (Невырожденность при $\mu \ne \lambda$)</h4>
+                        <p class="text-sm">Ограничение $\mathcal{A}|_{V^\lambda} = \mathcal{N} + \lambda\mathcal{E}$, где $\mathcal{N}$ нильпотентен. Матрица оператора $(\mathcal{A}-\mu\mathcal{E})|_{V^\lambda} = \mathcal{N} + (\lambda - \mu)\mathcal{E}$ имеет на главной диагонали элементы $(\lambda - \mu)$. Раз $\lambda \ne \mu$, на диагонали нет нулей $\implies$ определитель не равен нулю $\implies$ оператор невырожден.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Свойство 4 (Размерность)</h4>
+                        <p class="text-sm">Мы доказали это ранее через характеристический многочлен блочной матрицы: корень $\lambda$ не может встретиться в блоке для дополняющего подпространства (иначе был бы вектор, переходящий в себя, что сделало бы его корневым и он должен был бы лежать в $V^\lambda$). Значит, $a(\lambda)$ в точности совпадает с $\dim V^\lambda$.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Нильпотентный оператор</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <div class="bg-rose-50 border border-rose-200 p-5 rounded-xl">
+                            <h3 class="font-bold text-rose-900 mb-2 border-b border-rose-200 pb-1">Определение</h3>
+                            <p class="text-sm text-slate-700">Линейный оператор $\mathcal{N}$ называется <strong>нильпотентным</strong>, если существует такое целое неотрицательное число $m$, что $\mathcal{N}^m = \mathcal{O}$ (нулевой оператор).</p>
+                            <p class="text-sm text-slate-700 mt-2">Наименьшее из таких $m$ называют <strong>высотой</strong> нильпотентного оператора.</p>
+                        </div>
+                        
+                        <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
+                            <h3 class="font-bold text-slate-800 mb-2"><i class="fas fa-link text-slate-400 mr-2"></i>Зачем он нужен?</h3>
+                            <p class="text-sm text-slate-600">Для нильпотентного оператора <em>все</em> векторы пространства являются корневыми с собственным значением 0.</p>
+                            <p class="text-sm text-slate-600 mt-2">В силу свойства 2 (из предыдущего пункта), изучение <strong>абсолютно любого оператора</strong> на его корневом подпространстве $V^\lambda$ сводится к простому сдвигу: $\mathcal{A}|_{V^\lambda} = \lambda\mathcal{E} + \mathcal{N}$. Изучив нильпотентные операторы, мы поймём структуру любых операторов (именно это ведет к Жордановой Нормальной Форме).</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg h-full flex flex-col justify-center">
+                        <h3 class="text-xl font-bold mb-4 flex items-center text-rose-300">
+                            <i class="fas fa-water mr-2"></i> Геометрия (Водопад)
+                        </h3>
+                        <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+                            Представь нильпотентный оператор как каскадный водопад. Если применить его один раз ($\mathcal{N}$), векторы спускаются на один уровень ниже (попадают в меньшее подпространство). Применить дважды ($\mathcal{N}^2$) — падают еще ниже.
                         </p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            В итоге, после $m$ шагов (высота водопада), абсолютно <em>всё</em> пространство смывается на самое дно — в нулевой вектор. Ничто не может уцелеть под действием $\mathcal{N}^m$.
+                        </p>
+                        <div class="mt-6 flex justify-center text-rose-400 space-x-2">
+                            <i class="fas fa-long-arrow-alt-down"></i>
+                            <i class="fas fa-long-arrow-alt-down text-lg mt-1"></i>
+                            <i class="fas fa-long-arrow-alt-down text-xl mt-2"></i>
+                            <i class="fas fa-long-arrow-alt-down text-2xl mt-3"></i>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1002,8 +1479,8 @@
             activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md', 'transform', 'hover:-translate-y-0.5');
         }
         
-        // Default to Ticket 6
-        switchTab('ticket-6');
+        // По умолчанию открываем 11 билет
+        switchTab('ticket-11');
     </script>
 </body>
 </html>
