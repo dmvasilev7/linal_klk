@@ -155,6 +155,18 @@
             <button id="btn-ticket-14" onclick="switchTab('ticket-14')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
                 Билет 14
             </button>
+            <button id="btn-ticket-15" onclick="switchTab('ticket-15')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 15
+            </button>
+            <button id="btn-ticket-16" onclick="switchTab('ticket-16')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 16
+            </button>
+            <button id="btn-ticket-17" onclick="switchTab('ticket-17')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 17
+            </button>
+            <button id="btn-ticket-18" onclick="switchTab('ticket-18')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 18
+            </button>
         </div>
     </div>
 
@@ -1730,133 +1742,339 @@
             </section>
 
         </div>
-        <div id="ticket-14" class="ticket-section hidden space-y-12">
+        <div id="ticket-13" class="ticket-section hidden space-y-12">
             
-            <div class="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-2xl p-6 md:p-8 shadow-sm">
-                <h2 class="text-sm uppercase tracking-wider text-purple-600 font-bold mb-2">Полная формулировка</h2>
+            <div class="bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-teal-600 font-bold mb-2">Полная формулировка</h2>
                 <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
-                    14. Связь между жордановыми клетками и диаграммами Юнга. Теорема о структуре оператора. Жорданова клетка. Жорданова нормальная форма.
+                    13. Понятие циклического подпространства. Жорданова цепочка. Свойства циклических подпространств. Теорема о структуре нильпотентного оператора. Жорданов базис. Нильпотентная жорданова клетка.
                 </p>
             </div>
 
-            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-purple-500">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-bl-full -z-10 opacity-50"></div>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-teal-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-teal-100 rounded-bl-full -z-10 opacity-50"></div>
                 
                 <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-border-all"></i>
+                    <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-redo"></i>
                     </div>
-                    <h2 class="text-3xl font-bold text-slate-900">1. Жорданова клетка и Жорданова нормальная форма</h2>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Циклическое подпространство</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white border-2 border-purple-100 rounded-xl p-6 shadow-sm">
-                        <h3 class="text-lg font-bold text-purple-800 mb-3 border-b pb-2">Жорданова клетка $J_k(\lambda)$</h3>
-                        <p class="text-slate-700 text-sm mb-4">Это квадратная матрица порядка $k$, у которой на главной диагонали стоит собственное значение $\lambda$, чуть выше (на наддиагонали) стоят единицы, а все остальные элементы — нули.</p>
-                        <div class="text-center font-mono font-bold text-purple-700 bg-purple-50 p-3 rounded border border-purple-100 text-sm overflow-x-auto">
-                            $J_k(\lambda) = \begin{pmatrix} \lambda & 1 & 0 & \dots & 0 \\ 0 & \lambda & 1 & \dots & 0 \\ \dots & \dots & \dots & \ddots & \dots \\ 0 & 0 & 0 & \dots & 1 \\ 0 & 0 & 0 & \dots & \lambda \end{pmatrix}$
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-teal-50/50 border border-teal-100 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-teal-800 mb-3 flex items-center">
+                            <i class="fas fa-book-open mr-2"></i> Определение
+                        </h3>
+                        <p class="text-slate-700 text-sm mb-3">Пусть $\mathcal{N}$ — нильпотентный оператор, а $x \in V$ — корневой вектор высоты $k$ (то есть $\mathcal{N}^k x = 0$, но $\mathcal{N}^{k-1} x \neq 0$).</p>
+                        <p class="text-slate-700 text-sm mb-3"><strong>Циклическим подпространством</strong>, порождённым вектором $x$, называется линейная оболочка векторов, полученных последовательным применением оператора $\mathcal{N}$ к $x$:</p>
+                        <div class="text-center font-mono font-bold text-teal-700 my-4 bg-white p-3 rounded shadow-sm border border-teal-200">
+                            $U = \langle x, \mathcal{N}x, \mathcal{N}^2x, \dots, \mathcal{N}^{k-1}x \rangle$
                         </div>
-                        <p class="text-xs text-slate-500 mt-3 italic">Она отвечает одному циклическому подпространству (одной жордановой цепочке векторов).</p>
                     </div>
 
-                    <div class="bg-white border-2 border-pink-100 rounded-xl p-6 shadow-sm">
-                        <h3 class="text-lg font-bold text-pink-800 mb-3 border-b pb-2">Жорданова нормальная форма (ЖНФ)</h3>
-                        <p class="text-slate-700 text-sm mb-4">Это блочно-диагональная матрица $J$, на главной диагонали которой расположены жордановы клетки (возможно, разных размеров и с разными собственными значениями), а вне клеток — нули.</p>
-                        <div class="text-center font-mono font-bold text-pink-700 bg-pink-50 p-3 rounded border border-pink-100 text-sm overflow-x-auto">
-                            $J = \begin{pmatrix} J_{k_1}(\lambda_1) & 0 & \dots & 0 \\ 0 & J_{k_2}(\lambda_2) & \dots & 0 \\ \dots & \dots & \ddots & \dots \\ 0 & 0 & \dots & J_{k_s}(\lambda_s) \end{pmatrix}$
-                        </div>
-                        <p class="text-xs text-slate-500 mt-3 italic">Это самый простой и красивый вид, к которому можно привести матрицу оператора.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500 shadow-xl">
-                <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold text-slate-900">2. Теорема о структуре оператора</h2>
-                </div>
-
-                <div class="bg-rose-50 border border-rose-200 p-6 rounded-xl mb-8 text-center shadow-sm">
-                    <p class="text-lg font-medium text-rose-900 mb-3">Если характеристический многочлен оператора $\mathcal{A}$ полностью раскладывается на линейные сомножители (все корни лежат в поле $F$), то:</p>
-                    <div class="text-2xl font-bold text-rose-700 bg-white inline-block px-6 py-3 rounded-lg border border-rose-100 shadow-inner my-2">
-                        Существует базис, в котором матрица оператора имеет ЖНФ.
-                    </div>
-                    <p class="text-sm text-rose-800 mt-3">Эта форма <strong>единственна</strong> с точностью до порядка следования жордановых клеток на диагонали.</p>
-                </div>
-
-                <div class="space-y-4 text-slate-700">
-                    <h3 class="text-xl font-bold text-slate-800 mb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Суть доказательства (Сборка пазла)</h3>
-                    <ul class="list-none space-y-3 pl-2">
-                        <li class="flex items-start">
-                            <span class="text-rose-500 font-bold mr-3">1.</span>
-                            <span>Сначала пространство $V$ разбивается в прямую сумму корневых подпространств $V^{\lambda_i}$ (по Теореме 7.3 из прошлого билета).</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-rose-500 font-bold mr-3">2.</span>
-                            <span>Внутри каждого корневого подпространства $V^{\lambda_i}$ оператор действует как $\mathcal{A} = \lambda_i \mathcal{E} + \mathcal{N}$, где $\mathcal{N}$ — нильпотентный оператор.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-rose-500 font-bold mr-3">3.</span>
-                            <span>По Теореме 8.1 (о структуре нильпотентного оператора), каждое $V^{\lambda_i}$ разбивается в прямую сумму <em>циклических подпространств</em>, в каждом из которых матрица имеет вид клетки $J_k(0)$.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-rose-500 font-bold mr-3">4.</span>
-                            <span>Добавляя обратно сдвиг $\lambda_i \mathcal{E}$, нули на диагонали в этих клетках превращаются в $\lambda_i$. Мы получаем клетку $J_k(\lambda_i)$. Пазл собран! Базис, составленный из всех этих жордановых цепочек, называется <strong>жордановым базисом</strong>.</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500">
-                <div class="flex items-center mb-8">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold text-slate-900">3. Диаграммы Юнга и вычисление ЖНФ</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-8">
-                    <div class="space-y-4">
-                        <div class="bg-indigo-50 border border-indigo-100 p-5 rounded-xl">
-                            <h3 class="font-bold text-indigo-900 mb-2 border-b border-indigo-200 pb-1">Что такое Диаграмма Юнга?</h3>
-                            <p class="text-sm text-slate-700 mb-2">Для каждого собственного значения $\lambda$ строится своя диаграмма Юнга (для нильпотентного оператора $\mathcal{N} = \mathcal{A} - \lambda\mathcal{E}$). Она наглядно показывает структуру жордановых клеток.</p>
-                            <ul class="space-y-2 text-sm text-slate-700">
-                                <li><i class="fas fa-square text-indigo-400 mr-2"></i> <strong>Один столбец</strong> = одна жорданова цепочка (одна жорданова клетка).</li>
-                                <li><i class="fas fa-arrows-alt-v text-indigo-400 mr-2"></i> <strong>Высота столбца</strong> = размер этой жордановой клетки.</li>
-                                <li><i class="fas fa-layer-group text-indigo-400 mr-2"></i> <strong>Количество клеток в диаграмме</strong> = алгебраическая кратность $a(\lambda)$.</li>
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Свойства циклических подпространств
+                            </h3>
+                            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-4">
+                                <li>Это <strong>наименьшее $\mathcal{N}$-инвариантное подпространство</strong>, содержащее вектор $x$.</li>
+                                <li>Векторы $x, \mathcal{N}x, \dots, \mathcal{N}^{k-1}x$ всегда <strong>линейно независимы</strong>, поэтому они образуют базис $U$.</li>
+                                <li>Размерность циклического подпространства $\dim U = k$ в точности равна высоте порождающего вектора $x$.</li>
                             </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg h-full">
-                        <h3 class="text-lg font-bold mb-4 flex items-center text-indigo-300">
-                            <i class="fas fa-calculator mr-2"></i> Формулы для поиска размеров
-                        </h3>
-                        <p class="text-sm text-slate-300 mb-4">Чтобы найти ЖНФ матрицы без поиска самого базиса, достаточно посчитать ранги степеней матрицы $(\mathcal{A} - \lambda\mathcal{E})$.</p>
-                        
-                        <p class="text-xs text-slate-400 mb-1 uppercase tracking-wide">Обозначим ранг:</p>
-                        <div class="bg-slate-900 p-2 rounded text-center text-indigo-400 font-mono mb-4 text-sm border border-slate-700">
-                            $r_k(\lambda) = \text{rk}(\mathcal{A} - \lambda\mathcal{E})^k$
+                <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство линейной независимости</h3>
+                <div class="pl-8 step-counter space-y-4 text-teal-600">
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p class="text-sm">Предположим, есть линейная комбинация, равная нулю: $\alpha_0 x + \alpha_1 \mathcal{N}x + \dots + \alpha_{k-1} \mathcal{N}^{k-1}x = 0$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-teal-400">
+                        <p class="text-sm">Применим оператор $\mathcal{N}^{k-1}$ к обеим частям равенства. Так как $\mathcal{N}^k x = 0$, все слагаемые, кроме первого, обнулятся:<br>
+                        $\alpha_0 \mathcal{N}^{k-1}x + 0 + \dots + 0 = 0$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p class="text-sm">Поскольку высота вектора $x$ равна $k$, вектор $\mathcal{N}^{k-1}x \neq 0$. Отсюда следует, что $\alpha_0 = 0$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p class="text-sm">Повторяя этот процесс (применяя $\mathcal{N}^{k-2}$ и т.д.), мы последовательно получим, что все коэффициенты $\alpha_i$ равны нулю. Векторы линейно независимы!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-blue-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Жорданова цепочка и клетка</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <div class="bg-blue-50 border border-blue-200 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3 border-b border-blue-200 pb-2">Жорданова цепочка</h3>
+                        <p class="text-sm text-slate-700 mb-4">Если мы возьмем базис циклического подпространства и перенумеруем его в обратном порядке: $e_1 = \mathcal{N}^{k-1}x, e_2 = \mathcal{N}^{k-2}x, \dots, e_k = x$, то мы получим <strong>жорданову цепочку</strong>:</p>
+                        <div class="text-center font-mono font-bold text-blue-800 bg-white p-3 rounded-lg shadow-inner border border-blue-100 text-lg mb-4 overflow-x-auto">
+                            $0 \xleftarrow{\mathcal{N}} e_1 \xleftarrow{\mathcal{N}} e_2 \xleftarrow{\mathcal{N}} \dots \xleftarrow{\mathcal{N}} e_k$
                         </div>
+                        <p class="text-sm text-slate-600 italic">Действие оператора сдвигает каждый вектор на одну позицию влево, а самый левый смывает в ноль.</p>
+                    </div>
 
-                        <p class="text-xs text-slate-400 mb-1 uppercase tracking-wide">Количество клеток размера $k \times k$:</p>
-                        <div class="bg-slate-900 p-3 rounded text-center text-emerald-400 font-mono font-bold text-lg border border-slate-700">
-                            $n_k(\lambda) = r_{k-1}(\lambda) - 2r_k(\lambda) + r_{k+1}(\lambda)$
+                    <div class="bg-slate-800 text-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-blue-300 mb-3 border-b border-slate-600 pb-2">Нильпотентная жорданова клетка</h3>
+                        <p class="text-sm text-slate-300 mb-3">В базисе, состоящем из жордановой цепочки, матрица оператора принимает канонический вид $J_k(0)$ — <strong>нильпотентную жорданову клетку</strong> порядка $k$:</p>
+                        <div class="text-center font-mono text-emerald-400 bg-slate-900 p-3 rounded-lg border border-slate-700 text-lg overflow-x-auto">
+                            $J_k(0) = \begin{pmatrix} 0 & 1 & 0 & \dots & 0 \\ 0 & 0 & 1 & \dots & 0 \\ \dots & \dots & \dots & \ddots & \dots \\ 0 & 0 & 0 & \dots & 1 \\ 0 & 0 & 0 & \dots & 0 \end{pmatrix}$
+                        </div>
+                        <p class="text-xs text-slate-400 mt-3">Единицы стоят строго над главной диагональю, так как $\mathcal{N}e_j = e_{j-1}$ (образ $j$-го вектора — это $(j-1)$-й вектор).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Теорема о структуре нильпотентного оператора</h2>
+                </div>
+
+                <div class="bg-emerald-50 border border-emerald-200 p-6 rounded-xl mb-8 text-center shadow-sm">
+                    <p class="text-lg font-medium text-emerald-900 mb-3">Пусть $\mathcal{N}$ — нильпотентный оператор на $V$. Тогда существует разложение пространства $V$ в <strong>прямую сумму циклических подпространств</strong> этого оператора:</p>
+                    <div class="text-3xl font-bold text-emerald-700 bg-white inline-block px-8 py-3 rounded-lg border border-emerald-100 shadow-inner my-2">
+                        $V = \bigoplus_{i=1}^{\dim \text{Ker} \mathcal{N}} U_i$
+                    </div>
+                    <p class="text-sm text-emerald-800 mt-3">Базис из объединения таких цепочек называется <strong>жордановым базисом</strong>. Матрица оператора в нём состоит из нильпотентных жордановых клеток по главной диагонали.</p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Полное доказательство (Индукция по размерности)</h3>
+                
+                <div class="pl-8 step-counter space-y-5 text-emerald-600">
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 1: База индукции</h4>
+                        <p class="text-sm">Индукция по $\dim V = n$. При $n=1$ нильпотентный оператор $\mathcal{N}$ обязан быть нулевым $\mathcal{N}=0$, теорема очевидно верна (пространство само является циклическим подпространством высоты 1).</p>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-emerald-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 2: Идея перехода и подпространство $\text{Im} \mathcal{N}$</h4>
+                        <p class="text-sm mb-2">Пусть $n \ge 2$. Если $\text{Im} \mathcal{N} = 0$, то $\mathcal{N} = 0$, и теорема тривиальна.</p>
+                        <p class="text-sm mb-2">Может ли $\text{Im} \mathcal{N} = V$? Нет. Если $\mathcal{N}(V) = V$, то применяя $\mathcal{N}$ много раз, мы получим $\mathcal{N}^m(V) = V$. Но $\mathcal{N}$ нильпотентен ($\mathcal{N}^m = 0$), значит $0 = V$, противоречие.</p>
+                        <p class="text-sm font-bold text-emerald-700">Следовательно, $0 < \dim \text{Im} \mathcal{N} < \dim V$. Мы можем применить предположение индукции к подпространству $\text{Im} \mathcal{N}$!</p>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 3: Применяем индукцию к образу</h4>
+                        <p class="text-sm mb-2">По предположению индукции, $\text{Im} \mathcal{N}$ раскладывается в прямую сумму циклических подпространств, порожденных некоторыми векторами $y_1, y_2, \dots, y_s$. Базис $\text{Im} \mathcal{N}$ выглядит так:</p>
+                        <div class="bg-slate-50 p-3 rounded font-mono text-xs border border-slate-200 mb-2">
+                            $y_1, \mathcal{N}y_1, \dots, \mathcal{N}^{p_1-1}y_1$<br>
+                            $y_2, \mathcal{N}y_2, \dots, \mathcal{N}^{p_2-1}y_2$<br>
+                            $\dots$<br>
+                            $y_s, \mathcal{N}y_s, \dots, \mathcal{N}^{p_s-1}y_s$
+                        </div>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 4: Поднимаем базис (строим цепочки для V)</h4>
+                        <p class="text-sm mb-2">Так как каждый вектор $y_i$ лежит в <em>образе</em> $\text{Im} \mathcal{N}$, то по определению образа существуют такие векторы $x_i \in V$, что $\mathcal{N}(x_i) = y_i$.</p>
+                        <p class="text-sm">Теперь у нас есть более длинные жордановы цепочки для всего пространства $V$, начинающиеся с $x_i$:</p>
+                        <div class="bg-emerald-50 p-2 rounded font-mono text-sm border border-emerald-200 mt-2 font-bold text-emerald-800">
+                            $x_i, y_i, \mathcal{N}y_i, \dots, \mathcal{N}^{p_i-1}y_i$ (длина каждой цепочки увеличилась на 1).
+                        </div>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 5: Добиваем Ядро (Базис $\text{Ker} \mathcal{N}$)</h4>
+                        <p class="text-sm mb-2">Векторы в самом конце наших цепочек, то есть $\mathcal{N}^{p_1-1}y_1, \dots, \mathcal{N}^{p_s-1}y_s$, переходят в ноль, а значит, лежат в $\text{Ker} \mathcal{N}$.</p>
+                        <p class="text-sm">Дополним эти $s$ векторов линейно независимыми векторами $w_1, \dots, w_l \in \text{Ker} \mathcal{N}$ до полного базиса подпространства $\text{Ker} \mathcal{N}$. Каждый такой вектор $w_j$ образует маленькую жорданову цепочку длины 1.</p>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 6: Линейная независимость и Разложение</h4>
+                        <p class="text-sm mb-2">Мы собрали огромное количество векторов: $x_i$ и их образы, плюс векторы $w_j$. Докажем, что они образуют базис всего $V$.</p>
+                        <p class="text-sm mb-2"><strong>1. Линейная независимость:</strong> Если мы приравняем их линейную комбинацию к нулю и применим оператор $\mathcal{N}$, все $w_j$ обнулятся, а векторы длинных цепочек сдвинутся. Получится линейная комбинация базиса $\text{Im} \mathcal{N}$, равная нулю. В силу независимости базиса $\text{Im} \mathcal{N}$, все коэффициенты будут нулями. Оставшаяся часть обяжет и коэффициенты при $w_j$ быть нулями.</p>
+                        <p class="text-sm"><strong>2. Полнота:</strong> Количество наших векторов — это (размерность $\text{Im} \mathcal{N}$ + количество $x_i$) + (количество $w_j$). Но количество $x_i$ плюс количество $w_j$ равно в точности размерности $\text{Ker} \mathcal{N}$! А по теореме $\dim \text{Im} \mathcal{N} + \dim \text{Ker} \mathcal{N} = \dim V$. Существование разложения доказано.</p>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-rose-400">
+                        <h4 class="font-bold text-rose-800 mb-1">Шаг 7: Единственность структуры (Размеры клеток)</h4>
+                        <p class="text-sm mb-2">Сами циклические подпространства $U_i$ (и сам базис) <strong>не единственны</strong>. Мы могли выбрать другие векторы $x_i$ и $w_j$.</p>
+                        <p class="text-sm mb-2">Однако <strong>набор размерностей этих подпространств</strong> (то есть количество жордановых клеток каждого размера) <strong>строго единственен</strong>! Почему?</p>
+                        <p class="text-sm">Потому что количество цепочек длины $k$ (клеток размера $k \times k$) жестко задается формулой: <br>
+                        <span class="font-mono font-bold bg-rose-50 px-2 py-1 rounded inline-block mt-1">$n_k = \text{rk}(\mathcal{N}^{k-1}) - 2\text{rk}(\mathcal{N}^k) + \text{rk}(\mathcal{N}^{k+1})$</span><br>
+                        Ранги степеней оператора $\mathcal{N}$ — это объективные, не зависящие от базиса инварианты[cite: 745, 751]. Следовательно, структура матриц (набор клеток) для данного оператора всегда будет абсолютно одинаковой.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <div id="ticket-15" class="ticket-section hidden space-y-12">
+            
+            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-blue-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    15. Аннулирующий многочлен. Минимальный многочлен. Свойства минимального многочлена. Связь между минимальным многочленом и жордановой нормальной формой. Теорема Гамильтона — Кэли.
+                </p>
+            </div>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-blue-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-bl-full -z-10 opacity-50"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-eraser"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Многочлены от оператора и Аннулирующий многочлен</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
+                            <i class="fas fa-book-open mr-2"></i> Формулировка
+                        </h3>
+                        <p class="text-sm text-slate-700 mb-3">Если $f(t) = a_m t^m + a_{m-1} t^{m-1} + \dots + a_1 t + a_0$ — многочлен из кольца $F[t]$, а $\mathcal{A}$ — линейный оператор, то мы можем подставить оператор в многочлен:</p>
+                        <div class="text-center font-mono font-bold text-blue-700 my-4 bg-white p-3 rounded shadow-sm border border-blue-200">
+                            $f(\mathcal{A}) = a_m \mathcal{A}^m + \dots + a_1 \mathcal{A} + a_0 \mathcal{E}$
+                        </div>
+                        <p class="text-sm text-slate-700 mb-2"><strong>Аннулирующий многочлен:</strong> Это такой ненулевой многочлен $f(t)$, при подстановке в который оператора $\mathcal{A}$ (или его матрицы $A$) получается нулевой оператор $\mathcal{O}$ (или нулевая матрица):</p>
+                        <div class="text-center font-mono font-bold text-rose-600 bg-rose-50 p-2 rounded border border-rose-100">
+                            $f(\mathcal{A}) = \mathcal{O}$
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Суть «на пальцах»
+                            </h3>
+                            <p class="text-sm text-slate-700 mb-2">Оператор $\mathcal{A}^k$ — это применение оператора $k$ раз подряд. Многочлен от оператора — это сложная комбинация этих последовательных применений.</p>
+                            <p class="text-sm text-slate-700">Аннулирующий многочлен — это такой особый "рецепт" смешивания различных шагов оператора, который в итоге приводит любое действие в абсолютный ноль (полностью гасит оператор).</p>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-6 pattern-bg">
-                    <h3 class="text-sm font-bold text-amber-800 mb-3 uppercase tracking-wider flex items-center">
-                        <i class="fas fa-eye mr-2 text-amber-600"></i> Как работает формула $n_k(\lambda)$?
-                    </h3>
-                    <p class="text-sm text-slate-700 mb-3">В диаграмме Юнга <strong>ширина строки</strong> с номером $k$ (считая снизу вверх) равна $\dim \text{Ker} \mathcal{N}^k - \dim \text{Ker} \mathcal{N}^{k-1}$.</p>
-                    <p class="text-sm text-slate-700 mb-3">Количество столбцов, высота которых равна <em>ровно</em> $k$, — это разница между шириной $k$-й строки и шириной следующей $(k+1)$-й строки. То есть, насколько $k$-я строка длиннее $(k+1)$-й.</p>
-                    <p class="text-sm text-slate-700">Переходя от дефектов (размерностей ядер) к рангам по теореме $\dim \text{Ker} = n - \text{rk}$, мы и получаем эту красивую формулу с двойкой посередине. Это вторая конечная разность функции ранга!</p>
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-compress"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Минимальный многочлен и его свойства</h2>
+                </div>
+
+                <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-xl mb-8">
+                    <p class="text-lg text-emerald-900 mb-2"><strong>Минимальный многочлен $\mu_{\mathcal{A}}(t)$</strong> — это аннулирующий многочлен наименьшей степени со старшим коэффициентом, равным единице.</p>
+                </div>
+
+                <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-list-ul text-slate-400 mr-2"></i> Свойства минимального многочлена (Лемма 11.1)</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white border-2 border-slate-200 rounded-xl p-5 shadow-sm hover:border-emerald-300 transition-colors">
+                        <h4 class="font-bold text-emerald-700 mb-2">1. Существование и Единственность</h4>
+                        <p class="text-sm text-slate-600">Для любого линейного оператора в конечномерном пространстве минимальный многочлен всегда существует и притом только один.</p>
+                    </div>
+                    <div class="bg-white border-2 border-slate-200 rounded-xl p-5 shadow-sm hover:border-emerald-300 transition-colors">
+                        <h4 class="font-bold text-emerald-700 mb-2">2. Остаток от деления</h4>
+                        <p class="text-sm text-slate-600">Для любого многочлена $f(t)$, подстановка оператора $f(\mathcal{A})$ даёт ровно такой же результат, как и подстановка оператора в остаток от деления $f(t)$ на $\mu_{\mathcal{A}}(t)$.</p>
+                    </div>
+                    <div class="bg-white border-2 border-slate-200 rounded-xl p-5 shadow-sm hover:border-emerald-300 transition-colors">
+                        <h4 class="font-bold text-emerald-700 mb-2">3. Делимость</h4>
+                        <p class="text-sm text-slate-600">Многочлен $f(t)$ является аннулирующим тогда и только тогда, когда он нацело <strong>делится</strong> на минимальный многочлен $\mu_{\mathcal{A}}(t)$.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство (Существование и Единственность)</h3>
+                <div class="pl-8 step-counter space-y-4 text-emerald-600">
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Размерность пространства операторов</h4>
+                        <p class="text-sm">Пусть $\dim V = n$. Тогда пространство всех линейных операторов $\text{End}(V)$ имеет размерность $n^2$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-emerald-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Существование</h4>
+                        <p class="text-sm">Возьмем $n^2 + 1$ степеней оператора: $\mathcal{E}, \mathcal{A}, \mathcal{A}^2, \dots, \mathcal{A}^{n^2}$. Так как их количество больше размерности пространства ($n^2+1 > n^2$), они <strong>линейно зависимы</strong>. Значит, существует нетривиальная комбинация, равная нулевому оператору. Эта комбинация и задает аннулирующий многочлен (степени не выше $n^2$). Из всех таких выберем многочлен наименьшей степени и поделим на старший коэффициент.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Единственность</h4>
+                        <p class="text-sm">Предположим, что минимальных многочлена два: $\mu$ и $\tilde{\mu}$ (оба имеют одинаковую минимальную степень и старший коэффициент 1). Тогда их разность $\mu(t) - \tilde{\mu}(t)$ тоже аннулирует оператор, но старшие степени сократятся ($t^m - t^m = 0$), и мы получим аннулирующий многочлен <em>меньшей</em> степени. Противоречие с минимальностью! Значит $\mu(t) = \tilde{\mu}(t)$.</p>
+                    </div>
                 </div>
             </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Связь минимального многочлена и ЖНФ</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <div class="space-y-4">
+                        <p class="text-slate-700">Если оператор $\mathcal{A}$ задан блочно-диагональной матрицей (например, ЖНФ), то чтобы многочлен обнулил всю матрицу, он должен обнулять каждый её диагональный блок по отдельности.</p>
+                        <p class="text-slate-700">Следовательно, минимальный многочлен всей матрицы — это <strong>Наименьшее Общее Кратное (НОК)</strong> минимальных многочленов всех её жордановых клеток.</p>
+                        
+                        <div class="bg-indigo-50 p-4 rounded-lg font-mono text-sm border border-indigo-200 text-indigo-900">
+                            <strong>Минимальный многочлен одной жордановой клетки $J_k(\lambda)$:</strong><br>
+                            $\mu_{J_k}(t) = (t - \lambda)^k$
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 text-white p-6 rounded-xl shadow-lg h-full flex flex-col justify-center">
+                        <h3 class="text-xl font-bold text-indigo-300 mb-3 border-b border-slate-600 pb-2">Теорема 11.1 (Формула $\mu_{\mathcal{A}}$)</h3>
+                        <p class="text-sm text-slate-300 mb-4">Над полем $\mathbb{C}$ минимальный многочлен всегда имеет вид:</p>
+                        <div class="text-center font-mono font-bold text-emerald-400 bg-slate-900 p-3 rounded border border-slate-700 text-lg mb-4">
+                            $\mu_{\mathcal{A}}(t) = (t-\lambda_1)^{k_1} (t-\lambda_2)^{k_2} \dots (t-\lambda_s)^{k_s}$
+                        </div>
+                        <ul class="text-sm text-slate-400 space-y-2">
+                            <li><i class="fas fa-check text-emerald-500 mr-2"></i> $\lambda_i$ — все различные собственные значения.</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2"></i> $k_i$ — размер <strong>самой большой</strong> жордановой клетки для данного собственного значения $\lambda_i$.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-chess-knight"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">4. Теорема Гамильтона — Кэли</h2>
+                </div>
+
+                <div class="bg-rose-50 border border-rose-200 p-6 rounded-xl mb-8 text-center shadow-sm">
+                    <p class="text-xl font-medium text-rose-900 mb-2">Характеристический многочлен оператора является аннулирующим для этого оператора:</p>
+                    <div class="text-4xl font-bold text-rose-700 bg-white inline-block px-8 py-3 rounded-lg border border-rose-100 shadow-inner my-2 font-mono">
+                        $\chi_{\mathcal{A}}(\mathcal{A}) = \mathcal{O}$
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div class="bg-white border-2 border-slate-200 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство</h3>
+                        <p class="text-sm text-slate-700 mb-3">Вспомним вид характеристического многочлена (где $a(\lambda_i)$ — алгебраическая кратность):</p>
+                        <div class="bg-slate-50 p-2 rounded text-center font-mono text-sm border border-slate-200 mb-3">
+                            $\chi_{\mathcal{A}}(t) = \prod_{i=1}^s (t - \lambda_i)^{a(\lambda_i)}$
+                        </div>
+                        <p class="text-sm text-slate-700 mb-3">Сравним со степенью минимального многочлена $\mu_{\mathcal{A}}(t)$ из предыдущего пункта. Там степень равна $k_i$ (размер самой большой жордановой клетки).</p>
+                        <p class="text-sm text-slate-700 mb-3">Сумма размеров <em>всех</em> жордановых клеток для $\lambda_i$ в точности равна алгебраической кратности $a(\lambda_i)$. Значит, размер самой большой клетки <strong>не может превышать</strong> алгебраическую кратность: $k_i \le a(\lambda_i)$.</p>
+                        <p class="text-sm text-slate-700 font-bold text-rose-700">Следовательно, характеристический многочлен нацело делится на минимальный. А раз минимальный многочлен аннулирует оператор, то и кратный ему характеристический многочлен тоже его аннулирует!</p>
+                    </div>
+
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg h-full">
+                        <h3 class="text-xl font-bold text-rose-300 mb-3 border-b border-slate-600 pb-2"><i class="fas fa-lightbulb mr-2"></i> Мощь теоремы</h3>
+                        <p class="text-sm text-slate-300 mb-4">
+                            Теорема Гамильтона-Кэли — один из главных инструментов для вычислений в линейной алгебре.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-400">
+                            <li><i class="fas fa-arrow-right text-rose-400 mr-2"></i> <strong>Снижение степеней:</strong> Она позволяет выразить любую высокую степень матрицы (например, $A^{100}$) через степени матрицы, меньшие $n$.</li>
+                            <li><i class="fas fa-arrow-right text-rose-400 mr-2"></i> <strong>Поиск обратной матрицы:</strong> Если $\chi(A) = 0$, можно вынести $A$ за скобки, оставив свободный член, и выразить $A^{-1}$ как многочлен от $A$.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
         </div>                    
     </main>
 
