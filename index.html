@@ -1460,26 +1460,51 @@
                     <h2 class="text-3xl font-bold text-slate-900">1. Линейная независимость (Теорема 7.2)</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-cyan-50/50 border border-cyan-100 rounded-xl p-6">
-                        <h3 class="text-lg font-bold text-cyan-800 mb-3 flex items-center">
-                            <i class="fas fa-book-open mr-2"></i> Формулировка
-                        </h3>
-                        <p class="text-slate-700 font-medium text-lg leading-relaxed">
-                            Корневые подпространства, отвечающие различным собственным значениям, линейно независимы.
-                        </p>
+                <div class="bg-cyan-50 border border-cyan-200 p-5 rounded-xl mb-8 text-center">
+                    <p class="text-xl font-bold text-cyan-900">Теорема</p>
+                    <p class="mt-2 text-cyan-800 text-lg max-w-3xl mx-auto">
+                        Корневые подпространства $V^{\lambda_1}, V^{\lambda_2}, \dots, V^{\lambda_k}$, отвечающие попарно различным собственным значениям оператора $\mathcal{A}$, <strong>линейно независимы</strong>.
+                    </p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство (Метод "Аннулятора")</h3>
+                <p class="text-slate-600 mb-6 italic border-l-4 border-slate-300 pl-4 py-1">Это элегантное доказательство строится на применении оператора, который "убивает" все векторы в сумме, кроме одного, опираясь на свойства из 11-го билета.</p>
+
+                <div class="pl-8 step-counter space-y-5 text-cyan-600">
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 1: Предположение от противного</h4>
+                        <p class="text-sm mb-2">Предположим, что существует линейная комбинация ненулевых корневых векторов (где каждый $x_i \in V^{\lambda_i}$), равная нулю:</p>
+                        <div class="bg-slate-50 px-3 py-2 rounded font-mono text-center border border-slate-200 text-cyan-700 font-bold">
+                            $x_1 + x_2 + \dots + x_k = 0$
+                        </div>
+                    </div>
+                    
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 2: Характеристика векторов</h4>
+                        <p class="text-sm">По определению корневого вектора, для каждого $x_i$ существует своя высота $m_i$, такая что оператор $(\mathcal{A} - \lambda_i \mathcal{E})^{m_i}$ полностью обнуляет вектор $x_i$: <br><span class="font-mono bg-slate-50 px-1 rounded">$(\mathcal{A} - \lambda_i \mathcal{E})^{m_i} x_i = 0$</span>.</p>
                     </div>
 
-                    <div class="space-y-6">
-                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5">
-                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
-                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> О доказательстве
-                            </h3>
-                            <p class="text-sm text-slate-700">
-                                В курсе линейной алгебры это доказывается аналогично доказательству теоремы 6.1 (которую мы разбирали в билете 8) методом математической индукции, но здесь возникает значительно больше тонких нюансов, связанных со структурой нильпотентных операторов.
-                            </p>
-                            <p class="text-sm text-slate-500 mt-2 italic">Для глубокого понимания всех тонкостей этого доказательства рекомендуется обратиться к классическим учебникам, таким как «Курс алгебры» Э. Б. Винберга.</p>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-cyan-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 3: Конструируем "Убийцу" (Оператор-аннулятор)</h4>
+                        <p class="text-sm mb-2">Составим мощный линейный оператор $\mathcal{F}$, перемножив все обнуляющие скобки для всех векторов, <strong>кроме первого ($x_1$)</strong>:</p>
+                        <div class="bg-slate-50 px-3 py-2 rounded font-mono text-center border border-slate-200">
+                            $\mathcal{F} = (\mathcal{A} - \lambda_2 \mathcal{E})^{m_2} \dots (\mathcal{A} - \lambda_k \mathcal{E})^{m_k}$
                         </div>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 4: Применяем оператор</h4>
+                        <p class="text-sm mb-2">Подействуем нашим оператором $\mathcal{F}$ на исходное равенство суммы. Так как $\mathcal{F}$ линеен, он применится к каждому слагаемому отдельно. Поскольку все скобки коммутируют между собой, для каждого $x_i$ (кроме $x_1$) внутри $\mathcal{F}$ найдется его "смертельная" скобка $(\mathcal{A} - \lambda_i \mathcal{E})^{m_i}$, которая превратит его в ноль. В итоге выживет только первый вектор:</p>
+                        <div class="bg-slate-50 px-3 py-2 rounded font-mono text-center border border-slate-200 text-indigo-700">
+                            $\mathcal{F}(x_1) + 0 + \dots + 0 = \mathcal{F}(0) \implies \mathcal{F}(x_1) = 0$
+                        </div>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 5: Финал (Связь с Билетом 11)</h4>
+                        <p class="text-sm mb-2">Вспомним Свойство 3 из прошлого билета: оператор $(\mathcal{A} - \mu\mathcal{E})$ <strong>невырожден</strong> (обратим) на корневом подпространстве $V^{\lambda_1}$ при любом $\mu \neq \lambda_1$.</p>
+                        <p class="text-sm">Наш оператор $\mathcal{F}$ состоит исключительно из перемножения таких невырожденных скобок (ведь $\lambda_2, \dots, \lambda_k \neq \lambda_1$). Произведение невырожденных операторов — это невырожденный оператор. Но невырожденный оператор может перевести в ноль <strong>только нулевой вектор</strong>!</p>
+                        <p class="text-sm font-bold text-emerald-600 mt-2">Вывод: $x_1 = 0$. Аналогично можно "убить" все векторы, кроме $x_2$, доказав что $x_2 = 0$, и так далее. Противоречие. Корневые подпространства линейно независимы!</p>
                     </div>
                 </div>
             </section>
@@ -1493,25 +1518,37 @@
                 </div>
 
                 <div class="bg-indigo-50 border border-indigo-200 p-5 rounded-xl mb-8">
-                    <p class="text-lg font-medium text-indigo-900 mb-3">Если характеристический многочлен $\chi_{\mathcal{A}}(x)$ раскладывается на линейные сомножители (что всегда верно, например, над полем комплексных чисел $\mathbb{C}$), то:</p>
+                    <p class="text-lg font-medium text-indigo-900 mb-3">Если характеристический многочлен $\chi_{\mathcal{A}}(x)$ полностью раскладывается на линейные сомножители над полем $F$ (что всегда верно, например, над полем комплексных чисел $\mathbb{C}$), то пространство $V$ является прямой суммой корневых подпространств:</p>
                     
                     <div class="text-center font-mono font-bold text-indigo-800 bg-white p-4 rounded-lg shadow-sm border border-indigo-100 text-3xl my-4">
                         $V = \bigoplus_{i=1}^s V^{\lambda_i}$
                     </div>
                     
                     <p class="text-sm text-slate-600 text-center">
-                        где $\lambda_1, \dots, \lambda_s$ — различные корни характеристического многочлена $\chi_{\mathcal{A}}(x)$, а $V^{\lambda_i}$ — соответствующие им корневые подпространства.
+                        где $\lambda_1, \dots, \lambda_s$ — различные собственные значения оператора $\mathcal{A}$.
                     </p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-balance-scale text-slate-400 mr-2"></i> Доказательство (Через размерности)</h3>
+                <div class="space-y-4 text-slate-700 mb-8">
+                    <p>Доказательство элегантно опирается на подсчет размерностей:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Из первой теоремы этого билета мы знаем, что подпространства $V^{\lambda_i}$ линейно независимы. Значит, их обычная сумма является <strong>прямой суммой</strong>: $U = V^{\lambda_1} \oplus \dots \oplus V^{\lambda_s}$.</li>
+                        <li>Чему равна размерность этой суммы? Она равна сумме размерностей слагаемых: $\dim U = \sum_{i=1}^s \dim V^{\lambda_i}$.</li>
+                        <li>Из свойства 4 прошлого билета мы строго знаем, что размерность корневого подпространства равна алгебраической кратности: $\dim V^{\lambda_i} = a(\lambda_i)$. Значит, $\dim U = \sum_{i=1}^s a(\lambda_i)$.</li>
+                        <li>По условию теоремы, характеристический многочлен полностью раскладывается на линейные множители. Это означает, что сумма алгебраических кратностей всех его корней в точности равна степени многочлена, то есть размерности всего пространства $n$.</li>
+                        <li><strong>Итог:</strong> $\dim U = n = \dim V$. Поскольку $U$ является подпространством $V$ и имеет ту же размерность, что и $V$, они совпадают: $U = V$. Теорема доказана!</li>
+                    </ul>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                     <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg">
-                        <h3 class="text-xl font-bold text-indigo-300 mb-4 border-b border-slate-600 pb-2"><i class="fas fa-crown mr-2"></i> Суть и значение</h3>
+                        <h3 class="text-xl font-bold text-indigo-300 mb-4 border-b border-slate-600 pb-2"><i class="fas fa-crown mr-2"></i> Суть (Главная Структурная Теорема)</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-3">
-                            Это <strong>Главная Структурная Теорема</strong>. Если обычных собственных векторов не хватает, чтобы собрать из них базис всего пространства (геометрическая кратность меньше алгебраической), на помощь приходят корневые векторы.
+                            Эта теорема решает главную проблему линейной алгебры. Если обычных собственных векторов не хватает, чтобы собрать из них базис всего пространства (когда оператор не диагонализируем), на помощь приходят корневые векторы.
                         </p>
                         <p class="text-slate-300 text-sm leading-relaxed">
-                            Они «добирают» недостающую размерность. Сумма размерностей корневых подпространств всегда в точности равна размерности всего пространства (при условии разложимости многочлена).
+                            Они «добирают» недостающую размерность. Для ЛЮБОГО оператора (над алгебраически замкнутым полем) всегда можно найти базис, целиком состоящий из корневых векторов.
                         </p>
                     </div>
 
@@ -1519,13 +1556,14 @@
                         <h3 class="font-bold text-emerald-800 mb-3 text-sm uppercase tracking-wider"><i class="fas fa-cubes mr-2"></i> Путь к ЖНФ</h3>
                         <p class="text-sm text-slate-700 mb-3">Это разложение — фундамент для построения <strong>Жордановой Нормальной Формы (ЖНФ)</strong>.</p>
                         <ul class="space-y-2 text-sm text-slate-700 list-disc pl-4">
-                            <li>Оно разбивает матрицу оператора на независимые <strong>жордановы блоки</strong> для каждого собственного значения.</li>
-                            <li>Внутри каждого такого подпространства $V^{\lambda_i}$ оператор действует как $\lambda_i \mathcal{E} + \mathcal{N}$ (сдвиг + нильпотентный оператор).</li>
-                            <li>Остается только изучить структуру этих нильпотентных водопадов!</li>
+                            <li>Оно разбивает матрицу оператора на независимые блоки (корневые подпространства $V^{\lambda_i}$).</li>
+                            <li>Внутри каждого такого блока оператор действует как $\lambda_i \mathcal{E} + \mathcal{N}$ (сдвиг + нильпотентный водопад).</li>
+                            <li>Дальше остается только изучить структуру этих нильпотентных водопадов, чтобы причесать матрицу к идеальному виду!</li>
                         </ul>
                     </div>
                 </div>
             </section>
+
         </div>
 
     </main>
