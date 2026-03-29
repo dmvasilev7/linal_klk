@@ -1568,7 +1568,7 @@
             </section>
 
         </div>
-        <div id="ticket-13" class="ticket-section space-y-12">
+        <div id="ticket-13" class="ticket-section hidden space-y-12">
             
             <div class="bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-sm uppercase tracking-wider text-teal-600 font-bold mb-2">Полная формулировка</h2>
@@ -1592,8 +1592,8 @@
                         <h3 class="text-lg font-bold text-teal-800 mb-3 flex items-center">
                             <i class="fas fa-book-open mr-2"></i> Определение
                         </h3>
-                        <p class="text-slate-700 text-sm mb-3">Пусть $\mathcal{N}$ — нильпотентный оператор, а $x \in V$ — корневой вектор высоты $k$ (то есть $\mathcal{N}^k x = 0$, но $\mathcal{N}^{k-1} x \neq 0$).<span class="hidden">[cite: 326, 331]</span></p>
-                        <p class="text-slate-700 text-sm mb-3"><strong>Циклическим подпространством</strong>, порождённым вектором $x$, называется линейная оболочка векторов, полученных последовательным применением оператора $\mathcal{N}$ к $x$:<span class="hidden">[cite: 327]</span></p>
+                        <p class="text-slate-700 text-sm mb-3">Пусть $\mathcal{N}$ — нильпотентный оператор, а $x \in V$ — корневой вектор высоты $k$ (то есть $\mathcal{N}^k x = 0$, но $\mathcal{N}^{k-1} x \neq 0$)[cite: 630].</p>
+                        <p class="text-slate-700 text-sm mb-3"><strong>Циклическим подпространством</strong>, порождённым вектором $x$, называется линейная оболочка векторов, полученных последовательным применением оператора $\mathcal{N}$ к $x$[cite: 631]:</p>
                         <div class="text-center font-mono font-bold text-teal-700 my-4 bg-white p-3 rounded shadow-sm border border-teal-200">
                             $U = \langle x, \mathcal{N}x, \mathcal{N}^2x, \dots, \mathcal{N}^{k-1}x \rangle$
                         </div>
@@ -1602,12 +1602,12 @@
                     <div class="space-y-6">
                         <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
                             <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
-                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Свойства (Суть)
+                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Свойства циклических подпространств
                             </h3>
                             <ul class="space-y-2 text-sm text-slate-700 list-disc pl-4">
-                                <li>Это <strong>наименьшее $\mathcal{N}$-инвариантное подпространство</strong>, содержащее вектор $x$.<span class="hidden">[cite: 331]</span></li>
-                                <li>Векторы $x, \mathcal{N}x, \dots, \mathcal{N}^{k-1}x$ всегда <strong>линейно независимы</strong> (Лемма 8.1), поэтому они образуют базис $U$.<span class="hidden">[cite: 324]</span></li>
-                                <li>Размерность циклического подпространства $\dim U = k$ в точности равна высоте порождающего вектора $x$.<span class="hidden">[cite: 331]</span></li>
+                                <li>Это <strong>наименьшее $\mathcal{N}$-инвариантное подпространство</strong>, содержащее вектор $x$[cite: 634].</li>
+                                <li>Векторы $x, \mathcal{N}x, \dots, \mathcal{N}^{k-1}x$ всегда <strong>линейно независимы</strong>, поэтому они образуют базис $U$[cite: 632].</li>
+                                <li>Размерность циклического подпространства $\dim U = k$ в точности равна высоте порождающего вектора $x$[cite: 635].</li>
                             </ul>
                         </div>
                     </div>
@@ -1616,20 +1616,17 @@
                 <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство линейной независимости</h3>
                 <div class="pl-8 step-counter space-y-4 text-teal-600">
                     <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p class="text-sm">Предположим, есть линейная комбинация, равная нулю: $\alpha_0 x + \alpha_1 \mathcal{N}x + \dots + \alpha_{k-1} \mathcal{N}^{k-1}x = 0$.<span class="hidden">[cite: 326]</span></p>
+                        <p class="text-sm">Предположим, есть линейная комбинация, равная нулю: $\alpha_0 x + \alpha_1 \mathcal{N}x + \dots + \alpha_{k-1} \mathcal{N}^{k-1}x = 0$[cite: 627].</p>
                     </div>
                     <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-teal-400">
-                        <p class="text-sm">Применим оператор $\mathcal{N}$ к обеим частям равенства. Так как $\mathcal{N}^k x = 0$, последнее слагаемое обнулится:<br>
-                        $\alpha_0 \mathcal{N}x + \alpha_1 \mathcal{N}^2x + \dots + \alpha_{k-2} \mathcal{N}^{k-1}x = 0$.<span class="hidden">[cite: 326]</span></p>
+                        <p class="text-sm">Применим оператор $\mathcal{N}^{k-1}$ к обеим частям равенства. Так как $\mathcal{N}^k x = 0$, все слагаемые, кроме первого, обнулятся:<br>
+                        $\alpha_0 \mathcal{N}^{k-1}x + 0 + \dots + 0 = 0$.</p>
                     </div>
                     <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p class="text-sm">Обозначим $y = \mathcal{N}x$. Вектор $y$ имеет высоту $k-1$. Мы получили сумму $\alpha_0 y + \dots + \alpha_{k-2} \mathcal{N}^{k-2}y = 0$.<span class="hidden">[cite: 326]</span></p>
+                        <p class="text-sm">Поскольку высота вектора $x$ равна $k$, вектор $\mathcal{N}^{k-1}x \neq 0$. Отсюда следует, что $\alpha_0 = 0$.</p>
                     </div>
                     <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p class="text-sm">По методу математической индукции для высоты $k-1$, эти векторы независимы $\implies \alpha_0 = \dots = \alpha_{k-2} = 0$.<span class="hidden">[cite: 326]</span></p>
-                    </div>
-                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                        <p class="text-sm">Остается $\alpha_{k-1} \mathcal{N}^{k-1}x = 0$. Но высота вектора $x$ равна $k$, значит $\mathcal{N}^{k-1}x \neq 0$. Отсюда $\alpha_{k-1} = 0$. Все коэффициенты равны нулю!<span class="hidden">[cite: 326]</span></p>
+                        <p class="text-sm">Повторяя этот процесс (применяя $\mathcal{N}^{k-2}$ и т.д.), мы последовательно получим, что все коэффициенты $\alpha_i$ равны нулю. Векторы линейно независимы[cite: 629]!</p>
                     </div>
                 </div>
             </section>
@@ -1645,20 +1642,20 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                     <div class="bg-blue-50 border border-blue-200 p-6 rounded-xl">
                         <h3 class="text-xl font-bold text-blue-900 mb-3 border-b border-blue-200 pb-2">Жорданова цепочка</h3>
-                        <p class="text-sm text-slate-700 mb-4">Если мы возьмем базис циклического подпространства и перенумеруем его в обратном порядке: $x_1 = \mathcal{N}^{k-1}x, x_2 = \mathcal{N}^{k-2}x, \dots, x_k = x$, то мы получим <strong>жорданову цепочку</strong>:<span class="hidden">[cite: 332]</span></p>
+                        <p class="text-sm text-slate-700 mb-4">Если мы возьмем базис циклического подпространства и перенумеруем его в обратном порядке: $e_1 = \mathcal{N}^{k-1}x, e_2 = \mathcal{N}^{k-2}x, \dots, e_k = x$, то мы получим <strong>жорданову цепочку</strong>[cite: 656]:</p>
                         <div class="text-center font-mono font-bold text-blue-800 bg-white p-3 rounded-lg shadow-inner border border-blue-100 text-lg mb-4 overflow-x-auto">
-                            $0 \xleftarrow{\mathcal{N}} x_1 \xleftarrow{\mathcal{N}} x_2 \xleftarrow{\mathcal{N}} \dots \xleftarrow{\mathcal{N}} x_k$
+                            $0 \xleftarrow{\mathcal{N}} e_1 \xleftarrow{\mathcal{N}} e_2 \xleftarrow{\mathcal{N}} \dots \xleftarrow{\mathcal{N}} e_k$
                         </div>
-                        <p class="text-sm text-slate-600 italic">Действие оператора сдвигает каждый вектор на одну позицию влево, а самый левый смывает в ноль.<span class="hidden">[cite: 332]</span></p>
+                        <p class="text-sm text-slate-600 italic">Действие оператора сдвигает каждый вектор на одну позицию влево, а самый левый смывает в ноль.</p>
                     </div>
 
                     <div class="bg-slate-800 text-white p-6 rounded-xl shadow-lg">
                         <h3 class="text-xl font-bold text-blue-300 mb-3 border-b border-slate-600 pb-2">Нильпотентная жорданова клетка</h3>
-                        <p class="text-sm text-slate-300 mb-3">В базисе, состоящем из жордановой цепочки, матрица оператора принимает канонический вид $J_k(0)$ — <strong>нильпотентную жорданову клетку</strong> порядка $k$:<span class="hidden">[cite: 333, 334, 335]</span></p>
+                        <p class="text-sm text-slate-300 mb-3">В базисе, состоящем из жордановой цепочки, матрица оператора принимает канонический вид $J_k(0)$ — <strong>нильпотентную жорданову клетку</strong> порядка $k$[cite: 639]:</p>
                         <div class="text-center font-mono text-emerald-400 bg-slate-900 p-3 rounded-lg border border-slate-700 text-lg overflow-x-auto">
                             $J_k(0) = \begin{pmatrix} 0 & 1 & 0 & \dots & 0 \\ 0 & 0 & 1 & \dots & 0 \\ \dots & \dots & \dots & \ddots & \dots \\ 0 & 0 & 0 & \dots & 1 \\ 0 & 0 & 0 & \dots & 0 \end{pmatrix}$
                         </div>
-                        <p class="text-xs text-slate-400 mt-3">Единицы стоят строго над главной диагональю, так как $\mathcal{N}x_j = x_{j-1}$ (образ $j$-го вектора — это $(j-1)$-й вектор).<span class="hidden">[cite: 507]</span></p>
+                        <p class="text-xs text-slate-400 mt-3">Единицы стоят строго над главной диагональю, так как $\mathcal{N}e_j = e_{j-1}$ (образ $j$-го вектора — это $(j-1)$-й вектор)[cite: 635].</p>
                     </div>
                 </div>
             </section>
@@ -1668,40 +1665,67 @@
                     <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
                         <i class="fas fa-crown"></i>
                     </div>
-                    <h2 class="text-3xl font-bold text-slate-900">3. Основная теорема о структуре (Теорема 8.1)</h2>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Теорема о структуре нильпотентного оператора</h2>
                 </div>
 
                 <div class="bg-emerald-50 border border-emerald-200 p-6 rounded-xl mb-8 text-center shadow-sm">
-                    <p class="text-lg font-medium text-emerald-900 mb-3">Пусть $\mathcal{N}$ — нильпотентный оператор на $V$. Тогда существует разложение пространства $V$ в <strong>прямую сумму циклических подпространств</strong> этого оператора:<span class="hidden">[cite: 339]</span></p>
+                    <p class="text-lg font-medium text-emerald-900 mb-3">Пусть $\mathcal{N}$ — нильпотентный оператор на $V$. Тогда существует разложение пространства $V$ в <strong>прямую сумму циклических подпространств</strong> этого оператора[cite: 658, 660]:</p>
                     <div class="text-3xl font-bold text-emerald-700 bg-white inline-block px-8 py-3 rounded-lg border border-emerald-100 shadow-inner my-2">
-                        $V = \bigoplus_{i=1}^s U_i$
+                        $V = \bigoplus_{i=1}^{\dim \text{Ker} \mathcal{N}} U_i$
                     </div>
-                    <p class="text-sm text-emerald-800 mt-3">Количество слагаемых $s$ (и количество жордановых клеток) в точности равно $\dim \text{Ker} \mathcal{N}$.<span class="hidden">[cite: 340]</span></p>
+                    <p class="text-sm text-emerald-800 mt-3">Базис из объединения таких цепочек называется <strong>жордановым базисом</strong>[cite: 700]. Матрица оператора в нём состоит из нильпотентных жордановых клеток по главной диагонали[cite: 661].</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                    <div class="bg-white border-2 border-slate-200 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-th-large text-slate-400 mr-2"></i> Жорданов базис</h3>
-                        <p class="text-sm text-slate-700 mb-3">Базис пространства $V$, составленный как объединение жордановых цепочек (базисов каждого из циклических подпространств $U_i$), называется <strong>жордановым базисом</strong> нильпотентного оператора.<span class="hidden">[cite: 347, 1221]</span></p>
-                        <p class="text-sm text-slate-700">В этом базисе матрица оператора является блочно-диагональной, состоящей из нильпотентных жордановых клеток $J_{k_i}(0)$.<span class="hidden">[cite: 399, 1222]</span></p>
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Полное доказательство (Индукция по размерности)</h3>
+                
+                <div class="pl-8 step-counter space-y-5 text-emerald-600">
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 1: База индукции</h4>
+                        <p class="text-sm">Индукция по $\dim V = n$[cite: 662]. При $n=1$ нильпотентный оператор $\mathcal{N}$ обязан быть нулевым $\mathcal{N}=0$, теорема очевидно верна (пространство само является циклическим подпространством высоты 1).</p>
                     </div>
 
-                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg relative overflow-hidden">
-                        <div class="absolute -right-4 -top-4 opacity-10 text-9xl">
-                            <i class="fas fa-table"></i>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-emerald-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 2: Идея перехода и подпространство $\text{Im} \mathcal{N}$</h4>
+                        <p class="text-sm mb-2">Пусть $n \ge 2$. Если $\text{Im} \mathcal{N} = 0$, то $\mathcal{N} = 0$, и теорема тривиальна[cite: 663].</p>
+                        <p class="text-sm mb-2">Может ли $\text{Im} \mathcal{N} = V$? Нет. Если $\mathcal{N}(V) = V$, то применяя $\mathcal{N}$ много раз, мы получим $\mathcal{N}^m(V) = V$. Но $\mathcal{N}$ нильпотентен ($\mathcal{N}^m = 0$), значит $0 = V$, противоречие[cite: 664, 666, 667].</p>
+                        <p class="text-sm font-bold text-emerald-700">Следовательно, $0 < \dim \text{Im} \mathcal{N} < \dim V$[cite: 668]. Мы можем применить предположение индукции к подпространству $\text{Im} \mathcal{N}$[cite: 669]!</p>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 3: Применяем индукцию к образу</h4>
+                        <p class="text-sm mb-2">По предположению индукции, $\text{Im} \mathcal{N}$ раскладывается в прямую сумму циклических подпространств, порожденных некоторыми векторами $y_1, y_2, \dots, y_s$[cite: 670, 671]. Базис $\text{Im} \mathcal{N}$ выглядит так:</p>
+                        <div class="bg-slate-50 p-3 rounded font-mono text-xs border border-slate-200 mb-2">
+                            $y_1, \mathcal{N}y_1, \dots, \mathcal{N}^{p_1-1}y_1$<br>
+                            $y_2, \mathcal{N}y_2, \dots, \mathcal{N}^{p_2-1}y_2$<br>
+                            $\dots$<br>
+                            $y_s, \mathcal{N}y_s, \dots, \mathcal{N}^{p_s-1}y_s$ [cite: 676]
                         </div>
-                        <h3 class="text-xl font-bold text-emerald-300 mb-3 border-b border-slate-600 pb-2"><i class="fas fa-cubes mr-2"></i> Диаграмма Юнга</h3>
-                        <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-                            Структуру нильпотентного оператора удобно изображать Диаграммой Юнга:<span class="hidden">[cite: 346]</span>
-                        </p>
-                        <ul class="space-y-2 text-sm text-slate-400">
-                            <li><i class="fas fa-arrow-right text-emerald-500 mr-2"></i><strong>Столбцы:</strong> Жордановы цепочки (циклические подпространства $U_i$).<span class="hidden">[cite: 349]</span></li>
-                            <li><i class="fas fa-arrow-right text-emerald-500 mr-2"></i><strong>Высота столбца:</strong> Размер жордановой клетки.<span class="hidden">[cite: 348]</span></li>
-                            <li><i class="fas fa-arrow-right text-emerald-500 mr-2"></i><strong>Нижняя строка:</strong> Векторы, переходящие в ноль (базис $\text{Ker} \mathcal{N}$).<span class="hidden">[cite: 351]</span></li>
-                        </ul>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 4: Поднимаем базис (строим цепочки для V)</h4>
+                        <p class="text-sm mb-2">Так как каждый вектор $y_i$ лежит в <em>образе</em> $\text{Im} \mathcal{N}$, то по определению образа существуют такие векторы $x_i \in V$, что $\mathcal{N}(x_i) = y_i$[cite: 677, 679].</p>
+                        <p class="text-sm">Теперь у нас есть более длинные жордановы цепочки для всего пространства $V$, начинающиеся с $x_i$:</p>
+                        <div class="bg-emerald-50 p-2 rounded font-mono text-sm border border-emerald-200 mt-2 font-bold text-emerald-800">
+                            $x_i, y_i, \mathcal{N}y_i, \dots, \mathcal{N}^{p_i-1}y_i$ (длина каждой цепочки увеличилась на 1).
+                        </div>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 5: Добиваем Ядро (Базис $\text{Ker} \mathcal{N}$)</h4>
+                        <p class="text-sm mb-2">Векторы в самом конце наших цепочек, то есть $\mathcal{N}^{p_1-1}y_1, \dots, \mathcal{N}^{p_s-1}y_s$, переходят в ноль, а значит, лежат в $\text{Ker} \mathcal{N}$[cite: 687].</p>
+                        <p class="text-sm">Дополним эти $s$ векторов линейно независимыми векторами $w_1, \dots, w_l \in \text{Ker} \mathcal{N}$ до полного базиса подпространства $\text{Ker} \mathcal{N}$[cite: 688]. Каждый такой вектор $w_j$ образует маленькую жорданову цепочку длины 1.</p>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 6: Финальная проверка</h4>
+                        <p class="text-sm mb-2">Мы собрали огромное количество векторов: $x_i$ и их образы, плюс векторы $w_j$. Нужно доказать, что они образуют базис всего $V$.</p>
+                        <p class="text-sm mb-2"><strong>1. Они линейно независимы:</strong> Если мы приравняем их линейную комбинацию к нулю и применим оператор $\mathcal{N}$, все $w_j$ обнулятся, а векторы цепочек сдвинутся. Получится линейная комбинация базиса $\text{Im} \mathcal{N}$, равная нулю. В силу независимости базиса $\text{Im} \mathcal{N}$, все коэффициенты будут нулями. Оставшаяся часть обяжет и коэффициенты при $w_j$ быть нулями[cite: 692, 694, 695].</p>
+                        <p class="text-sm"><strong>2. Их количество равно $\dim V$:</strong> Количество наших векторов — это (размерность $\text{Im} \mathcal{N}$ + количество $x_i$) + (количество $w_j$). Но количество $x_i$ плюс количество $w_j$ равно в точности размерности $\text{Ker} \mathcal{N}$! А по фундаментальной теореме $\dim \text{Im} \mathcal{N} + \dim \text{Ker} \mathcal{N} = \dim V$. Теорема доказана[cite: 695]!</p>
                     </div>
                 </div>
             </section>
+
         </div>
     </main>
 
