@@ -149,6 +149,9 @@
             <button id="btn-ticket-12" onclick="switchTab('ticket-12')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
                 Билет 12
             </button>
+            <button id="btn-ticket-13" onclick="switchTab('ticket-12')" class="tab-btn bg-white text-slate-600 hover:bg-slate-50 px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg font-bold border border-slate-200 transition-colors flex items-center text-sm md:text-base">
+                Билет 13
+            </button>
         </div>
     </div>
 
@@ -1565,7 +1568,141 @@
             </section>
 
         </div>
+        <div id="ticket-13" class="ticket-section space-y-12">
+            
+            <div class="bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-teal-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    13. Понятие циклического подпространства. Жорданова цепочка. Свойства циклических подпространств. Теорема о структуре нильпотентного оператора. Жорданов базис. Нильпотентная жорданова клетка.
+                </p>
+            </div>
 
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-teal-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-teal-100 rounded-bl-full -z-10 opacity-50"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Циклическое подпространство</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-teal-50/50 border border-teal-100 rounded-xl p-6">
+                        <h3 class="text-lg font-bold text-teal-800 mb-3 flex items-center">
+                            <i class="fas fa-book-open mr-2"></i> Определение
+                        </h3>
+                        <p class="text-slate-700 text-sm mb-3">Пусть $\mathcal{N}$ — нильпотентный оператор, а $x \in V$ — корневой вектор высоты $k$ (то есть $\mathcal{N}^k x = 0$, но $\mathcal{N}^{k-1} x \neq 0$).<span class="hidden">[cite: 326, 331]</span></p>
+                        <p class="text-slate-700 text-sm mb-3"><strong>Циклическим подпространством</strong>, порождённым вектором $x$, называется линейная оболочка векторов, полученных последовательным применением оператора $\mathcal{N}$ к $x$:<span class="hidden">[cite: 327]</span></p>
+                        <div class="text-center font-mono font-bold text-teal-700 my-4 bg-white p-3 rounded shadow-sm border border-teal-200">
+                            $U = \langle x, \mathcal{N}x, \mathcal{N}^2x, \dots, \mathcal{N}^{k-1}x \rangle$
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
+                            <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
+                                <i class="fas fa-lightbulb mr-2 text-amber-500"></i> Свойства (Суть)
+                            </h3>
+                            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-4">
+                                <li>Это <strong>наименьшее $\mathcal{N}$-инвариантное подпространство</strong>, содержащее вектор $x$.<span class="hidden">[cite: 331]</span></li>
+                                <li>Векторы $x, \mathcal{N}x, \dots, \mathcal{N}^{k-1}x$ всегда <strong>линейно независимы</strong> (Лемма 8.1), поэтому они образуют базис $U$.<span class="hidden">[cite: 324]</span></li>
+                                <li>Размерность циклического подпространства $\dim U = k$ в точности равна высоте порождающего вектора $x$.<span class="hidden">[cite: 331]</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство линейной независимости</h3>
+                <div class="pl-8 step-counter space-y-4 text-teal-600">
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p class="text-sm">Предположим, есть линейная комбинация, равная нулю: $\alpha_0 x + \alpha_1 \mathcal{N}x + \dots + \alpha_{k-1} \mathcal{N}^{k-1}x = 0$.<span class="hidden">[cite: 326]</span></p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-teal-400">
+                        <p class="text-sm">Применим оператор $\mathcal{N}$ к обеим частям равенства. Так как $\mathcal{N}^k x = 0$, последнее слагаемое обнулится:<br>
+                        $\alpha_0 \mathcal{N}x + \alpha_1 \mathcal{N}^2x + \dots + \alpha_{k-2} \mathcal{N}^{k-1}x = 0$.<span class="hidden">[cite: 326]</span></p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p class="text-sm">Обозначим $y = \mathcal{N}x$. Вектор $y$ имеет высоту $k-1$. Мы получили сумму $\alpha_0 y + \dots + \alpha_{k-2} \mathcal{N}^{k-2}y = 0$.<span class="hidden">[cite: 326]</span></p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p class="text-sm">По методу математической индукции для высоты $k-1$, эти векторы независимы $\implies \alpha_0 = \dots = \alpha_{k-2} = 0$.<span class="hidden">[cite: 326]</span></p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <p class="text-sm">Остается $\alpha_{k-1} \mathcal{N}^{k-1}x = 0$. Но высота вектора $x$ равна $k$, значит $\mathcal{N}^{k-1}x \neq 0$. Отсюда $\alpha_{k-1} = 0$. Все коэффициенты равны нулю!<span class="hidden">[cite: 326]</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-blue-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Жорданова цепочка и клетка</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <div class="bg-blue-50 border border-blue-200 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3 border-b border-blue-200 pb-2">Жорданова цепочка</h3>
+                        <p class="text-sm text-slate-700 mb-4">Если мы возьмем базис циклического подпространства и перенумеруем его в обратном порядке: $x_1 = \mathcal{N}^{k-1}x, x_2 = \mathcal{N}^{k-2}x, \dots, x_k = x$, то мы получим <strong>жорданову цепочку</strong>:<span class="hidden">[cite: 332]</span></p>
+                        <div class="text-center font-mono font-bold text-blue-800 bg-white p-3 rounded-lg shadow-inner border border-blue-100 text-lg mb-4 overflow-x-auto">
+                            $0 \xleftarrow{\mathcal{N}} x_1 \xleftarrow{\mathcal{N}} x_2 \xleftarrow{\mathcal{N}} \dots \xleftarrow{\mathcal{N}} x_k$
+                        </div>
+                        <p class="text-sm text-slate-600 italic">Действие оператора сдвигает каждый вектор на одну позицию влево, а самый левый смывает в ноль.<span class="hidden">[cite: 332]</span></p>
+                    </div>
+
+                    <div class="bg-slate-800 text-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-blue-300 mb-3 border-b border-slate-600 pb-2">Нильпотентная жорданова клетка</h3>
+                        <p class="text-sm text-slate-300 mb-3">В базисе, состоящем из жордановой цепочки, матрица оператора принимает канонический вид $J_k(0)$ — <strong>нильпотентную жорданову клетку</strong> порядка $k$:<span class="hidden">[cite: 333, 334, 335]</span></p>
+                        <div class="text-center font-mono text-emerald-400 bg-slate-900 p-3 rounded-lg border border-slate-700 text-lg overflow-x-auto">
+                            $J_k(0) = \begin{pmatrix} 0 & 1 & 0 & \dots & 0 \\ 0 & 0 & 1 & \dots & 0 \\ \dots & \dots & \dots & \ddots & \dots \\ 0 & 0 & 0 & \dots & 1 \\ 0 & 0 & 0 & \dots & 0 \end{pmatrix}$
+                        </div>
+                        <p class="text-xs text-slate-400 mt-3">Единицы стоят строго над главной диагональю, так как $\mathcal{N}x_j = x_{j-1}$ (образ $j$-го вектора — это $(j-1)$-й вектор).<span class="hidden">[cite: 507]</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Основная теорема о структуре (Теорема 8.1)</h2>
+                </div>
+
+                <div class="bg-emerald-50 border border-emerald-200 p-6 rounded-xl mb-8 text-center shadow-sm">
+                    <p class="text-lg font-medium text-emerald-900 mb-3">Пусть $\mathcal{N}$ — нильпотентный оператор на $V$. Тогда существует разложение пространства $V$ в <strong>прямую сумму циклических подпространств</strong> этого оператора:<span class="hidden">[cite: 339]</span></p>
+                    <div class="text-3xl font-bold text-emerald-700 bg-white inline-block px-8 py-3 rounded-lg border border-emerald-100 shadow-inner my-2">
+                        $V = \bigoplus_{i=1}^s U_i$
+                    </div>
+                    <p class="text-sm text-emerald-800 mt-3">Количество слагаемых $s$ (и количество жордановых клеток) в точности равно $\dim \text{Ker} \mathcal{N}$.<span class="hidden">[cite: 340]</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <div class="bg-white border-2 border-slate-200 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-th-large text-slate-400 mr-2"></i> Жорданов базис</h3>
+                        <p class="text-sm text-slate-700 mb-3">Базис пространства $V$, составленный как объединение жордановых цепочек (базисов каждого из циклических подпространств $U_i$), называется <strong>жордановым базисом</strong> нильпотентного оператора.<span class="hidden">[cite: 347, 1221]</span></p>
+                        <p class="text-sm text-slate-700">В этом базисе матрица оператора является блочно-диагональной, состоящей из нильпотентных жордановых клеток $J_{k_i}(0)$.<span class="hidden">[cite: 399, 1222]</span></p>
+                    </div>
+
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg relative overflow-hidden">
+                        <div class="absolute -right-4 -top-4 opacity-10 text-9xl">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-emerald-300 mb-3 border-b border-slate-600 pb-2"><i class="fas fa-cubes mr-2"></i> Диаграмма Юнга</h3>
+                        <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                            Структуру нильпотентного оператора удобно изображать Диаграммой Юнга:<span class="hidden">[cite: 346]</span>
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li><i class="fas fa-arrow-right text-emerald-500 mr-2"></i><strong>Столбцы:</strong> Жордановы цепочки (циклические подпространства $U_i$).<span class="hidden">[cite: 349]</span></li>
+                            <li><i class="fas fa-arrow-right text-emerald-500 mr-2"></i><strong>Высота столбца:</strong> Размер жордановой клетки.<span class="hidden">[cite: 348]</span></li>
+                            <li><i class="fas fa-arrow-right text-emerald-500 mr-2"></i><strong>Нижняя строка:</strong> Векторы, переходящие в ноль (базис $\text{Ker} \mathcal{N}$).<span class="hidden">[cite: 351]</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="text-center text-slate-500 mt-16 pb-8">
