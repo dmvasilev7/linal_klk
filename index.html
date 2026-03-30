@@ -106,6 +106,11 @@
             border-color: #334155 !important;
         }
 
+        /* Убираем точки на фоне в темной теме */
+        body.dark .pattern-bg {
+            background-image: none !important;
+        }
+
         /* Агрессивно перекрашиваем АБСОЛЮТНО ВСЕ светлые фоны в темные */
         body.dark [class*="bg-white"],
         body.dark [class*="bg-slate-50"], body.dark [class*="bg-slate-100"],
@@ -119,7 +124,9 @@
         body.dark [class*="bg-cyan-50"], body.dark [class*="bg-cyan-100"],
         body.dark [class*="bg-sky-50"], body.dark [class*="bg-sky-100"],
         body.dark [class*="bg-pink-50"], body.dark [class*="bg-pink-100"],
-        body.dark [class*="bg-orange-50"], body.dark [class*="bg-orange-100"] {
+        body.dark [class*="bg-orange-50"], body.dark [class*="bg-orange-100"],
+        body.dark [class*="bg-fuchsia-50"], body.dark [class*="bg-fuchsia-100"], /* Добавлено! */
+        body.dark [class*="bg-violet-50"], body.dark [class*="bg-violet-100"]    /* Добавлено! */ {
             background-color: #1e293b !important; /* slate-800 */
             border-color: #334155 !important; /* slate-700 */
         }
@@ -146,7 +153,8 @@
         body.dark [class*="text-indigo-"], body.dark [class*="text-rose-"], 
         body.dark [class*="text-teal-"], body.dark [class*="text-cyan-"], 
         body.dark [class*="text-sky-"], body.dark [class*="text-pink-"], 
-        body.dark [class*="text-orange-"] {
+        body.dark [class*="text-orange-"], body.dark [class*="text-fuchsia-"], 
+        body.dark [class*="text-violet-"] {
             color: #e2e8f0 !important; 
         }
         
@@ -162,6 +170,8 @@
         body.dark .text-sky-600, body.dark .text-sky-700, body.dark .text-sky-800, body.dark .text-sky-900 { color: #7dd3fc !important; }
         body.dark .text-pink-600, body.dark .text-pink-700, body.dark .text-pink-800, body.dark .text-pink-900 { color: #f9a8d4 !important; }
         body.dark .text-orange-600, body.dark .text-orange-700, body.dark .text-orange-800, body.dark .text-orange-900 { color: #fdba74 !important; }
+        body.dark .text-fuchsia-600, body.dark .text-fuchsia-700, body.dark .text-fuchsia-800, body.dark .text-fuchsia-900 { color: #f5d0fe !important; }
+        body.dark .text-violet-600, body.dark .text-violet-700, body.dark .text-violet-800, body.dark .text-violet-900 { color: #ddd6fe !important; }
 
         /* Формулы KaTeX */
         body.dark .katex {
