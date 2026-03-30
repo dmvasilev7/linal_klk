@@ -99,62 +99,73 @@
             color: #f8fafc !important; /* slate-50 */
         }
         
-        /* 1. Убираем градиенты на карточках и баннере, делаем их темными */
+        /* Убираем градиенты на карточках и баннере, делаем их темными */
         body.dark [class*="bg-gradient-to-r"] {
             background-image: none !important;
             background-color: #1e293b !important;
             border-color: #334155 !important;
         }
 
-        /* 2. Агрессивно перекрашиваем все светлые фоны в темные */
-        body.dark .bg-white,
-        body.dark .bg-slate-50, body.dark .bg-slate-100,
-        body.dark .bg-blue-50, body.dark .bg-blue-50\/50, body.dark .bg-blue-100,
-        body.dark .bg-amber-50, body.dark .bg-amber-50\/50, body.dark .bg-amber-100,
-        body.dark .bg-emerald-50, body.dark .bg-emerald-50\/50, body.dark .bg-emerald-100,
-        body.dark .bg-purple-50, body.dark .bg-purple-50\/50, body.dark .bg-purple-100,
-        body.dark .bg-indigo-50, body.dark .bg-indigo-50\/50, body.dark .bg-indigo-100,
-        body.dark .bg-rose-50, body.dark .bg-rose-50\/50, body.dark .bg-rose-100,
-        body.dark .bg-teal-50, body.dark .bg-teal-50\/50, body.dark .bg-teal-100,
-        body.dark .bg-cyan-50, body.dark .bg-cyan-50\/50, body.dark .bg-cyan-100,
-        body.dark .bg-sky-50, body.dark .bg-sky-50\/50, body.dark .bg-sky-100,
-        body.dark .bg-pink-50, body.dark .bg-pink-50\/50, body.dark .bg-pink-100 {
+        /* Агрессивно перекрашиваем АБСОЛЮТНО ВСЕ светлые фоны в темные */
+        body.dark [class*="bg-white"],
+        body.dark [class*="bg-slate-50"], body.dark [class*="bg-slate-100"],
+        body.dark [class*="bg-blue-50"], body.dark [class*="bg-blue-100"],
+        body.dark [class*="bg-amber-50"], body.dark [class*="bg-amber-100"],
+        body.dark [class*="bg-emerald-50"], body.dark [class*="bg-emerald-100"],
+        body.dark [class*="bg-purple-50"], body.dark [class*="bg-purple-100"],
+        body.dark [class*="bg-indigo-50"], body.dark [class*="bg-indigo-100"],
+        body.dark [class*="bg-rose-50"], body.dark [class*="bg-rose-100"],
+        body.dark [class*="bg-teal-50"], body.dark [class*="bg-teal-100"],
+        body.dark [class*="bg-cyan-50"], body.dark [class*="bg-cyan-100"],
+        body.dark [class*="bg-sky-50"], body.dark [class*="bg-sky-100"],
+        body.dark [class*="bg-pink-50"], body.dark [class*="bg-pink-100"],
+        body.dark [class*="bg-orange-50"], body.dark [class*="bg-orange-100"] {
             background-color: #1e293b !important; /* slate-800 */
             border-color: #334155 !important; /* slate-700 */
         }
 
-        /* Эффект стекла для главных карточек */
         body.dark .glass-card {
             background: rgba(30, 41, 59, 0.95) !important;
             border-color: rgba(255, 255, 255, 0.05) !important;
         }
 
-        /* 3. Инвертируем темный текст в светлый */
+        /* Инвертируем текст */
         body.dark .text-slate-900,
         body.dark .text-slate-800,
         body.dark .text-slate-700,
         body.dark .text-slate-600 {
-            color: #f1f5f9 !important; /* slate-100 */
+            color: #f1f5f9 !important;
         }
         body.dark .text-slate-500 {
-            color: #94a3b8 !important; /* slate-400 */
+            color: #94a3b8 !important;
         }
 
-        /* 4. Делаем цветной текст (заголовки, акценты) ярким и читаемым на темном фоне */
-        body.dark .text-blue-900, body.dark .text-blue-800, body.dark .text-blue-700, body.dark .text-blue-600 { color: #93c5fd !important; }
-        body.dark .text-amber-900, body.dark .text-amber-800, body.dark .text-amber-700, body.dark .text-amber-600 { color: #fcd34d !important; }
-        body.dark .text-emerald-900, body.dark .text-emerald-800, body.dark .text-emerald-700, body.dark .text-emerald-600 { color: #6ee7b7 !important; }
-        body.dark .text-purple-900, body.dark .text-purple-800, body.dark .text-purple-700, body.dark .text-purple-600 { color: #d8b4fe !important; }
-        body.dark .text-indigo-900, body.dark .text-indigo-800, body.dark .text-indigo-700, body.dark .text-indigo-600 { color: #a5b4fc !important; }
-        body.dark .text-rose-900, body.dark .text-rose-800, body.dark .text-rose-700, body.dark .text-rose-600 { color: #fda4af !important; }
-        body.dark .text-teal-900, body.dark .text-teal-800, body.dark .text-teal-700, body.dark .text-teal-600 { color: #5eead4 !important; }
-        body.dark .text-cyan-900, body.dark .text-cyan-800, body.dark .text-cyan-700, body.dark .text-cyan-600 { color: #67e8f9 !important; }
-        body.dark .text-sky-900, body.dark .text-sky-800, body.dark .text-sky-700, body.dark .text-sky-600 { color: #7dd3fc !important; }
-        body.dark .text-pink-900, body.dark .text-pink-800, body.dark .text-pink-700, body.dark .text-pink-600 { color: #f9a8d4 !important; }
-
-        /* 5. Инверсия для формул KaTeX */
-        body.dark .katex {
+        /* Делаем цветной текст читаемым на темном фоне */
+        body.dark [class*="text-blue-"], body.dark [class*="text-amber-"], 
+        body.dark [class*="text-emerald-"], body.dark [class*="text-purple-"], 
+        body.dark [class*="text-indigo-"], body.dark [class*="text-rose-"], 
+        body.dark [class*="text-teal-"], body.dark [class*="text-cyan-"], 
+        body.dark [class*="text-sky-"], body.dark [class*="text-pink-"], 
+        body.dark [class*="text-orange-"] {
             color: #e2e8f0 !important; 
+        }
+        
+        /* Оставляем яркими только специфичные заголовки/акценты */
+        body.dark .text-blue-600, body.dark .text-blue-700, body.dark .text-blue-800, body.dark .text-blue-900 { color: #93c5fd !important; }
+        body.dark .text-amber-600, body.dark .text-amber-700, body.dark .text-amber-800, body.dark .text-amber-900 { color: #fcd34d !important; }
+        body.dark .text-emerald-600, body.dark .text-emerald-700, body.dark .text-emerald-800, body.dark .text-emerald-900 { color: #6ee7b7 !important; }
+        body.dark .text-purple-600, body.dark .text-purple-700, body.dark .text-purple-800, body.dark .text-purple-900 { color: #d8b4fe !important; }
+        body.dark .text-indigo-600, body.dark .text-indigo-700, body.dark .text-indigo-800, body.dark .text-indigo-900 { color: #a5b4fc !important; }
+        body.dark .text-rose-600, body.dark .text-rose-700, body.dark .text-rose-800, body.dark .text-rose-900 { color: #fda4af !important; }
+        body.dark .text-teal-600, body.dark .text-teal-700, body.dark .text-teal-800, body.dark .text-teal-900 { color: #5eead4 !important; }
+        body.dark .text-cyan-600, body.dark .text-cyan-700, body.dark .text-cyan-800, body.dark .text-cyan-900 { color: #67e8f9 !important; }
+        body.dark .text-sky-600, body.dark .text-sky-700, body.dark .text-sky-800, body.dark .text-sky-900 { color: #7dd3fc !important; }
+        body.dark .text-pink-600, body.dark .text-pink-700, body.dark .text-pink-800, body.dark .text-pink-900 { color: #f9a8d4 !important; }
+        body.dark .text-orange-600, body.dark .text-orange-700, body.dark .text-orange-800, body.dark .text-orange-900 { color: #fdba74 !important; }
+
+        /* Формулы KaTeX */
+        body.dark .katex {
+            color: #f8fafc !important; 
         }
     </style>
 </head>
@@ -167,7 +178,7 @@
                 <i class="fas fa-graduation-cap mr-2"></i> Подготовка к коллоквиуму
             </div>
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-                Абстрактная и Линейная Алгебра
+                Линейная Алгебра. 2 семестр. КЛК-1
             </h1>
             <p class="text-lg md:text-xl text-indigo-100 max-w-3xl mx-auto font-light">
                 Визуальный конспект. Вся теория, геометрический смысл и полные доказательства теорем.
@@ -2671,6 +2682,18 @@
             likeCountEl.innerText = likes > 999 ? (likes/1000).toFixed(1) + 'k' : likes;
             localStorage.setItem('likeCount', likes);
         }
+    </script>
+    <script>
+        (function cleanCites() {
+            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+            let node;
+            while (node = walker.nextNode()) {
+                if (node.nodeValue.includes('[cite')) {
+                    // Удаляем и , и [cite: 123]
+                    node.nodeValue = node.nodeValue.replace(/\[cite_start\]/g, '').replace(/\+\]/g, '');
+                }
+            }
+        })();
     </script>
 </body>
 </html>
