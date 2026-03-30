@@ -98,26 +98,38 @@
             background-color: #0f172a !important; /* slate-900 */
             color: #f8fafc !important; /* slate-50 */
         }
-        /* Перекрашиваем все светлые карточки и фоны билетов */
-        body.dark .bg-white, 
-        body.dark .bg-slate-50, 
-        body.dark .bg-blue-50\/50,
-        body.dark .bg-amber-50\/50,
-        body.dark .bg-emerald-50\/50,
-        body.dark .bg-purple-50\/50,
-        body.dark .bg-indigo-50\/50,
-        body.dark .bg-rose-50,
-        body.dark .bg-teal-50\/50,
-        body.dark .bg-cyan-50\/50,
-        body.dark .bg-sky-50\/50 {
+        
+        /* 1. Убираем градиенты на карточках и баннере, делаем их темными */
+        body.dark [class*="bg-gradient-to-r"] {
+            background-image: none !important;
+            background-color: #1e293b !important;
+            border-color: #334155 !important;
+        }
+
+        /* 2. Агрессивно перекрашиваем все светлые фоны в темные */
+        body.dark .bg-white,
+        body.dark .bg-slate-50, body.dark .bg-slate-100,
+        body.dark .bg-blue-50, body.dark .bg-blue-50\/50, body.dark .bg-blue-100,
+        body.dark .bg-amber-50, body.dark .bg-amber-50\/50, body.dark .bg-amber-100,
+        body.dark .bg-emerald-50, body.dark .bg-emerald-50\/50, body.dark .bg-emerald-100,
+        body.dark .bg-purple-50, body.dark .bg-purple-50\/50, body.dark .bg-purple-100,
+        body.dark .bg-indigo-50, body.dark .bg-indigo-50\/50, body.dark .bg-indigo-100,
+        body.dark .bg-rose-50, body.dark .bg-rose-50\/50, body.dark .bg-rose-100,
+        body.dark .bg-teal-50, body.dark .bg-teal-50\/50, body.dark .bg-teal-100,
+        body.dark .bg-cyan-50, body.dark .bg-cyan-50\/50, body.dark .bg-cyan-100,
+        body.dark .bg-sky-50, body.dark .bg-sky-50\/50, body.dark .bg-sky-100,
+        body.dark .bg-pink-50, body.dark .bg-pink-50\/50, body.dark .bg-pink-100 {
             background-color: #1e293b !important; /* slate-800 */
             border-color: #334155 !important; /* slate-700 */
         }
+
+        /* Эффект стекла для главных карточек */
         body.dark .glass-card {
             background: rgba(30, 41, 59, 0.95) !important;
             border-color: rgba(255, 255, 255, 0.05) !important;
         }
-        /* Перекрашиваем текст */
+
+        /* 3. Инвертируем темный текст в светлый */
         body.dark .text-slate-900,
         body.dark .text-slate-800,
         body.dark .text-slate-700,
@@ -127,7 +139,20 @@
         body.dark .text-slate-500 {
             color: #94a3b8 !important; /* slate-400 */
         }
-        /* Инверсия для формул KaTeX, чтобы они не сливались с темным фоном */
+
+        /* 4. Делаем цветной текст (заголовки, акценты) ярким и читаемым на темном фоне */
+        body.dark .text-blue-900, body.dark .text-blue-800, body.dark .text-blue-700, body.dark .text-blue-600 { color: #93c5fd !important; }
+        body.dark .text-amber-900, body.dark .text-amber-800, body.dark .text-amber-700, body.dark .text-amber-600 { color: #fcd34d !important; }
+        body.dark .text-emerald-900, body.dark .text-emerald-800, body.dark .text-emerald-700, body.dark .text-emerald-600 { color: #6ee7b7 !important; }
+        body.dark .text-purple-900, body.dark .text-purple-800, body.dark .text-purple-700, body.dark .text-purple-600 { color: #d8b4fe !important; }
+        body.dark .text-indigo-900, body.dark .text-indigo-800, body.dark .text-indigo-700, body.dark .text-indigo-600 { color: #a5b4fc !important; }
+        body.dark .text-rose-900, body.dark .text-rose-800, body.dark .text-rose-700, body.dark .text-rose-600 { color: #fda4af !important; }
+        body.dark .text-teal-900, body.dark .text-teal-800, body.dark .text-teal-700, body.dark .text-teal-600 { color: #5eead4 !important; }
+        body.dark .text-cyan-900, body.dark .text-cyan-800, body.dark .text-cyan-700, body.dark .text-cyan-600 { color: #67e8f9 !important; }
+        body.dark .text-sky-900, body.dark .text-sky-800, body.dark .text-sky-700, body.dark .text-sky-600 { color: #7dd3fc !important; }
+        body.dark .text-pink-900, body.dark .text-pink-800, body.dark .text-pink-700, body.dark .text-pink-600 { color: #f9a8d4 !important; }
+
+        /* 5. Инверсия для формул KaTeX */
         body.dark .katex {
             color: #e2e8f0 !important; 
         }
@@ -2393,7 +2418,7 @@
                     
                     <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-emerald-400">
                         <h4 class="font-bold text-slate-900 mb-1">Шаг 2: Случай вещественного корня (1D)</h4>
-                        <p class="text-sm">Если $\lambda \in \mathbb{R}$ — собственное значение, то существует вещественный собственный вектор $v \in V$. Тогда одномерное подпространство $\text{span}(v)$ инвариантно относительно $A$.</p>
+                        <p class="text-sm">Если $\lambda \in \mathbb{R}$ — собственное значение, то существует вещественный собственный вектор $v \in V \setminus \{0\}$. Тогда одномерное подпространство $\text{span}(v)$ инвариантно относительно $A$.</p>
                     </div>
 
                     <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-indigo-400">
@@ -2414,7 +2439,7 @@
                     <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
                         <h4 class="font-bold text-slate-900 mb-1">Шаг 4: Линейная независимость $a$ и $b$</h4>
                         <p class="text-sm mb-2">Покажем, что векторы $a$ и $b$ линейно независимы. Пусть $a = cb$ ($c \in \mathbb{R}$). Тогда $u = cb + ib = (c+i)b$.</p>
-                        <p class="text-sm">Подставим это в уравнение на собственный вектор: $\tilde{A}((c+i)b) = \lambda (c+i)b$. Поскольку $b$ — чисто вещественный вектор, это означало бы, что вещественный оператор имеет вещественный собственный вектор $b$ с комплексным собственным значением $\lambda$, что невозможно. Значит, $a$ и $b$ независимы!</p>
+                        <p class="text-sm">Подставим это в уравнение: $\tilde{A}((c+i)b) = \lambda (c+i)b$. Отсюда $\tilde{A}(b) = \lambda b$. Но $b$ — вещественный вектор, а матрица $A$ вещественна, значит $\tilde{A}(b)$ тоже чисто вещественный вектор. Однако $\lambda b$ содержит мнимую часть $i\beta b \neq 0$. Противоречие! Значит, $a$ и $b$ независимы.</p>
                         <p class="text-sm font-bold text-emerald-600 mt-2">Вывод: Двумерное подпространство $U = \text{span}(a, b)$ инвариантно, так как образы $A(a)$ и $A(b)$ выражаются только через $a$ и $b$.</p>
                     </div>
                 </div>
@@ -2436,8 +2461,9 @@
                         </div>
                         <p class="text-sm text-slate-700 mt-3">Характеристический многочлен этого ограничения:</p>
                         <div class="bg-slate-50 p-2 rounded font-mono text-center border border-slate-200 text-sm">
-                            $\det(\lambda E - [A|_U]) = (\lambda - \alpha)^2 + \beta^2 = \lambda^2 - 2\alpha\lambda + (\alpha^2 + \beta^2)$
+                            $\det(\lambda I - [A|_U]) = (\lambda - \alpha)^2 + \beta^2 = \lambda^2 - 2\alpha\lambda + (\alpha^2 + \beta^2)$
                         </div>
+                        <p class="text-xs text-slate-500 italic">Здесь $2\alpha = 2\text{Re}(\lambda)$ и $\alpha^2+\beta^2 = |\lambda|^2$.</p>
                     </div>
 
                     <div class="bg-slate-800 text-white p-6 rounded-xl shadow-lg">
@@ -2446,7 +2472,7 @@
                         <div class="bg-slate-900 p-3 rounded border border-slate-700 text-center font-mono text-emerald-400 text-sm mb-3">
                             $(A^2 - 2\alpha A + (\alpha^2 + \beta^2)E)x = 0 \quad \forall x \in U$
                         </div>
-                        <p class="text-sm text-slate-300 font-medium text-center">Следовательно, наше инвариантное подпространство $U$ лежит внутри ядра этого мощного вещественного оператора второй степени.</p>
+                        <p class="text-sm text-slate-300 font-medium text-center">Следовательно, наше инвариантное подпространство $U$ целиком лежит внутри ядра этого вещественного оператора второй степени.</p>
                     </div>
                 </div>
             </section>
@@ -2476,9 +2502,9 @@
 
                 <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
                     <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
-                        <i class="fas fa-eye mr-2 text-amber-600"></i> Физический смысл
+                        <i class="fas fa-eye mr-2 text-amber-600"></i> Интуиция
                     </h3>
-                    <p class="text-sm text-slate-700">Комплексная жорданова клетка $J_k(\lambda)$ имела на диагонали число $\lambda$. При переходе к вещественному базису это комплексное число "раздувается" в блок $2 \times 2$, описывающий <strong>спиральное движение</strong> (вращение с растяжением). Единицы на наддиагонали тоже раздуваются в блоки $2 \times 2$ (матрицы $I$).</p>
+                    <p class="text-sm text-slate-700">Комплексная жорданова клетка $J_k(\lambda)$ имела на диагонали число $\lambda$. При переходе к вещественному пространству каждое комплексное число "раздувается" в блок $2 \times 2$, описывающий <strong>спиральное движение</strong> (вращение на угол $\arctan(\beta/\alpha)$ с растяжением на $|\lambda|$). Единицы на наддиагонали тоже раздуваются в блоки $2 \times 2$ (матрицы $I$).</p>
                 </div>
             </section>
 
@@ -2495,42 +2521,36 @@
                     <p class="text-lg text-purple-800 max-w-3xl mx-auto">
                         Любой линейный оператор $A$ на конечномерном вещественном пространстве может быть приведён к <strong>вещественной жордановой форме</strong>.
                     </p>
+                    <div class="mt-4 font-mono text-purple-800 font-bold bg-white inline-block p-3 rounded shadow-sm border border-purple-100">
+                        $J = \bigoplus_i C_{k_i}(\alpha_i, \beta_i) \oplus \bigoplus_j J_{m_j}(\lambda_j)$
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                    <div class="space-y-4">
-                        <h3 class="text-xl font-bold text-slate-800 mb-2 border-b pb-2"><i class="fas fa-list-ol text-slate-400 mr-2"></i> Краткий набросок доказательства</h3>
-                        <ul class="list-none space-y-3 pl-2 text-sm text-slate-700">
-                            <li class="flex items-start">
-                                <span class="text-purple-500 font-bold mr-3">1.</span>
-                                <span>Переходим к комплексификации $V_{\mathbb{C}}$ и применяем классическую теорему о ЖНФ для оператора $\tilde{A}$.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-purple-500 font-bold mr-3">2.</span>
-                                <span>Базис ЖНФ в $V_{\mathbb{C}}$ состоит из жордановых цепочек. Для комплексно-сопряженных корней $\lambda$ и $\bar{\lambda}$ образуются сопряженные жордановы клетки.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-purple-500 font-bold mr-3">3.</span>
-                                <span>Берём жорданову цепочку комплексных векторов $u_j = a_j + ib_j$. Выделяем их вещественные и мнимые части: $a_1, b_1, a_2, b_2, \dots, a_k, b_k$.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-purple-500 font-bold mr-3">4.</span>
-                                <span>Показываем, что этот набор векторов линейно независим над $\mathbb{R}$ и образует инвариантное подпространство размерности $2k$. Матрица оператора в этом базисе в точности равна вещественной жордановой клетке $C_k(\alpha, \beta)$!</span>
-                            </li>
-                        </ul>
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Строгое доказательство (с Леммой 4.1)</h3>
+                
+                <div class="pl-8 step-counter space-y-5 text-purple-600">
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 1: Комплексификация</h4>
+                        <p class="text-sm">Переходим к комплексификации $V_{\mathbb{C}}$. Применяем теорему о ЖНФ для комплексного оператора $\tilde{A}$. Базис ЖНФ в $V_{\mathbb{C}}$ состоит из жордановых цепочек.</p>
                     </div>
 
-                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg h-full">
-                        <h3 class="text-lg font-bold text-purple-300 mb-4 border-b border-slate-600 pb-2">
-                            <i class="fas fa-th mr-2"></i> Итоговый вид матрицы
-                        </h3>
-                        <p class="text-sm text-slate-300 mb-4">В таком базисе матрица оператора имеет идеальный блочно-диагональный вид:</p>
-                        
-                        <div class="bg-slate-900 p-4 rounded text-center text-emerald-400 font-mono text-lg border border-slate-700 mb-4">
-                            $J = \bigoplus_i C_{k_i}(\alpha_i, \beta_i) \oplus \bigoplus_j J_{m_j}(\lambda_j)$
-                        </div>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-purple-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 2: Эффект сопряжения</h4>
+                        <p class="text-sm mb-2">Для пар комплексно-сопряженных корней $\lambda = \alpha+i\beta$ и $\bar{\lambda}$ образуются сопряженные жордановы клетки.</p>
+                        <p class="text-sm bg-purple-50 p-2 rounded border border-purple-100 font-mono">Если $(\tilde{A} - \lambda I)u = v$, то сопрягая обе части и учитывая вещественность $A$ (т.е. $\bar{\tilde{A}} = \tilde{A}$), получаем $(\tilde{A} - \bar{\lambda} I)\bar{u} = \bar{v}$.</p>
+                        <p class="text-sm mt-2">Значит, если $u_j$ образуют жорданову цепочку высоты $k$ для $\lambda$, то сопряженные векторы $\bar{u}_j$ образуют жорданову цепочку той же высоты $k$ для $\bar{\lambda}$.</p>
+                    </div>
 
-                        <p class="text-xs text-slate-400">Первая прямая сумма берётся по парам комплексно-сопряженных собственных значений (они дают большие клетки $C_k$), а вторая — по обычным вещественным собственным значениям (они дают классические клетки $J_m$).</p>
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 3: Выделение вещественного базиса (Лемма 4.1)</h4>
+                        <p class="text-sm mb-2">Пусть $u_j = a_j + i b_j$ — векторы цепочки для $\lambda$. Возьмём их вещественные и мнимые части: $a_1, b_1, a_2, b_2, \dots, a_k, b_k$.</p>
+                        <p class="text-sm">Они линейно независимы над $\mathbb{R}$! Если $\sum (\alpha_j a_j + \beta_j b_j) = 0$, то переходя обратно к $u_j$ и $\bar{u}_j$ (т.к. $a_j = \frac{u_j+\bar{u}_j}{2}$ и $b_j = \frac{u_j-\bar{u}_j}{2i}$), мы получим линейную комбинацию цепочек для $\lambda$ и $\bar{\lambda}$. В силу независимости цепочек для разных собственных значений над $\mathbb{C}$, все коэффициенты обязаны быть нулями.</p>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-emerald-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 4: Построение клетки</h4>
+                        <p class="text-sm">Набор из $2k$ векторов $a_1, b_1, \dots, a_k, b_k$ образует вещественное инвариантное подпространство. Выражая действие оператора $A$ на эти векторы через формулы из Шага 3 (раздела 1), мы получаем блоки $J(\alpha, \beta)$ на диагонали и блоки $I$ над ними. Матрица оператора в этом базисе в точности равна $C_k(\alpha, \beta)$.</p>
+                        <p class="text-sm text-emerald-600 font-bold mt-2">Итог: Для каждой пары сопряженных корней мы получаем вещественные клетки $C_k$, а для чисто вещественных корней $\lambda \in \mathbb{R}$ — обычные жордановы клетки $J_m$. Теорема доказана.</p>
                     </div>
                 </div>
             </section>
@@ -2581,11 +2601,6 @@
         switchTab('ticket-1');
     </script>
     <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
-        <button id="like-btn" onclick="toggleLike()" class="bg-rose-500 hover:bg-rose-600 text-white rounded-full h-14 w-14 flex items-center justify-center shadow-lg transform transition-transform hover:scale-110 flex-col gap-0.5">
-            <i class="fas fa-heart text-xl"></i>
-            <span id="like-count" class="text-xs font-bold leading-none">0</span>
-        </button>
-
         <button id="theme-toggle" onclick="toggleTheme()" class="bg-slate-800 text-white rounded-full h-14 w-14 flex items-center justify-center shadow-lg transform transition-transform hover:scale-110">
             <i class="fas fa-moon text-xl" id="icon-moon"></i>
             <i class="fas fa-sun text-xl hidden text-amber-400" id="icon-sun"></i>
