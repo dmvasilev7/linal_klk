@@ -2044,7 +2044,459 @@
                 </div>
             </section>
 
-        </div>                    
+        </div>
+        <div id="ticket-16" class="ticket-section hidden space-y-12">
+            
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-blue-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    16. Вычисление многочленов и аналитических функций от матриц.
+                </p>
+            </div>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-blue-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-bl-full -z-10 opacity-50"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Многочлены от матриц (Метод остатков)</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-8">
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 border border-blue-100 rounded-xl p-5">
+                            <h3 class="font-bold text-blue-800 mb-2 border-b border-blue-200 pb-1">Проблема</h3>
+                            <p class="text-sm text-slate-700">Допустим, нам нужно вычислить огромную степень матрицы, например $A^{2024}$, или значение сложного многочлена $f(A)$. Прямое перемножение матриц займёт вечность.</p>
+                        </div>
+                        
+                        <div class="bg-white border-2 border-blue-100 rounded-xl p-5 shadow-sm">
+                            <h3 class="font-bold text-blue-800 mb-2 border-b border-blue-100 pb-1">Элегантное решение</h3>
+                            <p class="text-sm text-slate-600 mb-2">Поделим наш сложный многочлен $f(t)$ на минимальный многочлен матрицы $\mu(t)$ (или на характеристический $\chi(t)$) с остатком:</p>
+                            <div class="bg-slate-50 p-2 rounded text-center font-mono text-sm border border-slate-200 text-slate-800 font-bold mb-2">
+                                $f(t) = \mu(t)g(t) + r(t)$
+                            </div>
+                            <p class="text-sm text-slate-600">Подставим вместо $t$ матрицу $A$. Так как $\mu(A) = \mathcal{O}$ (по определению аннулирующего многочлена), всё слагаемое обнуляется!</p>
+                            <div class="bg-blue-100 p-3 rounded-lg text-center font-mono text-blue-900 font-bold border border-blue-300 text-lg mt-2">
+                                $f(A) = r(A)$
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg h-full">
+                        <h3 class="text-xl font-bold text-blue-300 mb-4 border-b border-slate-600 pb-2">
+                            <i class="fas fa-search mr-2"></i> Как найти остаток $r(t)$?
+                        </h3>
+                        <p class="text-sm text-slate-300 mb-4">Делить "в лоб" $t^{2024}$ на кубический многочлен сложно. Вместо этого мы ищем $r(t)$ методом неопределенных коэффициентов.</p>
+                        <p class="text-sm text-slate-300 mb-3">Степень остатка строго меньше степени делителя ($\deg r < \deg \mu$). Мы составляем систему уравнений, подставляя корни минимального многочлена (собственные значения $\lambda_i$) в равенство $f(t) = r(t)$.</p>
+                        
+                        <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                            <p class="text-xs text-slate-400 mb-2 uppercase tracking-wide">Важное правило (Кратность корней):</p>
+                            <p class="text-sm text-emerald-400">Если корень $\lambda_i$ имеет кратность $k$, мы обязаны приравнять не только сами функции, но и их производные вплоть до $(k-1)$-го порядка:</p>
+                            <ul class="text-sm font-mono mt-2 space-y-1 text-slate-300 pl-4 border-l-2 border-emerald-500">
+                                <li>$f(\lambda_i) = r(\lambda_i)$</li>
+                                <li>$f'(\lambda_i) = r'(\lambda_i)$</li>
+                                <li>...</li>
+                                <li>$f^{(k-1)}(\lambda_i) = r^{(k-1)}(\lambda_i)$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Аналитические функции от матриц</h2>
+                </div>
+
+                <div class="bg-emerald-50 border border-emerald-200 p-6 rounded-xl mb-8">
+                    <p class="text-slate-800 mb-3"><strong>Аналитическая функция</strong> $f(t)$ — это функция, которая задаётся сходящимся степенным рядом (рядом Тейлора), например: $e^t, \sin t, \cos t$.</p>
+                    <p class="text-slate-800 mb-3">Мы можем подставить матрицу $A$ прямо в этот бесконечный ряд: $e^A = E + A + \frac{A^2}{2!} + \frac{A^3}{3!} + \dots$</p>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-emerald-100 flex items-start mt-4">
+                        <i class="fas fa-magic text-emerald-500 text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-emerald-800 mb-1">Магия линейной алгебры</h4>
+                            <p class="text-sm text-slate-700">Математический анализ доказывает, что бесконечный ряд остатков сходится! Поэтому для аналитических функций <strong>работает абсолютно тот же самый алгоритм</strong>, что и для многочленов.</p>
+                            <p class="text-sm text-emerald-700 font-bold mt-2">$f(A) = r(A)$ даже если $f(t)$ — это экспонента или синус!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Алгоритм и Классический Пример</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-slate-800 border-b pb-2"><i class="fas fa-list-ol text-slate-400 mr-2"></i> Универсальный алгоритм вычисления $f(A)$</h3>
+                        <div class="pl-8 step-counter space-y-4 text-rose-600">
+                            <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                <h4 class="font-bold text-slate-900 text-sm">Найди минимальный (или хар-кий) многочлен</h4>
+                                <p class="text-xs text-slate-600 mt-1">Например, $\mu(t) = (t-\lambda_1)^2 (t-\lambda_2)$. Запомни его степень $m$.</p>
+                            </div>
+                            <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                <h4 class="font-bold text-slate-900 text-sm">Запиши общий вид остатка $r(t)$</h4>
+                                <p class="text-xs text-slate-600 mt-1">Многочлен степени $m-1$ с неизвестными коэффициентами: $r(t) = a t^2 + b t + c$.</p>
+                            </div>
+                            <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-rose-400">
+                                <h4 class="font-bold text-slate-900 text-sm">Составь систему уравнений</h4>
+                                <p class="text-xs text-slate-600 mt-1">Подставь корни $\lambda_i$ в $f(t)=r(t)$. Если корень кратный (как $\lambda_1$ в квадрате), добавь уравнения с производными: $f'(\lambda_1)=r'(\lambda_1)$.</p>
+                            </div>
+                            <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                <h4 class="font-bold text-slate-900 text-sm">Реши систему и подставь матрицу</h4>
+                                <p class="text-xs text-slate-600 mt-1">Найди $a, b, c$. Итоговый ответ: $f(A) = a A^2 + b A + c E$.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 text-white p-6 rounded-xl shadow-lg flex flex-col justify-between">
+                        <h3 class="text-xl font-bold text-rose-300 mb-4 border-b border-slate-600 pb-2">Пример: Найти матричную экспоненту $e^A$</h3>
+                        
+                        <p class="text-sm text-slate-300 mb-2">Пусть для матрицы $A$ мы нашли $\mu(t) = t^2(t-1)$.<br>Найти: $f(A) = e^A$.</p>
+                        
+                        <div class="bg-slate-900 p-4 rounded-lg border border-slate-700 text-sm font-mono space-y-2 text-slate-300 mb-4">
+                            <p>1. $\deg \mu = 3 \implies r(t) = at^2 + bt + c$</p>
+                            <p>2. Корень $\lambda=0$ (кр. 2):</p>
+                            <p class="pl-4 border-l-2 border-slate-600 text-emerald-400">$f(0) = r(0) \implies e^0 = c \implies c=1$</p>
+                            <p class="pl-4 border-l-2 border-slate-600 text-emerald-400">$f'(0) = r'(0) \implies e^0 = 2a(0) + b \implies b=1$</p>
+                            <p>3. Корень $\lambda=1$ (кр. 1):</p>
+                            <p class="pl-4 border-l-2 border-slate-600 text-rose-400">$f(1) = r(1) \implies e^1 = a(1)^2 + b(1) + c \implies e = a + 1 + 1$</p>
+                            <p class="pl-4 text-rose-300">Отсюда $a = e - 2$.</p>
+                        </div>
+
+                        <p class="text-sm text-slate-300 mb-2">Собираем остаток $r(t) = (e-2)t^2 + t + 1$.</p>
+                        <div class="text-center font-mono font-bold text-emerald-400 bg-black p-3 rounded-lg border border-slate-600 text-lg">
+                            $e^A = (e-2)A^2 + A + E$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <div id="ticket-17" class="ticket-section hidden space-y-12">
+            
+            <div class="bg-gradient-to-r from-sky-50 to-indigo-50 border border-sky-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-sky-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    17. Комплексификация вещественного векторного пространства: существование и единственность. Комплексификация линейного оператора.
+                </p>
+            </div>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-sky-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-sky-100 rounded-bl-full -z-10 opacity-50"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Комплексификация пространства</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-8">
+                    <div class="bg-white border-2 border-sky-100 rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-sky-800 mb-3 border-b border-sky-100 pb-2">Мотивация и Определение</h3>
+                        <p class="text-sm text-slate-700 mb-3"><strong>Мотивация:</strong> Поле $\mathbb{R}$ не является алгебраически замкнутым. Оператор над $\mathbb{R}$ может не иметь собственных векторов и ЖНФ. Решение — искусственно расширить пространство до поля $\mathbb{C}$.</p>
+                        <p class="text-sm text-slate-700 mb-3"><strong>Определение:</strong> Пусть $V$ — вещественное векторное пространство. Его <strong>комплексификация</strong> $V_{\mathbb{C}}$ — это комплексное векторное пространство, такое что:</p>
+                        <ul class="space-y-2 text-sm text-slate-700 list-decimal pl-5">
+                            <li>Оно содержит $V$ как вещественное подпространство.</li>
+                            <li>Для любого вектора $u \in V_{\mathbb{C}}$ существует <strong>единственное представление</strong> в виде:
+                                <div class="bg-sky-50 font-mono font-bold text-sky-800 p-2 rounded text-center my-2 border border-sky-200">
+                                    $u = a + ib, \quad a, b \in V$
+                                </div>
+                                где $a$ — вещественная часть, $b$ — мнимая часть.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg flex flex-col justify-center">
+                        <h3 class="text-xl font-bold text-sky-300 mb-3 border-b border-slate-600 pb-2">
+                            <i class="fas fa-lightbulb mr-2"></i> Интуиция
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Мы делаем с векторами абсолютно то же самое, что в школе делали с числами. Комплексное число $z = x + iy$ состоит из двух вещественных чисел. Комплексифицированный вектор $u = a + ib$ состоит из пары обычных вещественных векторов.
+                        </p>
+                        <div class="bg-slate-900 p-3 rounded-lg border border-slate-700 font-mono text-sm text-emerald-400">
+                            Сложение: $(a_1 + ib_1) + (a_2 + ib_2) = (a_1 + a_2) + i(b_1 + b_2)$<br><br>
+                            Умнож. на $z$: $(\alpha + i\beta)(a + ib) = (\alpha a - \beta b) + i(\beta a + \alpha b)$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Существование, Единственность и Базис</h2>
+                </div>
+
+                <div class="bg-indigo-50 border border-indigo-200 p-5 rounded-xl mb-8">
+                    <h3 class="font-bold text-indigo-900 mb-2">Лемма 6.1</h3>
+                    <ul class="space-y-2 text-sm text-indigo-900">
+                        <li><i class="fas fa-check text-indigo-500 mr-2"></i> <strong>Часть 1:</strong> Комплексификация $V_{\mathbb{C}}$ существует и единственна с точностью до изоморфизма.</li>
+                        <li><i class="fas fa-check text-indigo-500 mr-2"></i> <strong>Часть 2:</strong> Если $e_1, \dots, e_n$ — базис $V$ над $\mathbb{R}$, то он же является базисом $V_{\mathbb{C}}$ над $\mathbb{C}$. Следовательно, $\dim_{\mathbb{C}}(V_{\mathbb{C}}) = \dim_{\mathbb{R}}(V)$.</li>
+                    </ul>
+                </div>
+
+                <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательства</h3>
+                <div class="pl-8 step-counter space-y-4 text-indigo-600">
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Единственность</h4>
+                        <p class="text-sm">Предположим, что $V_{\mathbb{C}}$ — комплексификация. Операции сложения и умножения на комплексное число <strong>жестко заданы</strong> алгебраическими правилами (раскрытием скобок) и определением $u = a+ib$. Поскольку операции однозначно определены, любые две комплексификации естественно изоморфны.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-indigo-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Существование (Явное построение)</h4>
+                        <p class="text-sm mb-2">Рассмотрим внешнюю прямую сумму $V \oplus V$ — множество всевозможных пар $(a, b)$, где $a, b \in V$.</p>
+                        <p class="text-sm">Определим сложение покомпонентно, а умножение на $\alpha + i\beta$ по правилу: $(\alpha + i\beta)(a, b) = (\alpha a - \beta b, \beta a + \alpha b)$. Множество пар вида $(a, 0)$ изоморфно исходному $V$. А любую пару $(a,b)$ можно записать как $(a, 0) + (0, b) = (a, 0) + i(b, 0)$, что и дает нам $a + ib$.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Базис (Линейная независимость над $\mathbb{C}$)</h4>
+                        <p class="text-sm mb-2">Пусть $\sum_{j=1}^n (\alpha_j + i\beta_j)e_j = 0$. Раскроем скобки и сгруппируем:</p>
+                        <div class="bg-slate-50 font-mono text-center p-2 rounded text-xs mb-2">$\sum_{j=1}^n \alpha_j e_j + i \sum_{j=1}^n \beta_j e_j = 0 + i \cdot 0$</div>
+                        <p class="text-sm">В силу <em>единственности представления</em> вектора в $V_{\mathbb{C}}$, его вещественная и мнимая части обязаны быть нулями. То есть $\sum \alpha_j e_j = 0$ и $\sum \beta_j e_j = 0$. Но $e_j$ — базис над $\mathbb{R}$, значит все $\alpha_j=0$ и $\beta_j=0$. Набор независим и, очевидно, порождает всё $V_{\mathbb{C}}$.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Комплексификация линейного оператора</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-6">
+                    <div class="bg-white border-2 border-rose-100 rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-rose-800 mb-3 border-b pb-2">Определение и Теорема 1.1</h3>
+                        <p class="text-sm text-slate-700 mb-4">Пусть $A: V \to V$ — линейный оператор на вещественном пространстве. Его <strong>комплексификацией</strong> называется оператор $\tilde{A}: V_{\mathbb{C}} \to V_{\mathbb{C}}$, действующий по правилу:</p>
+                        <div class="text-center font-mono font-bold text-rose-700 bg-rose-50 p-3 rounded border border-rose-100 text-lg mb-4">
+                            $\tilde{A}(v + iw) = A(v) + iA(w)$
+                        </div>
+                        <p class="text-sm text-slate-700 font-medium"><strong>Теорема:</strong> Существует единственный линейный (над полем $\mathbb{C}$) оператор $\tilde{A}$, продолжающий $A$ (т.е. его сужение на $V$ совпадает с $A$).</p>
+                    </div>
+
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 flex items-center text-rose-300">
+                            <i class="fas fa-table mr-2"></i> Важное замечание о Матрице
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Поскольку базис $e_1, \dots, e_n$ пространства $V$ является одновременно и базисом $V_{\mathbb{C}}$ (доказано выше), то образы базисных векторов совпадают:
+                            $\tilde{A}(e_j) = A(e_j)$.
+                        </p>
+                        <div class="bg-slate-900 p-4 rounded-lg border border-slate-700 text-emerald-400 font-bold text-center text-sm uppercase tracking-wide">
+                            Матрица оператора $\tilde{A}$ в базисе $e$ абсолютно совпадает с исходной матрицей оператора $A$.
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство Теоремы</h3>
+                <div class="pl-8 step-counter space-y-4 text-rose-600">
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Единственность</h4>
+                        <p class="text-sm">Если $\tilde{A}$ — линейное продолжение, то в силу линейности $\tilde{A}(v + iw) = \tilde{A}(v) + i\tilde{A}(w)$. А так как на вещественных векторах он совпадает с $A$, получаем $A(v) + iA(w)$. Формула действия определена абсолютно однозначно.</p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Линейность: Аддитивность</h4>
+                        <p class="text-sm font-mono text-xs overflow-x-auto">
+                            $\tilde{A}((v_1+iw_1) + (v_2+iw_2)) = \tilde{A}((v_1+v_2) + i(w_1+w_2)) = A(v_1+v_2) + iA(w_1+w_2) = (A(v_1) + iA(w_1)) + (A(v_2) + iA(w_2)) = \tilde{A}(v_1+iw_1) + \tilde{A}(v_2+iw_2)$
+                        </p>
+                    </div>
+                    <div class="step-item text-slate-800 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Линейность: Однородность</h4>
+                        <p class="text-sm font-mono text-xs overflow-x-auto">
+                            $\tilde{A}((\alpha+i\beta)(v+iw)) = \tilde{A}((\alpha v - \beta w) + i(\alpha w + \beta v)) = A(\alpha v - \beta w) + iA(\alpha w + \beta v) = \dots$ (раскрывая в силу линейности $A$ над $\mathbb{R}$) $\dots = (\alpha+i\beta)(A(v) + iA(w)) = (\alpha+i\beta)\tilde{A}(v+iw)$.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="ticket-18" class="ticket-section hidden space-y-12">
+            
+            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-100 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-sm uppercase tracking-wider text-indigo-600 font-bold mb-2">Полная формулировка</h2>
+                <p class="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
+                    18. Существование одно- или двумерного инвариантного подпространства у вещественного оператора. Двумерное инвариантное подпространство как ядро некоторого вещественного оператора. Вещественная жорданова клетка. Теорема о существовании вещественной жордановой формы у вещественного оператора.
+                </p>
+            </div>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-indigo-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-100 rounded-bl-full -z-10 opacity-50"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-2xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Существование 1D или 2D инвариантного подпространства</h2>
+                </div>
+
+                <div class="bg-indigo-50 border border-indigo-200 p-5 rounded-xl mb-8 text-center shadow-sm">
+                    <p class="text-lg font-medium text-indigo-900 mb-2"><strong>Теорема 2.1:</strong> Любой линейный оператор $A$ на конечномерном вещественном пространстве $V$ обладает хотя бы одним <strong>одномерным</strong> или <strong>двумерным</strong> инвариантным подпространством.</p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-2"><i class="fas fa-hammer text-slate-400 mr-2"></i> Доказательство (через комплексификацию)</h3>
+                
+                <div class="pl-8 step-counter space-y-5 text-indigo-600">
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 1: Переход в $\mathbb{C}$ и поиск корней</h4>
+                        <p class="text-sm">Рассмотрим комплексификацию $\tilde{A}$. Её характеристический многочлен имеет вещественные коэффициенты. По основной теореме алгебры, он имеет либо <strong>вещественный корень</strong>, либо <strong>пару комплексно-сопряженных корней</strong>.</p>
+                    </div>
+                    
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-emerald-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 2: Случай вещественного корня (1D)</h4>
+                        <p class="text-sm">Если $\lambda \in \mathbb{R}$ — собственное значение, то существует вещественный собственный вектор $v \in V$. Тогда одномерное подпространство $\text{span}(v)$ инвариантно относительно $A$.</p>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-indigo-400">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 3: Случай комплексного корня (2D)</h4>
+                        <p class="text-sm mb-2">Пусть $\lambda = \alpha + i\beta$ ($\beta \neq 0$) — комплексное собственное значение, а $u = a + ib$ — соответствующий ему собственный вектор ($a, b \in V$).</p>
+                        <p class="text-sm mb-2">Подействуем оператором $\tilde{A}$ на $u$ двумя способами:</p>
+                        <ol class="list-decimal pl-5 text-sm space-y-1 mb-2 font-mono">
+                            <li>$\tilde{A}(a + ib) = \lambda(a + ib) = (\alpha + i\beta)(a + ib) = (\alpha a - \beta b) + i(\alpha b + \beta a)$</li>
+                            <li>$\tilde{A}(a + ib) = A(a) + iA(b)$ (по определению комплексификации)</li>
+                        </ol>
+                        <p class="text-sm">Приравнивая вещественные и мнимые части, получаем важнейшие формулы:</p>
+                        <div class="bg-indigo-50 p-3 rounded font-mono font-bold text-center border border-indigo-200 mt-2 text-indigo-800">
+                            $A(a) = \alpha a - \beta b$ <br>
+                            $A(b) = \beta a + \alpha b$
+                        </div>
+                    </div>
+
+                    <div class="step-item text-slate-800 bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-1">Шаг 4: Линейная независимость $a$ и $b$</h4>
+                        <p class="text-sm mb-2">Покажем, что векторы $a$ и $b$ линейно независимы. Пусть $a = cb$ ($c \in \mathbb{R}$). Тогда $u = cb + ib = (c+i)b$.</p>
+                        <p class="text-sm">Подставим это в уравнение на собственный вектор: $\tilde{A}((c+i)b) = \lambda (c+i)b$. Поскольку $b$ — чисто вещественный вектор, это означало бы, что вещественный оператор имеет вещественный собственный вектор $b$ с комплексным собственным значением $\lambda$, что невозможно. Значит, $a$ и $b$ независимы!</p>
+                        <p class="text-sm font-bold text-emerald-600 mt-2">Вывод: Двумерное подпространство $U = \text{span}(a, b)$ инвариантно, так как образы $A(a)$ и $A(b)$ выражаются только через $a$ и $b$.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-emerald-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">2. Двумерное подпространство как ядро оператора</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <p class="text-sm text-slate-700">Рассмотрим матрицу ограничения оператора $A$ на наше двумерное подпространство $U = \text{span}(a, b)$. Из полученных выше формул её вид:</p>
+                        <div class="bg-slate-50 p-3 rounded font-mono text-center border border-slate-200 font-bold text-lg text-emerald-800">
+                            $[A|_U] = \begin{pmatrix} \alpha & \beta \\ -\beta & \alpha \end{pmatrix}$
+                        </div>
+                        <p class="text-sm text-slate-700 mt-3">Характеристический многочлен этого ограничения:</p>
+                        <div class="bg-slate-50 p-2 rounded font-mono text-center border border-slate-200 text-sm">
+                            $\det(\lambda E - [A|_U]) = (\lambda - \alpha)^2 + \beta^2 = \lambda^2 - 2\alpha\lambda + (\alpha^2 + \beta^2)$
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 text-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-lg font-bold text-emerald-300 mb-3 border-b border-slate-600 pb-2"><i class="fas fa-magic mr-2"></i> Суть (Связь с ядром)</h3>
+                        <p class="text-sm text-slate-300 mb-3">По теореме Гамильтона-Кэли этот многочлен аннулирует ограничение $A|_U$. То есть, если мы подставим сам оператор $A$ в этот многочлен, то на векторах из $U$ он выдаст ноль!</p>
+                        <div class="bg-slate-900 p-3 rounded border border-slate-700 text-center font-mono text-emerald-400 text-sm mb-3">
+                            $(A^2 - 2\alpha A + (\alpha^2 + \beta^2)E)x = 0 \quad \forall x \in U$
+                        </div>
+                        <p class="text-sm text-slate-300 font-medium text-center">Следовательно, наше инвариантное подпространство $U$ лежит внутри ядра этого мощного вещественного оператора второй степени.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-rose-500 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">3. Вещественная жорданова клетка</h2>
+                </div>
+
+                <div class="bg-rose-50 border border-rose-200 p-6 rounded-xl mb-6">
+                    <h3 class="font-bold text-rose-900 mb-3 border-b border-rose-200 pb-1">Определение 5.1</h3>
+                    <p class="text-sm text-slate-700 mb-4">Для пары комплексно-сопряженных собственных значений $\lambda = \alpha \pm i\beta$ <strong>вещественной жордановой клеткой</strong> размера $2k \times 2k$ называется блочная матрица вида:</p>
+                    
+                    <div class="text-center font-mono font-bold text-rose-800 bg-white p-4 rounded-lg shadow-sm border border-rose-100 text-lg overflow-x-auto mb-4">
+                        $C_k(\alpha, \beta) = \begin{pmatrix} J(\alpha, \beta) & I & 0 & \dots & 0 \\ 0 & J(\alpha, \beta) & I & \dots & 0 \\ \dots & \dots & \dots & \ddots & \dots \\ 0 & 0 & 0 & \dots & I \\ 0 & 0 & 0 & \dots & J(\alpha, \beta) \end{pmatrix}$
+                    </div>
+                    
+                    <p class="text-sm text-slate-700">Где каждый блок $J(\alpha, \beta)$ — это матрица $2 \times 2$ вида вращения-масштабирования, а $I$ — единичная матрица $2 \times 2$:</p>
+                    <div class="flex justify-center space-x-8 mt-3 font-mono text-sm text-rose-700">
+                        <span>$J(\alpha, \beta) = \begin{pmatrix} \alpha & -\beta \\ \beta & \alpha \end{pmatrix}$</span>
+                        <span>$I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$</span>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50/50 border border-amber-100 rounded-xl p-5 pattern-bg">
+                    <h3 class="text-sm font-bold text-amber-800 mb-2 uppercase tracking-wider flex items-center">
+                        <i class="fas fa-eye mr-2 text-amber-600"></i> Физический смысл
+                    </h3>
+                    <p class="text-sm text-slate-700">Комплексная жорданова клетка $J_k(\lambda)$ имела на диагонали число $\lambda$. При переходе к вещественному базису это комплексное число "раздувается" в блок $2 \times 2$, описывающий <strong>спиральное движение</strong> (вращение с растяжением). Единицы на наддиагонали тоже раздуваются в блоки $2 \times 2$ (матрицы $I$).</p>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden border-t-4 border-t-purple-500">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-lg mr-4 flex-shrink-0">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900">4. Теорема о вещественной ЖНФ</h2>
+                </div>
+
+                <div class="bg-purple-50 border border-purple-200 p-6 rounded-xl mb-8 text-center shadow-sm">
+                    <p class="text-xl font-bold text-purple-900 mb-2">Основная теорема (Теорема 5.1)</p>
+                    <p class="text-lg text-purple-800 max-w-3xl mx-auto">
+                        Любой линейный оператор $A$ на конечномерном вещественном пространстве может быть приведён к <strong>вещественной жордановой форме</strong>.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2 border-b pb-2"><i class="fas fa-list-ol text-slate-400 mr-2"></i> Краткий набросок доказательства</h3>
+                        <ul class="list-none space-y-3 pl-2 text-sm text-slate-700">
+                            <li class="flex items-start">
+                                <span class="text-purple-500 font-bold mr-3">1.</span>
+                                <span>Переходим к комплексификации $V_{\mathbb{C}}$ и применяем классическую теорему о ЖНФ для оператора $\tilde{A}$.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 font-bold mr-3">2.</span>
+                                <span>Базис ЖНФ в $V_{\mathbb{C}}$ состоит из жордановых цепочек. Для комплексно-сопряженных корней $\lambda$ и $\bar{\lambda}$ образуются сопряженные жордановы клетки.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 font-bold mr-3">3.</span>
+                                <span>Берём жорданову цепочку комплексных векторов $u_j = a_j + ib_j$. Выделяем их вещественные и мнимые части: $a_1, b_1, a_2, b_2, \dots, a_k, b_k$.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 font-bold mr-3">4.</span>
+                                <span>Показываем, что этот набор векторов линейно независим над $\mathbb{R}$ и образует инвариантное подпространство размерности $2k$. Матрица оператора в этом базисе в точности равна вещественной жордановой клетке $C_k(\alpha, \beta)$!</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 text-white rounded-xl p-6 shadow-lg h-full">
+                        <h3 class="text-lg font-bold text-purple-300 mb-4 border-b border-slate-600 pb-2">
+                            <i class="fas fa-th mr-2"></i> Итоговый вид матрицы
+                        </h3>
+                        <p class="text-sm text-slate-300 mb-4">В таком базисе матрица оператора имеет идеальный блочно-диагональный вид:</p>
+                        
+                        <div class="bg-slate-900 p-4 rounded text-center text-emerald-400 font-mono text-lg border border-slate-700 mb-4">
+                            $J = \bigoplus_i C_{k_i}(\alpha_i, \beta_i) \oplus \bigoplus_j J_{m_j}(\lambda_j)$
+                        </div>
+
+                        <p class="text-xs text-slate-400">Первая прямая сумма берётся по парам комплексно-сопряженных собственных значений (они дают большие клетки $C_k$), а вторая — по обычным вещественным собственным значениям (они дают классические клетки $J_m$).</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </main>
 
     <footer class="text-center text-slate-500 mt-16 pb-8">
