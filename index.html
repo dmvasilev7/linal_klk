@@ -105,31 +105,41 @@
             border-color: #334155 !important;
         }
 
-        /* Убираем бесячие точки на фоне */
         body.dark .pattern-bg {
             background-image: none !important;
         }
 
-        /* Точечно перекрашиваем только светлые фоны 50 и 100, не трогая 500+ (кнопки) */
-        body.dark .bg-white,
-        body.dark .bg-slate-50, body.dark .bg-slate-100, body.dark .bg-slate-50\/50,
-        body.dark .bg-gray-50, body.dark .bg-gray-100, body.dark .bg-gray-50\/50,
-        body.dark .bg-red-50, body.dark .bg-red-100, body.dark .bg-red-50\/50,
-        body.dark .bg-orange-50, body.dark .bg-orange-100, body.dark .bg-orange-50\/50,
-        body.dark .bg-amber-50, body.dark .bg-amber-100, body.dark .bg-amber-50\/50,
-        body.dark .bg-yellow-50, body.dark .bg-yellow-100, body.dark .bg-yellow-50\/50,
-        body.dark .bg-green-50, body.dark .bg-green-100, body.dark .bg-green-50\/50,
-        body.dark .bg-emerald-50, body.dark .bg-emerald-100, body.dark .bg-emerald-50\/50,
-        body.dark .bg-teal-50, body.dark .bg-teal-100, body.dark .bg-teal-50\/50,
-        body.dark .bg-cyan-50, body.dark .bg-cyan-100, body.dark .bg-cyan-50\/50,
-        body.dark .bg-sky-50, body.dark .bg-sky-100, body.dark .bg-sky-50\/50,
-        body.dark .bg-blue-50, body.dark .bg-blue-100, body.dark .bg-blue-50\/50,
-        body.dark .bg-indigo-50, body.dark .bg-indigo-100, body.dark .bg-indigo-50\/50,
-        body.dark .bg-violet-50, body.dark .bg-violet-100, body.dark .bg-violet-50\/50,
-        body.dark .bg-purple-50, body.dark .bg-purple-100, body.dark .bg-purple-50\/50,
-        body.dark .bg-fuchsia-50, body.dark .bg-fuchsia-100, body.dark .bg-fuchsia-50\/50,
-        body.dark .bg-pink-50, body.dark .bg-pink-100, body.dark .bg-pink-50\/50,
-        body.dark .bg-rose-50, body.dark .bg-rose-100, body.dark .bg-rose-50\/50 {
+        /* 1. Ловим ВСЕ белые фоны и фоны с модификаторами прозрачности (например, bg-purple-50/80) */
+        body.dark [class~="bg-white"],
+        body.dark [class*="bg-"][class*="-50/"],
+        body.dark [class*="bg-"][class*="-100/"] {
+            background-color: #1e293b !important;
+            border-color: #334155 !important;
+        }
+
+        /* 2. Ловим ВСЕ обычные светлые фоны (50 и 100), используя точное совпадение слов */
+        body.dark [class~="bg-slate-50"], body.dark [class~="bg-slate-100"],
+        body.dark [class~="bg-gray-50"], body.dark [class~="bg-gray-100"],
+        body.dark [class~="bg-zinc-50"], body.dark [class~="bg-zinc-100"],
+        body.dark [class~="bg-neutral-50"], body.dark [class~="bg-neutral-100"],
+        body.dark [class~="bg-stone-50"], body.dark [class~="bg-stone-100"],
+        body.dark [class~="bg-red-50"], body.dark [class~="bg-red-100"],
+        body.dark [class~="bg-orange-50"], body.dark [class~="bg-orange-100"],
+        body.dark [class~="bg-amber-50"], body.dark [class~="bg-amber-100"],
+        body.dark [class~="bg-yellow-50"], body.dark [class~="bg-yellow-100"],
+        body.dark [class~="bg-lime-50"], body.dark [class~="bg-lime-100"],
+        body.dark [class~="bg-green-50"], body.dark [class~="bg-green-100"],
+        body.dark [class~="bg-emerald-50"], body.dark [class~="bg-emerald-100"],
+        body.dark [class~="bg-teal-50"], body.dark [class~="bg-teal-100"],
+        body.dark [class~="bg-cyan-50"], body.dark [class~="bg-cyan-100"],
+        body.dark [class~="bg-sky-50"], body.dark [class~="bg-sky-100"],
+        body.dark [class~="bg-blue-50"], body.dark [class~="bg-blue-100"],
+        body.dark [class~="bg-indigo-50"], body.dark [class~="bg-indigo-100"],
+        body.dark [class~="bg-violet-50"], body.dark [class~="bg-violet-100"],
+        body.dark [class~="bg-purple-50"], body.dark [class~="bg-purple-100"],
+        body.dark [class~="bg-fuchsia-50"], body.dark [class~="bg-fuchsia-100"],
+        body.dark [class~="bg-pink-50"], body.dark [class~="bg-pink-100"],
+        body.dark [class~="bg-rose-50"], body.dark [class~="bg-rose-100"] {
             background-color: #1e293b !important;
             border-color: #334155 !important;
         }
@@ -139,28 +149,29 @@
             border-color: rgba(255, 255, 255, 0.05) !important;
         }
 
-        /* Инверсия базового текста */
-        body.dark .text-slate-900, body.dark .text-slate-800,
-        body.dark .text-slate-700, body.dark .text-slate-600 { color: #f1f5f9 !important; }
-        body.dark .text-slate-500 { color: #94a3b8 !important; }
+        /* 3. Инверсия базового серого текста в белый */
+        body.dark [class~="text-slate-900"], body.dark [class~="text-slate-800"],
+        body.dark [class~="text-slate-700"], body.dark [class~="text-slate-600"] { color: #f1f5f9 !important; }
+        body.dark [class~="text-slate-500"] { color: #94a3b8 !important; }
 
-        /* Высветляем все цветные тексты (600-900), чтобы они не сливались с темным фоном */
-        body.dark .text-red-600, body.dark .text-red-700, body.dark .text-red-800, body.dark .text-red-900 { color: #fca5a5 !important; }
-        body.dark .text-orange-600, body.dark .text-orange-700, body.dark .text-orange-800, body.dark .text-orange-900 { color: #fdba74 !important; }
-        body.dark .text-amber-600, body.dark .text-amber-700, body.dark .text-amber-800, body.dark .text-amber-900 { color: #fcd34d !important; }
-        body.dark .text-green-600, body.dark .text-green-700, body.dark .text-green-800, body.dark .text-green-900 { color: #86efac !important; }
-        body.dark .text-emerald-600, body.dark .text-emerald-700, body.dark .text-emerald-800, body.dark .text-emerald-900 { color: #6ee7b7 !important; }
-        body.dark .text-teal-600, body.dark .text-teal-700, body.dark .text-teal-800, body.dark .text-teal-900 { color: #5eead4 !important; }
-        body.dark .text-cyan-600, body.dark .text-cyan-700, body.dark .text-cyan-800, body.dark .text-cyan-900 { color: #67e8f9 !important; }
-        body.dark .text-sky-600, body.dark .text-sky-700, body.dark .text-sky-800, body.dark .text-sky-900 { color: #7dd3fc !important; }
-        body.dark .text-blue-600, body.dark .text-blue-700, body.dark .text-blue-800, body.dark .text-blue-900 { color: #93c5fd !important; }
-        body.dark .text-indigo-600, body.dark .text-indigo-700, body.dark .text-indigo-800, body.dark .text-indigo-900 { color: #a5b4fc !important; }
-        body.dark .text-violet-600, body.dark .text-violet-700, body.dark .text-violet-800, body.dark .text-violet-900 { color: #c4b5fd !important; }
-        body.dark .text-purple-600, body.dark .text-purple-700, body.dark .text-purple-800, body.dark .text-purple-900 { color: #d8b4fe !important; }
-        body.dark .text-fuchsia-600, body.dark .text-fuchsia-700, body.dark .text-fuchsia-800, body.dark .text-fuchsia-900 { color: #f0abfc !important; }
-        body.dark .text-pink-600, body.dark .text-pink-700, body.dark .text-pink-800, body.dark .text-pink-900 { color: #f9a8d4 !important; }
-        body.dark .text-rose-600, body.dark .text-rose-700, body.dark .text-rose-800, body.dark .text-rose-900 { color: #fda4af !important; }
+        /* 4. Высветляем все цветные тексты и иконки (600-900), чтобы они сияли */
+        body.dark [class*="text-red-6"], body.dark [class*="text-red-7"], body.dark [class*="text-red-8"], body.dark [class*="text-red-9"] { color: #fca5a5 !important; }
+        body.dark [class*="text-orange-6"], body.dark [class*="text-orange-7"], body.dark [class*="text-orange-8"], body.dark [class*="text-orange-9"] { color: #fdba74 !important; }
+        body.dark [class*="text-amber-6"], body.dark [class*="text-amber-7"], body.dark [class*="text-amber-8"], body.dark [class*="text-amber-9"] { color: #fcd34d !important; }
+        body.dark [class*="text-green-6"], body.dark [class*="text-green-7"], body.dark [class*="text-green-8"], body.dark [class*="text-green-9"] { color: #86efac !important; }
+        body.dark [class*="text-emerald-6"], body.dark [class*="text-emerald-7"], body.dark [class*="text-emerald-8"], body.dark [class*="text-emerald-9"] { color: #6ee7b7 !important; }
+        body.dark [class*="text-teal-6"], body.dark [class*="text-teal-7"], body.dark [class*="text-teal-8"], body.dark [class*="text-teal-9"] { color: #5eead4 !important; }
+        body.dark [class*="text-cyan-6"], body.dark [class*="text-cyan-7"], body.dark [class*="text-cyan-8"], body.dark [class*="text-cyan-9"] { color: #67e8f9 !important; }
+        body.dark [class*="text-sky-6"], body.dark [class*="text-sky-7"], body.dark [class*="text-sky-8"], body.dark [class*="text-sky-9"] { color: #7dd3fc !important; }
+        body.dark [class*="text-blue-6"], body.dark [class*="text-blue-7"], body.dark [class*="text-blue-8"], body.dark [class*="text-blue-9"] { color: #93c5fd !important; }
+        body.dark [class*="text-indigo-6"], body.dark [class*="text-indigo-7"], body.dark [class*="text-indigo-8"], body.dark [class*="text-indigo-9"] { color: #a5b4fc !important; }
+        body.dark [class*="text-violet-6"], body.dark [class*="text-violet-7"], body.dark [class*="text-violet-8"], body.dark [class*="text-violet-9"] { color: #c4b5fd !important; }
+        body.dark [class*="text-purple-6"], body.dark [class*="text-purple-7"], body.dark [class*="text-purple-8"], body.dark [class*="text-purple-9"] { color: #d8b4fe !important; }
+        body.dark [class*="text-fuchsia-6"], body.dark [class*="text-fuchsia-7"], body.dark [class*="text-fuchsia-8"], body.dark [class*="text-fuchsia-9"] { color: #f0abfc !important; }
+        body.dark [class*="text-pink-6"], body.dark [class*="text-pink-7"], body.dark [class*="text-pink-8"], body.dark [class*="text-pink-9"] { color: #f9a8d4 !important; }
+        body.dark [class*="text-rose-6"], body.dark [class*="text-rose-7"], body.dark [class*="text-rose-8"], body.dark [class*="text-rose-9"] { color: #fda4af !important; }
 
+        /* Формулы KaTeX */
         body.dark .katex { color: #f8fafc !important; }
     </style>
 </head>
