@@ -99,36 +99,39 @@
             color: #f8fafc !important; /* slate-50 */
         }
         
-        /* Убираем градиенты на карточках и баннере, делаем их темными */
         body.dark [class*="bg-gradient-to-r"] {
             background-image: none !important;
             background-color: #1e293b !important;
             border-color: #334155 !important;
         }
 
-        /* Убираем точки на фоне в темной теме */
+        /* Убираем бесячие точки на фоне */
         body.dark .pattern-bg {
             background-image: none !important;
         }
 
-        /* Агрессивно перекрашиваем АБСОЛЮТНО ВСЕ светлые фоны в темные */
-        body.dark [class*="bg-white"],
-        body.dark [class*="bg-slate-50"], body.dark [class*="bg-slate-100"],
-        body.dark [class*="bg-blue-50"], body.dark [class*="bg-blue-100"],
-        body.dark [class*="bg-amber-50"], body.dark [class*="bg-amber-100"],
-        body.dark [class*="bg-emerald-50"], body.dark [class*="bg-emerald-100"],
-        body.dark [class*="bg-purple-50"], body.dark [class*="bg-purple-100"],
-        body.dark [class*="bg-indigo-50"], body.dark [class*="bg-indigo-100"],
-        body.dark [class*="bg-rose-50"], body.dark [class*="bg-rose-100"],
-        body.dark [class*="bg-teal-50"], body.dark [class*="bg-teal-100"],
-        body.dark [class*="bg-cyan-50"], body.dark [class*="bg-cyan-100"],
-        body.dark [class*="bg-sky-50"], body.dark [class*="bg-sky-100"],
-        body.dark [class*="bg-pink-50"], body.dark [class*="bg-pink-100"],
-        body.dark [class*="bg-orange-50"], body.dark [class*="bg-orange-100"],
-        body.dark [class*="bg-fuchsia-50"], body.dark [class*="bg-fuchsia-100"], /* Добавлено! */
-        body.dark [class*="bg-violet-50"], body.dark [class*="bg-violet-100"]    /* Добавлено! */ {
-            background-color: #1e293b !important; /* slate-800 */
-            border-color: #334155 !important; /* slate-700 */
+        /* Точечно перекрашиваем только светлые фоны 50 и 100, не трогая 500+ (кнопки) */
+        body.dark .bg-white,
+        body.dark .bg-slate-50, body.dark .bg-slate-100, body.dark .bg-slate-50\/50,
+        body.dark .bg-gray-50, body.dark .bg-gray-100, body.dark .bg-gray-50\/50,
+        body.dark .bg-red-50, body.dark .bg-red-100, body.dark .bg-red-50\/50,
+        body.dark .bg-orange-50, body.dark .bg-orange-100, body.dark .bg-orange-50\/50,
+        body.dark .bg-amber-50, body.dark .bg-amber-100, body.dark .bg-amber-50\/50,
+        body.dark .bg-yellow-50, body.dark .bg-yellow-100, body.dark .bg-yellow-50\/50,
+        body.dark .bg-green-50, body.dark .bg-green-100, body.dark .bg-green-50\/50,
+        body.dark .bg-emerald-50, body.dark .bg-emerald-100, body.dark .bg-emerald-50\/50,
+        body.dark .bg-teal-50, body.dark .bg-teal-100, body.dark .bg-teal-50\/50,
+        body.dark .bg-cyan-50, body.dark .bg-cyan-100, body.dark .bg-cyan-50\/50,
+        body.dark .bg-sky-50, body.dark .bg-sky-100, body.dark .bg-sky-50\/50,
+        body.dark .bg-blue-50, body.dark .bg-blue-100, body.dark .bg-blue-50\/50,
+        body.dark .bg-indigo-50, body.dark .bg-indigo-100, body.dark .bg-indigo-50\/50,
+        body.dark .bg-violet-50, body.dark .bg-violet-100, body.dark .bg-violet-50\/50,
+        body.dark .bg-purple-50, body.dark .bg-purple-100, body.dark .bg-purple-50\/50,
+        body.dark .bg-fuchsia-50, body.dark .bg-fuchsia-100, body.dark .bg-fuchsia-50\/50,
+        body.dark .bg-pink-50, body.dark .bg-pink-100, body.dark .bg-pink-50\/50,
+        body.dark .bg-rose-50, body.dark .bg-rose-100, body.dark .bg-rose-50\/50 {
+            background-color: #1e293b !important;
+            border-color: #334155 !important;
         }
 
         body.dark .glass-card {
@@ -136,47 +139,29 @@
             border-color: rgba(255, 255, 255, 0.05) !important;
         }
 
-        /* Инвертируем текст */
-        body.dark .text-slate-900,
-        body.dark .text-slate-800,
-        body.dark .text-slate-700,
-        body.dark .text-slate-600 {
-            color: #f1f5f9 !important;
-        }
-        body.dark .text-slate-500 {
-            color: #94a3b8 !important;
-        }
+        /* Инверсия базового текста */
+        body.dark .text-slate-900, body.dark .text-slate-800,
+        body.dark .text-slate-700, body.dark .text-slate-600 { color: #f1f5f9 !important; }
+        body.dark .text-slate-500 { color: #94a3b8 !important; }
 
-        /* Делаем цветной текст читаемым на темном фоне */
-        body.dark [class*="text-blue-"], body.dark [class*="text-amber-"], 
-        body.dark [class*="text-emerald-"], body.dark [class*="text-purple-"], 
-        body.dark [class*="text-indigo-"], body.dark [class*="text-rose-"], 
-        body.dark [class*="text-teal-"], body.dark [class*="text-cyan-"], 
-        body.dark [class*="text-sky-"], body.dark [class*="text-pink-"], 
-        body.dark [class*="text-orange-"], body.dark [class*="text-fuchsia-"], 
-        body.dark [class*="text-violet-"] {
-            color: #e2e8f0 !important; 
-        }
-        
-        /* Оставляем яркими только специфичные заголовки/акценты */
-        body.dark .text-blue-600, body.dark .text-blue-700, body.dark .text-blue-800, body.dark .text-blue-900 { color: #93c5fd !important; }
+        /* Высветляем все цветные тексты (600-900), чтобы они не сливались с темным фоном */
+        body.dark .text-red-600, body.dark .text-red-700, body.dark .text-red-800, body.dark .text-red-900 { color: #fca5a5 !important; }
+        body.dark .text-orange-600, body.dark .text-orange-700, body.dark .text-orange-800, body.dark .text-orange-900 { color: #fdba74 !important; }
         body.dark .text-amber-600, body.dark .text-amber-700, body.dark .text-amber-800, body.dark .text-amber-900 { color: #fcd34d !important; }
+        body.dark .text-green-600, body.dark .text-green-700, body.dark .text-green-800, body.dark .text-green-900 { color: #86efac !important; }
         body.dark .text-emerald-600, body.dark .text-emerald-700, body.dark .text-emerald-800, body.dark .text-emerald-900 { color: #6ee7b7 !important; }
-        body.dark .text-purple-600, body.dark .text-purple-700, body.dark .text-purple-800, body.dark .text-purple-900 { color: #d8b4fe !important; }
-        body.dark .text-indigo-600, body.dark .text-indigo-700, body.dark .text-indigo-800, body.dark .text-indigo-900 { color: #a5b4fc !important; }
-        body.dark .text-rose-600, body.dark .text-rose-700, body.dark .text-rose-800, body.dark .text-rose-900 { color: #fda4af !important; }
         body.dark .text-teal-600, body.dark .text-teal-700, body.dark .text-teal-800, body.dark .text-teal-900 { color: #5eead4 !important; }
         body.dark .text-cyan-600, body.dark .text-cyan-700, body.dark .text-cyan-800, body.dark .text-cyan-900 { color: #67e8f9 !important; }
         body.dark .text-sky-600, body.dark .text-sky-700, body.dark .text-sky-800, body.dark .text-sky-900 { color: #7dd3fc !important; }
+        body.dark .text-blue-600, body.dark .text-blue-700, body.dark .text-blue-800, body.dark .text-blue-900 { color: #93c5fd !important; }
+        body.dark .text-indigo-600, body.dark .text-indigo-700, body.dark .text-indigo-800, body.dark .text-indigo-900 { color: #a5b4fc !important; }
+        body.dark .text-violet-600, body.dark .text-violet-700, body.dark .text-violet-800, body.dark .text-violet-900 { color: #c4b5fd !important; }
+        body.dark .text-purple-600, body.dark .text-purple-700, body.dark .text-purple-800, body.dark .text-purple-900 { color: #d8b4fe !important; }
+        body.dark .text-fuchsia-600, body.dark .text-fuchsia-700, body.dark .text-fuchsia-800, body.dark .text-fuchsia-900 { color: #f0abfc !important; }
         body.dark .text-pink-600, body.dark .text-pink-700, body.dark .text-pink-800, body.dark .text-pink-900 { color: #f9a8d4 !important; }
-        body.dark .text-orange-600, body.dark .text-orange-700, body.dark .text-orange-800, body.dark .text-orange-900 { color: #fdba74 !important; }
-        body.dark .text-fuchsia-600, body.dark .text-fuchsia-700, body.dark .text-fuchsia-800, body.dark .text-fuchsia-900 { color: #f5d0fe !important; }
-        body.dark .text-violet-600, body.dark .text-violet-700, body.dark .text-violet-800, body.dark .text-violet-900 { color: #ddd6fe !important; }
+        body.dark .text-rose-600, body.dark .text-rose-700, body.dark .text-rose-800, body.dark .text-rose-900 { color: #fda4af !important; }
 
-        /* Формулы KaTeX */
-        body.dark .katex {
-            color: #f8fafc !important; 
-        }
+        body.dark .katex { color: #f8fafc !important; }
     </style>
 </head>
 <body class="text-slate-800 antialiased min-h-screen pb-20">
@@ -2598,27 +2583,27 @@
 
         // Tab Switching Logic
         function switchTab(ticketId) {
-            // Hide all sections
+            // Прячем все секции
             document.querySelectorAll('.ticket-section').forEach(section => {
                 section.classList.add('hidden');
             });
             
-            // Reset all buttons styling
+            // Сбрасываем стили ВСЕХ кнопок (возвращаем рамку!)
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-md', 'transform', 'hover:-translate-y-0.5');
-                btn.classList.add('bg-white', 'text-slate-600', 'hover:bg-slate-50');
+                btn.classList.add('bg-white', 'text-slate-600', 'hover:bg-slate-50', 'border', 'border-slate-200');
             });
 
-            // Show selected section
+            // Показываем нужный билет
             document.getElementById(ticketId).classList.remove('hidden');
             
-            // Update active button styling
+            // Красим активную кнопку (убираем рамку, добавляем цвет)
             const activeBtn = document.getElementById('btn-' + ticketId);
-            activeBtn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-50');
+            activeBtn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-50', 'border', 'border-slate-200');
             activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-md', 'transform', 'hover:-translate-y-0.5');
         }
         
-        // По умолчанию открываем 11 билет
+        // По умолчанию открываем 1 билет
         switchTab('ticket-1');
     </script>
     <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
